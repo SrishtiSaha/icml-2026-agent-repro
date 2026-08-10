@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "skill": "posterly",
+  "timestamp": "2026-08-02T06:31:21Z",
+  "poster_html": "/Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_taming_the_loss_landscape_pinns_workspace/poster.html",
+  "canvas": {
+    "source": "page-rule",
+    "width_cm": 60.96,
+    "height_cm": 91.44,
+    "orientation": "portrait",
+    "source_url": null
+  },
+  "overall": "FAIL",
+  "hard_failures": 1,
+  "warnings": 0,
+  "gates": [
+    {
+      "name": "preflight",
+      "severity": "hard",
+      "status": "PASS",
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/posterly/tools/poster_check.py",
+        "preflight",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_taming_the_loss_landscape_pinns_workspace/poster.html"
+      ],
+      "summary": {
+        "exit_code": 0,
+        "tail": "[preflight] /Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_taming_the_loss_landscape_pinns_workspace/poster.html\n  problems: 0   warnings: 0\n[preflight] PASS"
+      },
+      "artifacts": []
+    },
+    {
+      "name": "style",
+      "severity": "hard",
+      "status": "PASS",
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/posterly/tools/style_check.py",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_taming_the_loss_landscape_pinns_workspace/poster.html",
+        "--disable",
+        "4,5",
+        "--json",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_taming_the_loss_landscape_pinns_workspace/style_check.json"
+      ],
+      "summary": {
+        "gate": "style",
+        "status": "PASS",
+        "rules": [
+          {
+            "id": 1,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 2,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 3,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 4,
+            "severity": "hard",
+            "status": "SKIPPED",
+            "detail": "disabled via --disable (rule 4)"
+          },
+          {
+            "id": 5,
+            "severity": "hard",
+            "status": "SKIPPED",
+            "detail": "disabled via --disable (rule 5)"
+          },
+          {
+            "id": 6,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 7,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 8,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 9,
+            "severity": "warn",
+            "status": "PASS",
+            "detail": "9 --fs-* token(s) defined"
+          },
+          {
+            "id": 10,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 11,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 12,
+            "severity": "warn",
+            "status": "PASS",
+            "detail": "dark area = 0.0% of poster (<= 8%)"
+          },
+          {
+            "id": 13,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          }
+        ]
+      },
+      "artifacts": [
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_taming_the_loss_landscape_pinns_workspace/style_check.json"
+      ]
+    },
+    {
+      "name": "asset",
+      "severity": "hard",
+      "status": "NOT_RUN",
+      "command": [],
+      "summary": {
+        "not_run": "no --manifest: real-figure provenance gate opted out (NOT verified)"
+      },
+      "artifacts": []
+    },
+    {
+      "name": "measure",
+      "severity": "hard",
+      "status": "FAIL",
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/posterly/tools/poster_check.py",
+        "measure",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_taming_the_loss_landscape_pinns_workspace/poster.html"
+      ],
+      "summary": {
+        "exit_code": 1,
+        "tail": "  target col bottom = 3227 px  (footer-strip/footer top 3267 px  - target gap 40 px)\n  col0     3229.66 px -> keep\n  col1     3556.56 px -> trim ~329 px\n  Tip: a body paragraph adds/removes ~25 px per wrapped line, a callout ~60-90 px,\n       a small figure ~80-150 px. Prefer trimming the tallest column first.\nFAIL: spread 326.91 >= max 5.0\nFAIL: min gap -289.12 < 30.0\n[measure] FAIL -- alignment gate not met"
+      },
+      "artifacts": []
+    },
+    {
+      "name": "polish",
+      "severity": "soft",
+      "status": "PASS",
+      "command": [
+        "/Library/Frameworks/Python.framework/Versions/3.9/bin/python3",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/posterly/tools/poster_check.py",
+        "polish",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_taming_the_loss_landscape_pinns_workspace/poster.html",
+        "--max-card-trailing",
+        "0.15",
+        "--strict"
+      ],
+      "summary": {
+        "exit_code": 0,
+        "tail": "  cards checked       : 7\n  inner-void cards    : 7\n  beside-text floats  : 0\n  flex/<br> parents   : 0\n  header logos        : 0\n  banner images       : 0\n  warnings            : 0\n[polish] PASS"
+      },
+      "artifacts": []
+    }
+  ]
+}

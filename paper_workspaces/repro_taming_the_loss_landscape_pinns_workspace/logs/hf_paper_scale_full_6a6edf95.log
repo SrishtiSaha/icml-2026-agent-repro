@@ -1,0 +1,181 @@
+Downloading nvidia-cuda-nvrtc (86.0MiB)
+Downloading nvidia-nccl-cu13 (196.4MiB)
+Downloading triton (188.6MiB)
+Downloading cuda-bindings (6.3MiB)
+Downloading sympy (6.0MiB)
+Downloading nvidia-curand (56.8MiB)
+Downloading nvidia-cuda-runtime (2.1MiB)
+Downloading nvidia-cufile (1.2MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading numpy (15.9MiB)
+Downloading nvidia-cufft (204.2MiB)
+Downloading networkx (2.0MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading plotly (9.5MiB)
+Downloading nvidia-cusparselt-cu13 (162.3MiB)
+Downloading nvidia-cuda-cupti (10.2MiB)
+Downloading nvidia-nvshmem-cu13 (57.6MiB)
+Downloading nvidia-cusparse (139.2MiB)
+Downloading scipy (33.7MiB)
+Downloading nvidia-cudnn-cu13 (349.2MiB)
+Downloading torch (502.2MiB)
+Downloading nvidia-nvjitlink (38.9MiB)
+ Downloaded nvidia-cufile
+ Downloaded nvidia-cuda-runtime
+ Downloaded networkx
+ Downloaded cuda-bindings
+ Downloaded nvidia-cuda-cupti
+ Downloaded sympy
+ Downloaded numpy
+ Downloaded plotly
+ Downloaded nvidia-nvjitlink
+ Downloaded scipy
+ Downloaded nvidia-curand
+ Downloaded nvidia-nvshmem-cu13
+ Downloaded nvidia-cuda-nvrtc
+ Downloaded nvidia-cusparse
+ Downloaded nvidia-cusparselt-cu13
+ Downloaded nvidia-cusolver
+ Downloaded nvidia-nccl-cu13
+ Downloaded nvidia-cufft
+ Downloaded triton
+ Downloaded nvidia-cudnn-cu13
+ Downloaded nvidia-cublas
+ Downloaded torch
+Installed 34 packages in 524ms
+Downloading nvidia-cuda-nvrtc-cu12 (22.6MiB)
+Downloading nvidia-cuda-cupti-cu12 (13.5MiB)
+Downloading nvidia-cusparse-cu12 (186.9MiB)
+Downloading nvidia-nvjitlink-cu12 (37.9MiB)
+Downloading nvidia-cudnn-cu12 (697.8MiB)
+Downloading nvidia-cusolver-cu12 (118.4MiB)
+Downloading nvidia-cublas-cu12 (391.6MiB)
+Downloading nvidia-nccl-cu12 (168.1MiB)
+Downloading torch (743.0MiB)
+Downloading nvidia-cufft-cu12 (116.0MiB)
+Downloading nvidia-curand-cu12 (53.9MiB)
+ Downloaded nvidia-cuda-cupti-cu12
+ Downloaded nvidia-cuda-nvrtc-cu12
+ Downloaded nvidia-nvjitlink-cu12
+ Downloaded nvidia-curand-cu12
+ Downloaded nvidia-cufft-cu12
+ Downloaded nvidia-cusolver-cu12
+ Downloaded nvidia-nccl-cu12
+ Downloaded nvidia-cusparse-cu12
+ Downloaded nvidia-cublas-cu12
+ Downloaded nvidia-cudnn-cu12
+ Downloaded torch
+Installed 26 packages in 281ms
+device=cuda torch=2.3.1+cu121 mode=full
+/root/.cache/uv/archive-v0/Pe3wCN1Tbx2uNcpaVFWWS/lib/python3.12/site-packages/torch/autograd/graph.py:744: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at ../aten/src/ATen/cuda/CublasHandlePool.cpp:135.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+COND poisson 500 0 pinn 541.9065411512017
+COND poisson 500 0 fk 325.1287199935967
+COND poisson 500 1 pinn 190.50482873594694
+COND poisson 500 1 fk 423.8942375762309
+COND poisson 1000 0 pinn 552.5054807548223
+COND poisson 1000 0 fk 575.9259226682965
+COND poisson 1000 1 pinn 2501.498773705006
+COND poisson 1000 1 fk 440.5209433165325
+COND poisson 2000 0 pinn 1083.8644686130053
+COND poisson 2000 0 fk 1000000000000.0
+COND poisson 2000 1 pinn 515.4313284968812
+COND poisson 2000 1 fk 240.43049985277932
+COND poisson 4000 0 pinn 828.8606578825312
+COND poisson 4000 0 fk 608.7194559122413
+COND poisson 4000 1 pinn 792.3617652953241
+COND poisson 4000 1 fk 519.8359334249548
+COND poisson 8000 0 pinn 361.02597764752954
+COND poisson 8000 0 fk 745.0904223734922
+COND poisson 8000 1 pinn 1000000000000.0
+COND poisson 8000 1 fk 1583.2517083191497
+COND met 500 0 pinn 500.8934815714521
+COND met 500 0 fk 3828.5960878265364
+COND met 500 1 pinn 33818.1504390604
+COND met 500 1 fk 37642.815366764764
+COND met 1000 0 pinn 3281.096508574215
+COND met 1000 0 fk 864.5320513760776
+COND met 1000 1 pinn 1318.7610599538516
+COND met 1000 1 fk 2769.8878744907115
+COND met 2000 0 pinn 2717.977204069784
+COND met 2000 0 fk 2794.4460105333333
+COND met 2000 1 pinn 179.8586872054026
+COND met 2000 1 fk 1507.1549449218717
+COND met 4000 0 pinn 136.6135847105239
+COND met 4000 0 fk 3147.1745680772683
+COND met 4000 1 pinn 14748.69081863579
+COND met 4000 1 fk 7803.911655919622
+COND met 8000 0 pinn 3928.856660092838
+COND met 8000 0 fk 931.1309112176363
+COND met 8000 1 pinn 5268.622772383694
+COND met 8000 1 fk 1252.33682160747
+C2 poisson 32 64 0.26732468605041504 0.26732468605041504
+C2 poisson 64 70 0.28412729501724243 0.2583956697750518
+C2 poisson 128 76 0.14869773387908936 0.2502077257487034
+C2 poisson 256 83 0.1697130650281906 0.24269934797100842
+C2 poisson 512 91 0.17512676119804382 0.235814135190954
+C2 met 32 64 0.4319421947002411 0.43194219470024114
+C2 met 64 70 0.3735426664352417 0.4175147247068145
+C2 met 128 76 0.3931916356086731 0.40428467638962823
+C2 met 256 83 0.27258962392807007 0.3921526685909752
+C2 met 512 91 0.2832222282886505 0.38102756838741986
+C4 schrodinger pinn 0 5.627796173095703
+C4 schrodinger fk 0 4.711375713348389
+C4 schrodinger pinn 1 4.691019535064697
+C4 schrodinger fk 1 4.995697021484375
+C4 schrodinger pinn 2 4.459949493408203
+C4 schrodinger fk 2 5.433526992797852
+C4 met pinn 0 0.5335941910743713
+C4 met fk 0 0.31877949833869934
+C4 met pinn 1 0.3819962441921234
+C4 met fk 1 0.27001097798347473
+C4 met pinn 2 0.5693454146385193
+C4 met fk 2 0.27277806401252747
+C4 committor pinn 0 0.03174928203225136
+C4 committor fk 0 0.03313402086496353
+C4 committor pinn 1 0.0011696560541167855
+C4 committor fk 1 0.006430819630622864
+C4 committor pinn 2 0.0011601645965129137
+C4 committor fk 2 0.015939148142933846
+SUMMARY_JSON_START
+{
+  "elapsed_s": 620.1765508651733,
+  "condition_slopes": {
+    "met_pinn": -0.21051701936989425,
+    "met_fk": -0.6903571115361321,
+    "poisson_pinn": 5.977963348631445,
+    "poisson_fk": 0.34233848719347093
+  },
+  "claim2": {
+    "met": {
+      "max_unseen_ratio": 0.9725613127857851,
+      "last_ratio": 0.7433116440558359
+    },
+    "poisson": {
+      "max_unseen_ratio": 1.099582261825794,
+      "last_ratio": 0.7426474289008685
+    }
+  },
+  "claim4_means": {
+    "committor": {
+      "fk": 0.018501329546173412,
+      "pinn": 0.011359700894293686,
+      "improvement": 0.6139937600669995
+    },
+    "met": {
+      "fk": 0.2871895134449005,
+      "pinn": 0.4949786166350047,
+      "improvement": 1.723526081080151
+    },
+    "schrodinger": {
+      "fk": 5.046866575876872,
+      "pinn": 4.926255067189534,
+      "improvement": 0.9761017045182372
+    }
+  },
+  "speed_slopes": {
+    "met": 0.5217836716953141,
+    "poisson": -0.053642319399682094
+  }
+}
+SUMMARY_JSON_END

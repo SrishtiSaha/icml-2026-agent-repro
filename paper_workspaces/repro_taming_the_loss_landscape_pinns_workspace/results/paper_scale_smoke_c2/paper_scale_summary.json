@@ -1,0 +1,16 @@
+{
+  "elapsed_s": 20.128319025039673,
+  "condition_slopes": {},
+  "claim2": {
+    "met": {
+      "max_unseen_ratio": 0.7038570500615291,
+      "last_ratio": 0.7038570500615291
+    },
+    "poisson": {
+      "max_unseen_ratio": 0.94674542901029,
+      "last_ratio": 0.5162845505901642
+    }
+  },
+  "claim4_means": {},
+  "speed_slopes": {}
+}

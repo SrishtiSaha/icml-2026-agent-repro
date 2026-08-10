@@ -1,0 +1,50 @@
+{
+  "mode": "smoke",
+  "device": "cpu",
+  "elapsed_s": 18.615577936172485,
+  "condition_slope_loglog": {
+    "sine_operator": 1.9999999999999987,
+    "sine_operator_fk": 1.9999144164088951
+  },
+  "mc_bias_slope_loglog": {
+    "committor": 0.16086287512773112,
+    "met": 0.4728629117001264
+  },
+  "benchmark_means": {
+    "schrodinger": {
+      "vanilla_pinn": 0.4215013661184196,
+      "fk_pinn": 0.3893058542118994,
+      "improvement": 1.0826997887604233
+    },
+    "met": {
+      "vanilla_pinn": 0.01633438816695297,
+      "fk_pinn": 0.1146873753474983,
+      "improvement": 0.14242533772754332
+    },
+    "committor": {
+      "vanilla_pinn": 0.002461843131640957,
+      "fk_pinn": 0.009178676335275329,
+      "improvement": 0.2682133067683893
+    }
+  },
+  "error_scaling_slope": null,
+  "paper_claim_numbers": {
+    "paper_table_1_relative_l2": {
+      "schrodinger": {
+        "vanilla": 0.624,
+        "fk_pinn": 0.096,
+        "improvement": 6.5
+      },
+      "met": {
+        "vanilla": 1.007,
+        "fk_pinn": 0.107,
+        "improvement": 9.411214953271028
+      },
+      "committor": {
+        "vanilla": 0.839,
+        "fk_pinn": 0.03,
+        "improvement": 27.966666666666665
+      }
+    }
+  }
+}

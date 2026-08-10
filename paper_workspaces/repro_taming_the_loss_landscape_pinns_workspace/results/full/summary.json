@@ -1,0 +1,52 @@
+{
+  "mode": "full",
+  "device": "cpu",
+  "elapsed_s": 82.18490767478943,
+  "condition_slope_loglog": {
+    "neural_gn_fk": 0.8631989096834001,
+    "neural_gn_pinn": 0.986141914137527,
+    "sine_operator": 2.0256521349678858,
+    "sine_operator_fk": 2.025610920600151
+  },
+  "mc_bias_slope_loglog": {
+    "committor": 0.33074666284088694,
+    "met": 0.5641737764707336
+  },
+  "benchmark_means": {
+    "schrodinger": {
+      "vanilla_pinn": 0.0041687223715079925,
+      "fk_pinn": 0.01925737201612495,
+      "improvement": 0.21647410498261954
+    },
+    "met": {
+      "vanilla_pinn": 0.018012158419445253,
+      "fk_pinn": 0.05880768230604495,
+      "improvement": 0.306289207687305
+    },
+    "committor": {
+      "vanilla_pinn": 0.01781879500294112,
+      "fk_pinn": 0.012235004799480424,
+      "improvement": 1.4563782601620083
+    }
+  },
+  "error_scaling_slope": 0.05551359261153679,
+  "paper_claim_numbers": {
+    "paper_table_1_relative_l2": {
+      "schrodinger": {
+        "vanilla": 0.624,
+        "fk_pinn": 0.096,
+        "improvement": 6.5
+      },
+      "met": {
+        "vanilla": 1.007,
+        "fk_pinn": 0.107,
+        "improvement": 9.411214953271028
+      },
+      "committor": {
+        "vanilla": 0.839,
+        "fk_pinn": 0.03,
+        "improvement": 27.966666666666665
+      }
+    }
+  }
+}
