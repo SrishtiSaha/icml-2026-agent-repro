@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Restart-safe execution unit",
+  "type": "object",
+  "required": ["schema_version", "unit_id", "kind", "status", "plan_hash", "command", "recorded_at", "artifacts"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "unit_id": {"type": "string"},
+    "kind": {"enum": ["smoke", "audit", "scaled"]},
+    "status": {"enum": ["running", "success", "failed"]},
+    "plan_hash": {"type": "string"},
+    "command": {"type": "string"},
+    "recorded_at": {"type": "string"},
+    "artifacts": {"type": "array"}
+  }
+}

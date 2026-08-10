@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Execution plan",
+  "type": "object",
+  "required": ["schema_version", "paper_id", "source_manifest_hash", "claims_hash", "budget", "units"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "paper_id": {"type": "string"},
+    "source_manifest_hash": {"type": "string"},
+    "claims_hash": {"type": "string"},
+    "budget": {"type": "object"},
+    "units": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "claim_ids", "route", "command", "cost_tier", "expected_artifacts"],
+        "properties": {
+          "id": {"type": "string"},
+          "kind": {"enum": ["smoke", "audit", "scaled"]},
+          "claim_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "route": {"type": "string"},
+          "command": {"type": "string"},
+          "cost_tier": {"type": "integer", "minimum": 0},
+          "expected_artifacts": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

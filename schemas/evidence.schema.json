@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Compiled claim evidence",
+  "type": "object",
+  "required": ["schema_version", "paper_id", "claims_hash", "plan_hash", "claims"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "paper_id": {"type": "string"},
+    "claims_hash": {"type": "string"},
+    "plan_hash": {"type": "string"},
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "verdict", "metric", "scope", "artifacts", "fidelity", "data_integrity", "controls", "statistics"],
+        "properties": {
+          "id": {"type": "string"},
+          "verdict": {"enum": ["verified", "falsified", "toy", "inconclusive"]},
+          "metric": {"type": "string"},
+          "scope": {"type": "string"},
+          "artifacts": {"type": "array"},
+          "fidelity": {"type": "object"},
+          "data_integrity": {"type": "object"},
+          "controls": {"type": "object"},
+          "statistics": {"type": "object"}
+        }
+      }
+    }
+  }
+}

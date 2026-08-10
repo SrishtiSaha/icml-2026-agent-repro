@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Claim contract",
+  "type": "object",
+  "required": ["schema_version", "paper_id", "source_manifest_hash", "claims"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "paper_id": {"type": "string"},
+    "source_manifest_hash": {"type": "string"},
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id", "text", "source_anchor", "evidence_type", "required_metric",
+          "verification_condition", "falsification_condition", "route",
+          "paper_scale", "fidelity", "data_integrity", "controls", "statistics",
+          "counterexample_search"
+        ],
+        "properties": {
+          "id": {"type": "string"},
+          "text": {"type": "string"},
+          "source_anchor": {"type": "string"},
+          "evidence_type": {
+            "enum": [
+              "artifact_recomputation", "theorem_audit", "empirical_magnitude",
+              "ranking_comparison", "mechanism_intervention", "quality_evaluation",
+              "identity_or_provenance"
+            ]
+          },
+          "required_metric": {"type": "string"},
+          "comparator": {"type": ["string", "null"]},
+          "verification_condition": {"type": "string"},
+          "falsification_condition": {"type": "string"},
+          "route": {"enum": ["local_command", "hf_job_command", "matrix_hf_job", "manual_source_audit"]},
+          "paper_scale": {"type": "object"},
+          "fidelity": {"type": "object"},
+          "data_integrity": {"type": "object"},
+          "controls": {"type": "object"},
+          "statistics": {"type": "object"},
+          "anti_tautology": {"type": "object"},
+          "counterexample_search": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}
