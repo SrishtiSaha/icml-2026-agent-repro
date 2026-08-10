@@ -1,0 +1,95 @@
+{
+  "metadata": {
+    "mode": "smoke",
+    "argv": {
+      "mode": "smoke",
+      "outdir": "outputs/local_smoke",
+      "model": "facebook/opt-2.7b",
+      "hotpot": 120,
+      "trivia": 80,
+      "squad": 80,
+      "scaling_samples": 24,
+      "max_new": 8,
+      "stress_new": 40,
+      "seed": 123,
+      "upload_repo": "",
+      "skip_quant4": false
+    },
+    "device": "mps",
+    "cuda_name": null,
+    "paper": "https://arxiv.org/abs/2605.30981",
+    "openreview": "https://openreview.net/forum?id=dE3Z3bfEzk",
+    "model_urls": {
+      "main": "https://huggingface.co/facebook/opt-2.7b",
+      "scaling": [
+        "https://huggingface.co/tiiuae/falcon-rw-1b",
+        "https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+        "https://huggingface.co/facebook/opt-1.3b",
+        "https://huggingface.co/tiiuae/falcon-7b",
+        "https://huggingface.co/tiiuae/falcon-7b-instruct"
+      ]
+    },
+    "dataset_urls": [
+      "https://huggingface.co/datasets/hotpotqa/hotpot_qa",
+      "https://huggingface.co/datasets/mandarjoshi/trivia_qa",
+      "https://huggingface.co/datasets/rajpurkar/squad"
+    ],
+    "started_at": "2026-08-03T08:22:26Z"
+  },
+  "claim1": {
+    "n_points": 150,
+    "bounded": true,
+    "weights_sum": 1.0,
+    "weights": {
+      "attention": 0.4,
+      "entropy": 0.35,
+      "drift": 0.25
+    },
+    "constants": {
+      "K": 64,
+      "H_low": 3.8,
+      "H_high": 5.0,
+      "beta": 5.0,
+      "kappa": 50.0,
+      "smoothing_window": 5,
+      "theta": 0.5,
+      "theta_low": 0.4
+    },
+    "attention_monotone_example": {
+      "FI_A_0.2": 0.32000000000000006,
+      "FI_A_0.8": 0.07999999999999999
+    },
+    "entropy_low_penalty_example": {
+      "FI_E_1.0": 0.45789473684210524,
+      "FI_E_4.4": 0.2
+    },
+    "drift_monotone_example": {
+      "FI_D_10": 0.25,
+      "FI_D_80": 0.45
+    },
+    "worked_example": 0.30000000000000004,
+    "csv": "outputs/local_smoke/claim1_formula_grid.csv"
+  },
+  "smoke": {
+    "model": "sshleifer/tiny-gpt2",
+    "sequence": {
+      "dataset": "smoke",
+      "sample_id": 0,
+      "prompt_len": 19,
+      "generated_len": 8,
+      "text": "eightneckprivate filled Marks sellers batted professors",
+      "rep_ratio": 0.0,
+      "mean_fi": 0.4161253643967211,
+      "first20_fi": 0.4161253643967211,
+      "mean_phi_a": 0.14663023501634598,
+      "mean_phi_e": 1.0,
+      "mean_phi_d": 0.029893081560730932,
+      "mean_attention": 0.853369764983654,
+      "mean_entropy": 10.824587345123291,
+      "mean_drift": 1.4946540780365467,
+      "static_flips": 0,
+      "hysteresis_flips": 0
+    }
+  },
+  "finished_at": "2026-08-03T08:22:31Z"
+}

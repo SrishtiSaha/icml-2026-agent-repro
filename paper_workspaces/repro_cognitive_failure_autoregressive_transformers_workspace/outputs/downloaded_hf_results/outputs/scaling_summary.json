@@ -1,0 +1,51 @@
+{
+  "models": [
+    {
+      "model": "tiiuae/falcon-rw-1b",
+      "type": "Base",
+      "size_b": 1.0,
+      "mean_entropy": 2.439215099061706,
+      "tail_entropy": 2.1158582168199547,
+      "rep_ratio": 0.008888888888888889,
+      "n": 20
+    },
+    {
+      "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "type": "Instruct",
+      "size_b": 1.1,
+      "mean_entropy": 1.1178718482535503,
+      "tail_entropy": 1.1580042340844714,
+      "rep_ratio": 0.017777777777777778,
+      "n": 20
+    },
+    {
+      "model": "facebook/opt-1.3b",
+      "type": "Base",
+      "size_b": 1.3,
+      "mean_entropy": 2.491937874547502,
+      "tail_entropy": 2.4792641596532325,
+      "rep_ratio": 0.0305982905982906,
+      "n": 20
+    },
+    {
+      "model": "tiiuae/falcon-7b",
+      "type": "Base",
+      "size_b": 7.0,
+      "mean_entropy": 2.2933876659469368,
+      "tail_entropy": 2.309189087512663,
+      "rep_ratio": 0.008333333333333333,
+      "n": 20
+    },
+    {
+      "model": "tiiuae/falcon-7b-instruct",
+      "type": "Instruct",
+      "size_b": 7.0,
+      "mean_entropy": 0.7770471410782986,
+      "tail_entropy": 0.6847790161667702,
+      "rep_ratio": 0.0,
+      "n": 20
+    }
+  ],
+  "n_samples_per_model": 20,
+  "max_new_tokens": 48
+}

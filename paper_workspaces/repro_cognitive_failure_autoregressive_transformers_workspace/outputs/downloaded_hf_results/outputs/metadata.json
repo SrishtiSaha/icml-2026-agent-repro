@@ -1,0 +1,37 @@
+{
+  "mode": "gpu",
+  "argv": {
+    "mode": "gpu",
+    "outdir": "outputs/hf_a100_repro",
+    "model": "facebook/opt-2.7b",
+    "hotpot": 150,
+    "trivia": 100,
+    "squad": 100,
+    "scaling_samples": 20,
+    "max_new": 64,
+    "stress_new": 40,
+    "seed": 123,
+    "upload_repo": "Srishti280992/cognitive-fatigue-repro-results",
+    "skip_quant4": false
+  },
+  "device": "cuda",
+  "cuda_name": "NVIDIA A100-SXM4-80GB",
+  "paper": "https://arxiv.org/abs/2605.30981",
+  "openreview": "https://openreview.net/forum?id=dE3Z3bfEzk",
+  "model_urls": {
+    "main": "https://huggingface.co/facebook/opt-2.7b",
+    "scaling": [
+      "https://huggingface.co/tiiuae/falcon-rw-1b",
+      "https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "https://huggingface.co/facebook/opt-1.3b",
+      "https://huggingface.co/tiiuae/falcon-7b",
+      "https://huggingface.co/tiiuae/falcon-7b-instruct"
+    ]
+  },
+  "dataset_urls": [
+    "https://huggingface.co/datasets/hotpotqa/hotpot_qa",
+    "https://huggingface.co/datasets/mandarjoshi/trivia_qa",
+    "https://huggingface.co/datasets/rajpurkar/squad"
+  ],
+  "started_at": "2026-08-03T08:31:08Z"
+}

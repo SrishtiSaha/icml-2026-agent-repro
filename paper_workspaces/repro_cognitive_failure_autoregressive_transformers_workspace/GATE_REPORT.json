@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "skill": "posterly",
+  "timestamp": "2026-08-03T09:04:43Z",
+  "poster_html": "/Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_cognitive_failure_autoregressive_transformers_workspace/poster.html",
+  "canvas": {
+    "source": "page-rule",
+    "width_cm": 60.96,
+    "height_cm": 63.5,
+    "orientation": "portrait",
+    "source_url": null
+  },
+  "overall": "PASS",
+  "hard_failures": 0,
+  "warnings": 0,
+  "gates": [
+    {
+      "name": "preflight",
+      "severity": "hard",
+      "status": "PASS",
+      "command": [
+        "/Users/srishtisaha/opt/anaconda3/bin/python",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/posterly/tools/poster_check.py",
+        "preflight",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_cognitive_failure_autoregressive_transformers_workspace/poster.html"
+      ],
+      "summary": {
+        "exit_code": 0,
+        "tail": "[preflight] /Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_cognitive_failure_autoregressive_transformers_workspace/poster.html\n  problems: 0   warnings: 0\n[preflight] PASS"
+      },
+      "artifacts": []
+    },
+    {
+      "name": "style",
+      "severity": "hard",
+      "status": "PASS",
+      "command": [
+        "/Users/srishtisaha/opt/anaconda3/bin/python",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/posterly/tools/style_check.py",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_cognitive_failure_autoregressive_transformers_workspace/poster.html",
+        "--disable",
+        "4,5",
+        "--json",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_cognitive_failure_autoregressive_transformers_workspace/style_check.json"
+      ],
+      "summary": {
+        "gate": "style",
+        "status": "PASS",
+        "rules": [
+          {
+            "id": 1,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 2,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 3,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 4,
+            "severity": "hard",
+            "status": "SKIPPED",
+            "detail": "disabled via --disable (rule 4)"
+          },
+          {
+            "id": 5,
+            "severity": "hard",
+            "status": "SKIPPED",
+            "detail": "disabled via --disable (rule 5)"
+          },
+          {
+            "id": 6,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 7,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 8,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 9,
+            "severity": "warn",
+            "status": "PASS",
+            "detail": "9 --fs-* token(s) defined"
+          },
+          {
+            "id": 10,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 11,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          },
+          {
+            "id": 12,
+            "severity": "warn",
+            "status": "PASS",
+            "detail": "dark area = 0.0% of poster (<= 8%)"
+          },
+          {
+            "id": 13,
+            "severity": "hard",
+            "status": "PASS",
+            "detail": "ok"
+          }
+        ]
+      },
+      "artifacts": [
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_cognitive_failure_autoregressive_transformers_workspace/style_check.json"
+      ]
+    },
+    {
+      "name": "asset",
+      "severity": "hard",
+      "status": "NOT_RUN",
+      "command": [],
+      "summary": {
+        "not_run": "no --manifest: real-figure provenance gate opted out (NOT verified)"
+      },
+      "artifacts": []
+    },
+    {
+      "name": "measure",
+      "severity": "hard",
+      "status": "PASS",
+      "command": [
+        "/Users/srishtisaha/opt/anaconda3/bin/python",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/posterly/tools/poster_check.py",
+        "measure",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_cognitive_failure_autoregressive_transformers_workspace/poster.html"
+      ],
+      "summary": {
+        "exit_code": 0,
+        "tail": "[measure] viewport = 2304 x 2400 px\n[measure] columns found: 2\n  col0    last-card-bottom =  2571.55 px\n  col1    last-card-bottom =  2571.55 px\n  spread = 0.00 px   (target < 5.0 px)\n  intercard gap in [22.67 (col0), 22.67 (col0)] px   (target [12.0, 50.0])\n  gap -> footer in [30.23, 30.23] px   (target [30.0, 50.0])\n[measure] PASS"
+      },
+      "artifacts": []
+    },
+    {
+      "name": "polish",
+      "severity": "soft",
+      "status": "PASS",
+      "command": [
+        "/Users/srishtisaha/opt/anaconda3/bin/python",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/posterly/tools/poster_check.py",
+        "polish",
+        "/Users/srishtisaha/Desktop/icml-2026-agent-repro/repro_cognitive_failure_autoregressive_transformers_workspace/poster.html",
+        "--max-card-trailing",
+        "0.15",
+        "--strict"
+      ],
+      "summary": {
+        "exit_code": 0,
+        "tail": "  cards checked       : 8\n  inner-void cards    : 8\n  beside-text floats  : 0\n  flex/<br> parents   : 0\n  header logos        : 0\n  banner images       : 0\n  warnings            : 0\n[polish] PASS"
+      },
+      "artifacts": []
+    }
+  ]
+}

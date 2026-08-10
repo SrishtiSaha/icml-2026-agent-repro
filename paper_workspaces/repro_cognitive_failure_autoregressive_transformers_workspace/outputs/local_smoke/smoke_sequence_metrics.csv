@@ -1,0 +1,2 @@
+dataset,sample_id,prompt_len,generated_len,text,rep_ratio,mean_fi,first20_fi,mean_phi_a,mean_phi_e,mean_phi_d,mean_attention,mean_entropy,mean_drift,static_flips,hysteresis_flips
+smoke,0,19,8,eightneckprivate filled Marks sellers batted professors,0.0,0.4161253643967211,0.4161253643967211,0.14663023501634598,1.0,0.029893081560730932,0.853369764983654,10.824587345123291,1.4946540780365467,0,0

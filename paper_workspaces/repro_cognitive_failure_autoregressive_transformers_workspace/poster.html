@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cognitive Fatigue Reproduction Poster</title>
+<style>
+@page { size: 24in 25in; margin: 0; }
+:root {
+  /* ===== DESIGN TOKENS ===== */
+  --u: 1mm;
+  --fs-1: calc(7 * var(--u));
+  --fs-2: calc(8 * var(--u));
+  --fs-3: calc(9 * var(--u));
+  --fs-4: calc(10 * var(--u));
+  --fs-5: calc(12 * var(--u));
+  --fs-6: calc(13 * var(--u));
+  --fs-7: calc(16 * var(--u));
+  --fs-8: calc(24 * var(--u));
+  --fs-9: calc(28 * var(--u));
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: Arial, sans-serif;
+  --accent: #2F5D50;
+  --accent-deep: #19372F;
+  --accent-light: #E7F1EE;
+  --gold: #B8860B;
+  --gold-light: #FFF7E1;
+  --ink: #17201D;
+  --muted: #5B6964;
+  --paper: #F8F7F3;
+  --card: #FFFFFF;
+  --bg-screen: #444444;
+  --metric-bg: #F6FAF8;
+  --bar-bg: #F0F2EF;
+  --line: #D8DED9;
+  --bad: #A9333A;
+  --ok: #16724F;
+  --mixed: #8A6500;
+  --shadow-card: 0 calc(1 * var(--u)) calc(3 * var(--u)) rgba(25,55,47,.08);
+  /* ===== END DESIGN TOKENS ===== */
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg-screen); color: var(--ink); font-family: var(--font-serif); }
+.poster {
+  width: calc(610 * var(--u));
+  height: calc(635 * var(--u));
+  margin: 0 auto;
+  padding: calc(13 * var(--u));
+  background: var(--paper);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: calc(8 * var(--u));
+  overflow: hidden;
+  position: relative;
+}
+.poster:before { content: ""; position: absolute; inset: 0 0 auto 0; height: calc(6 * var(--u)); background: var(--accent); }
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: calc(12 * var(--u));
+  align-items: end;
+  padding-bottom: calc(6 * var(--u));
+  border-bottom: calc(1.5 * var(--u)) solid var(--accent);
+}
+.kicker { font: 700 var(--fs-4)/1.1 var(--font-sans); color: var(--accent); letter-spacing: .08em; text-transform: uppercase; margin-bottom: calc(2 * var(--u)); }
+h1 { font: 800 var(--fs-8)/1.02 var(--font-sans); color: var(--accent-deep); margin: 0; letter-spacing: 0; }
+.subtitle { font: 500 var(--fs-4)/1.25 var(--font-sans); color: var(--muted); margin-top: calc(3 * var(--u)); }
+.badge { justify-self: end; border: calc(1 * var(--u)) solid var(--accent); padding: calc(5 * var(--u)); min-width: calc(72 * var(--u)); text-align: center; font: 800 var(--fs-5)/1.15 var(--font-sans); color: var(--accent-deep); background: var(--accent-light); }
+.body { display: grid; grid-template-columns: 1fr 1fr; gap: calc(8 * var(--u)); align-items: stretch; }
+.column { display: flex; flex-direction: column; gap: calc(6 * var(--u)); min-height: 0; }
+.card { background: var(--card); border: calc(.6 * var(--u)) solid var(--line); border-radius: calc(3 * var(--u)); padding: calc(6 * var(--u)); box-shadow: var(--shadow-card); flex: 0 0 auto; display: flex; flex-direction: column; }
+.column .card:last-child { flex: 1 1 auto; }
+.card.highlight { border-left: calc(3 * var(--u)) solid var(--accent); background: linear-gradient(90deg, var(--accent-light), var(--card) 38%); }
+.card.warn { border-left: calc(3 * var(--u)) solid var(--bad); }
+.card.ok { border-left: calc(3 * var(--u)) solid var(--ok); }
+h2 { font: 800 var(--fs-6)/1.1 var(--font-sans); margin: 0 0 calc(3 * var(--u)); color: var(--accent-deep); letter-spacing: 0; }
+p, li { font-size: var(--fs-3); line-height: 1.25; margin: 0 0 calc(2 * var(--u)); }
+ul { margin: 0; padding-left: calc(6 * var(--u)); }
+.small { font-size: var(--fs-2); color: var(--muted); }
+.metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: calc(3 * var(--u)); margin-top: calc(3 * var(--u)); }
+.metric { background: var(--metric-bg); border: calc(.5 * var(--u)) solid var(--line); padding: calc(3 * var(--u)); border-radius: calc(2 * var(--u)); text-align: center; }
+.metric strong { display: block; font: 800 var(--fs-5)/1 var(--font-sans); color: var(--bad); }
+.metric span { font: 700 var(--fs-1)/1.1 var(--font-sans); color: var(--muted); text-transform: uppercase; }
+table { width: 100%; border-collapse: collapse; margin-top: calc(3 * var(--u)); }
+th, td { border-bottom: calc(.4 * var(--u)) solid var(--line); padding: calc(2 * var(--u)) calc(1.5 * var(--u)); text-align: left; font-size: var(--fs-1); line-height: 1.15; }
+th { font-family: var(--font-sans); color: var(--accent-deep); }
+.status { font-family: var(--font-sans); font-weight: 800; }
+.verified { color: var(--ok); }
+.false { color: var(--bad); }
+.mixed { color: var(--mixed); }
+.bar { height: calc(6 * var(--u)); background: var(--bar-bg); border-radius: calc(3 * var(--u)); overflow: hidden; margin-top: calc(2 * var(--u)); }
+.bar span { display: block; height: 100%; background: var(--bad); }
+.footer { border-top: calc(.8 * var(--u)) solid var(--line); padding-top: calc(4 * var(--u)); display: flex; justify-content: space-between; gap: calc(8 * var(--u)); font: 700 var(--fs-1)/1.25 var(--font-sans); color: var(--muted); }
+a { color: var(--accent-deep); text-decoration: none; }
+</style>
+</head>
+<body>
+<main class="poster" data-measure-role="poster">
+  <header class="header" data-measure-role="header" data-logbook-target="executive-summary" data-logbook-label="Executive summary">
+    <div>
+      <div class="kicker">ICML 2026 Reproduction</div>
+      <h1>Cognitive Fatigue in Autoregressive Transformers</h1>
+      <div class="subtitle">Independent Trackio logbook reproduction of paper #26805 / OpenReview dE3Z3bfEzk</div>
+    </div>
+    <div class="badge">2 verified<br>4 falsified<br>1 mixed</div>
+  </header>
+
+  <section class="body" data-measure-role="body">
+    <div class="column" data-measure-role="column">
+      <article class="card highlight ok" data-measure-role="card" data-logbook-target="claim-1-fatigue-index-formula" data-logbook-label="Claim 1">
+        <h2>1. FI Formula Reproduces</h2>
+        <p>The weighted index is well defined: 0.40 attention decay, 0.35 entropy penalty, 0.25 drift penalty.</p>
+        <div class="metric-grid">
+          <div class="metric"><strong>150</strong><span>grid checks</span></div>
+          <div class="metric"><strong>1.0</strong><span>weight sum</span></div>
+          <div class="metric"><strong>0.300</strong><span>worked FI</span></div>
+        </div>
+        <p class="small">Boundedness and monotonicity held across all audited points.</p>
+      </article>
+
+      <article class="card warn" data-measure-role="card" data-logbook-target="claim-2-predictive-validity" data-logbook-label="Claim 2">
+        <h2>2. Predictive Validity Falls Short</h2>
+        <p>OPT-2.7B was evaluated on real HotpotQA, TriviaQA, and SQuAD generations using the paper's repetition-ratio proxy.</p>
+        <table>
+          <tr><th>Dataset</th><th>Paper rho</th><th>Repro rho</th></tr>
+          <tr><td>HotpotQA</td><td>0.848</td><td>0.283</td></tr>
+          <tr><td>TriviaQA</td><td>0.820</td><td>0.593</td></tr>
+          <tr><td>SQuAD</td><td>0.856</td><td>0.386</td></tr>
+        </table>
+        <p class="small">All reproduced correlations stayed far below Table 3.</p>
+      </article>
+
+      <article class="card warn" data-measure-role="card" data-logbook-target="claim-3-auroc-for-repetition-detection" data-logbook-label="Claim 3">
+        <h2>3. AUROC Does Not Match</h2>
+        <p>HotpotQA detection landed far below Table 5.</p>
+        <div class="metric-grid">
+          <div class="metric"><strong>0.663</strong><span>FI AUROC</span></div>
+          <div class="metric"><strong>0.722</strong><span>entropy only</span></div>
+          <div class="metric"><strong>0</strong><span>rep>=.6 positives</span></div>
+        </div>
+        <p class="small">Entropy-only beat aggregate FI; top-quartile labels were needed for AUROC.</p>
+      </article>
+
+      <article class="card" data-measure-role="card" data-logbook-target="claim-4-non-monotonic-scaling" data-logbook-label="Claim 4">
+        <h2>4. Scaling: 7B Reversal Fails</h2>
+        <p>Lower mean entropy indicates stronger collapse. TinyLlama-Chat supports sub-3B instruction collapse, but Falcon-7B-Instruct still collapses more than Falcon-7B base.</p>
+        <p>The sweep is observational, matching the paper's caveat: architectures and alignment recipes vary, so the direct test is whether the reported direction appears under matched decoding.</p>
+        <table>
+          <tr><th>Model</th><th>Type</th><th>Entropy</th></tr>
+          <tr><td>Falcon-RW-1B</td><td>Base</td><td>2.439</td></tr>
+          <tr><td>TinyLlama-1.1B-Chat</td><td>Instruct</td><td>1.118</td></tr>
+          <tr><td>OPT-1.3B</td><td>Base</td><td>2.492</td></tr>
+          <tr><td>Falcon-7B</td><td>Base</td><td>2.293</td></tr>
+          <tr><td>Falcon-7B-Instruct</td><td>Instruct</td><td>0.777</td></tr>
+        </table>
+        <p class="small">Each model used 20 HotpotQA prompts, matched sampling, and 48-token entropy traces. The reversal test is therefore direct: base and instruct Falcon-7B are compared within one model family.</p>
+        <p class="small">Result interpretation: the instruct curve is non-monotonic only if it rises at 7B; here it drops sharply, so the reversal is absent.</p>
+      </article>
+    </div>
+
+    <div class="column" data-measure-role="column">
+      <article class="card warn" data-measure-role="card" data-logbook-target="claim-5-hysteresis-alerting" data-logbook-label="Claim 5">
+        <h2>5. Hysteresis Helps, But Not 91-93%</h2>
+        <p>The theta=0.50 / theta_low=0.40 deadband reduced alert flips, but the reduction was materially smaller than claimed.</p>
+        <table>
+          <tr><th>Dataset</th><th>Static</th><th>Hyst.</th><th>Drop</th></tr>
+          <tr><td>HotpotQA</td><td>5.57</td><td>2.05</td><td>63%</td></tr>
+          <tr><td>TriviaQA</td><td>4.78</td><td>2.78</td><td>42%</td></tr>
+          <tr><td>SQuAD</td><td>6.03</td><td>1.77</td><td>71%</td></tr>
+        </table>
+        <p class="small">Mechanism: supported. Reported magnitude: not reproduced.</p>
+      </article>
+
+      <article class="card mixed" data-measure-role="card" data-logbook-target="claim-6-stress-tests" data-logbook-label="Claim 6">
+        <h2>6. Stress Tests Split</h2>
+        <p>NF4 quantization deepened entropy collapse, but evidence-position attention did not show the front 5-10x advantage.</p>
+        <div class="metric-grid">
+          <div class="metric"><strong>-0.741</strong><span>NF4 entropy delta</span></div>
+          <div class="metric"><strong>1.15x</strong><span>front/mid</span></div>
+          <div class="metric"><strong>0.68x</strong><span>front/end</span></div>
+        </div>
+        <table>
+          <tr><th>Position</th><th>Attention</th></tr>
+          <tr><td>Front</td><td>0.01485</td></tr>
+          <tr><td>Middle</td><td>0.01293</td></tr>
+          <tr><td>End</td><td>0.02195</td></tr>
+        </table>
+      </article>
+
+      <article class="card highlight" data-measure-role="card" data-logbook-target="conclusion" data-logbook-label="Conclusion">
+        <h2>Overall Verdict</h2>
+        <table>
+          <tr><th>Claim</th><th>Status</th></tr>
+          <tr><td>Formula</td><td class="status verified">Verified</td></tr>
+          <tr><td>Predictive rho</td><td class="status false">Falsified</td></tr>
+          <tr><td>Hotpot AUROC</td><td class="status false">Falsified</td></tr>
+          <tr><td>Scaling reversal</td><td class="status false">Falsified</td></tr>
+          <tr><td>Hysteresis magnitude</td><td class="status false">Falsified</td></tr>
+          <tr><td>Stress bundle</td><td class="status mixed">Mixed</td></tr>
+        </table>
+        <p class="small">The FI definition is reproducible; the paper's largest empirical effect sizes did not survive this scaled A100 audit.</p>
+      </article>
+
+      <article class="card" data-measure-role="card" data-logbook-target="executive-summary" data-logbook-label="Scope and assets">
+        <h2>Run Scope</h2>
+        <ul>
+          <li>350 real OPT-2.7B QA generations.</li>
+          <li>Five-model scaling sweep, 20 prompts/model.</li>
+          <li>Completed on A100-SXM4-80GB in about 12 minutes.</li>
+          <li>All CSV/JSON artifacts pushed to the Hub dataset.</li>
+        </ul>
+        <table>
+          <tr><th>Artifact</th><th>Role</th></tr>
+          <tr><td>qa_summary.json</td><td>Claims 2, 3, 5</td></tr>
+          <tr><td>scaling_summary.csv</td><td>Claim 4</td></tr>
+          <tr><td>stress_summary.json</td><td>Claim 6</td></tr>
+          <tr><td>reproduce_fatigue.py</td><td>Rerun script</td></tr>
+        </table>
+        <p class="small">Script and result dataset are linked in the logbook executive summary.</p>
+      </article>
+    </div>
+  </section>
+
+  <footer class="footer" data-measure-role="footer">
+    <div>Trackio logbook reproduction by Codex, 2026-08-03</div>
+    <div>Results: huggingface.co/datasets/Srishti280992/cognitive-fatigue-repro-results</div>
+  </footer>
+</main>
+</body>
+</html>

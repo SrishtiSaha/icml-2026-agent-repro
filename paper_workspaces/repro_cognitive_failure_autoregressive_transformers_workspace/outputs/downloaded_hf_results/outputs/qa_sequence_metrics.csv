@@ -1,0 +1,1875 @@
+dataset,sample_id,prompt_len,generated_len,text,rep_ratio,mean_fi,first20_fi,mean_phi_a,mean_phi_e,mean_phi_d,mean_attention,mean_entropy,mean_drift,static_flips,hysteresis_flips,model,dataset_url
+HotpotQA,0,373,64," Yes.
+
+Answer: No.
+
+Response: No – However, we do know that all three were born in the Philippines, and both had Filipino mothers.
+
+Relevant categories are: (5 points) (Category 5 points – 10 point total) (Numbers of responses are noted at the end)",0.0,0.4198243858023105,0.4138246271218124,0.20673370361328125,0.3021545976694477,0.9255071806907653,0.7932662963867188,2.889186435379088,54.160040497779846,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,1,376,25," Shirley Temple Black was Ambassador to Ghana and to Czechoslovakia, from February 10, 1959 to January 20, 1961.",0.0,0.5544556146918355,0.5506154837420847,0.3322265625,0.5311397002931488,0.9426643783569336,0.6677734375,1.8202436837926508,54.9194962310791,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,2,498,64," [Ad Option]: books describing this species include Equinox, Found In Air, Fun With Fire, Book of Artifice and The Sirens' Pause.
+
+References
+
+External links
+ Science Fantasy & Young Adult Contest and Giveaway (ANALYSIS of 2013 Winners by age and genre)
+",0.0,0.45216666755107177,0.3941173284798861,0.2458648681640625,0.3299098707956115,0.9534090620279312,0.7541351318359375,3.2530485612805933,55.91655245423317,7,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,3,467,64," Both locations are on the historical Esma Sultan Park. The Laleli Mosque is located in the neighborhood of Esma Sultan Mansion.
+
+Question: How was a view of the Esma Sultan Park developed with the Laleli Mosque located on one side and the Esma Sultan Mansion on the other side?
+Answer:",0.04918032786885246,0.5693429182336887,0.5194655300876813,0.36058807373046875,0.526571300587813,0.9632309341430665,0.6394119262695312,1.9777963672531769,56.415033400058746,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,4,315,64," Adriana Trigiani is a woman from...
+
+The Direct Theater Presents: In this production of a play, A, for ""Actors"", B, for ""Billionaires"", and C, for ""Cannibalism"", which of the following two titles best describes the action occurring on stage?:",0.0,0.42925563154804924,0.4262396522666768,0.136474609375,0.374952437145035,0.973729739189148,0.863525390625,2.7664518326346297,59.149533808231354,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,5,412,64," YG Entertainment
+
+Question: Nam Dong-wook is a rapper from which group?
+Answer: NEXTY
+
+Question: Name a member of a South Korean boy band.
+Answer: Lee Jong-hoon
+
+Question: What are the dates of the first performance by each member of a",0.03278688524590164,0.5273267449173573,0.5039567857655255,0.33431243896484375,0.45588913084020055,0.9361622941493988,0.6656875610351562,2.2450332706212066,52.882222175598145,13,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,6,410,64," Indriati Iskak
+Submit the answer using the evidence. Make it clear.
+
+Questions:
+Question: Who was known by his stage name Aladin?
+Answer: Indriati Iskak
+Submit the answer using the evidence. Make it clear.
+
+Question: Who was known by",0.3442622950819672,0.5299757456774233,0.49506684437668624,0.118133544921875,0.7081781161667957,0.9394399482011795,0.881866455078125,1.1382624810139532,55.523759573698044,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,7,395,64," The arena where the Lewiston Maineiacs played their home games can seat how many people?
+
+Your argument for |1. Lewiston Maineiacs 3,500  Is weak, using the evidence is strong
+
+The arena where the Lewiston Maineiacs played their home games can seat how many people",0.26229508196721313,0.5048770406920774,0.5550528470126999,0.13990020751953125,0.5908176481948191,0.9685231232643128,0.8600997924804688,1.6887184848528705,55.97677683830261,7,5,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,8,417,64," You are welcome to use the evidence within the tasks in any order you choose. The evidence should be used correctly. It should answer the question. No time is given to prove how to answer the question. You may be given points for following any particular rule within the evidence or ""correct use"" of the evidence. No",0.01639344262295082,0.409305117114349,0.3752100490370863,0.12361907958984375,0.33065805345479593,0.9765086662769318,0.8763809204101562,2.7054562526755035,62.99021917581558,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,9,376,64," Both the place names on the signs are from the United States (not in Canada).  The anti-GMO group is listed as the International Organization for the Repeal of Patent Exclusions for Genetic Engineering, Inc. (I.O.R.P.E.) and Mendocino County's is the Center",0.0,0.4984137422009026,0.45333332231532986,0.2945709228515625,0.40234583237730764,0.9590573269128799,0.7054290771484375,2.4418082561387564,54.479802161455154,10,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,10,495,64," This answer is 10101.
+
+Possible responses:
+21005.  Kansas University
+20054.  KU Vice President for Community Engagement
+21059.  Students Commend KU for Primary Address to West Kansas City
+21103.  University of Kansas
+21117.  Kansas Hospital",0.0,0.5050047582060735,0.44365149003581,0.4091339111328125,0.30655550479055627,0.9362270683050156,0.5908660888671875,3.0044965122360736,52.92639669775963,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,11,370,64," David Weissman
+
+More questions:
+Name a film that depicted the Soviet Union as a totalitarian regime:The Motherland Is Calling (1968 film): The Motherland Is Calling (Italian: E mamma, tu non vuoi mai sopprimerla ) is a 1968 Italian drama film directed",0.03278688524590164,0.4771629206055131,0.4218808445444723,0.21399688720703125,0.418893426859301,0.9798058652877807,0.7860031127929688,2.4836087904623128,63.61386775970459,7,5,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,12,474,64," Can you provide proof?
+
+This is what it says in the MOVIECLIPS database: NEW YORK police detective, Arnold Schwarzenegger who was an Oscar-winning star in the 1980s. It talks about the movie ""Conan The Barbarian"" the movie which starred this past week, also it has this information",0.0,0.4471185098221758,0.44321220928067834,0.25202178955078125,0.2987536161090247,0.9669841134548187,0.7479782104492188,3.0451189039158635,56.636205434799194,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,13,411,14," Yes, 888 7th Avenue is used for real estate.",0.0,0.509828238214429,0.509828238214429,0.11833844866071429,0.6998066446722897,0.870242132459368,0.8816615513392857,1.1407347502452987,50.81669412340437,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,14,338,64," Paul Scholes moved to France after the 2001 season. Paul Scholes moved to France after the 2001 season.
+
+Question: Which of the following clubs won an FA Cup Final the same year that United won the 1995-96 Premier League Double?
+Answer: Valencia
+
+Question: In 2011-12 which of",0.14754098360655737,0.4891697135473528,0.46613434832628603,0.1794586181640625,0.5117453979325403,0.9531015080213546,0.8205413818359375,1.8946352677430696,56.06026378273964,13,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,15,326,54,"
+
+Solution: Brown State Fishing Lake is in a country that has a population of how many inhabitants ?
+
+Question: This lake is 58,972 acres. How much area is not used as a lake?
+Answer: A
+
+Answer: A",0.0196078431372549,0.45751944108942405,0.5109198458408936,0.13053385416666666,0.49765157017522793,0.9245113994457105,0.8694661458333334,2.0103554905357734,52.53897137112088,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,16,404,64,"
+ eastern college athletic conference (ECAC-N)
+ Atlantic 10 Conference (Division I)
+ Hockey East Conference
+ Merrimack Valley Conference
+ Massachusetts–Dartmouth League
+ New England Football Conference (Division III)
+ Pioneer Valley Conference
+ Northeastern Athletic Conference (Division III)
+ Northeast Conference",0.08196721311475409,0.6101490171294541,0.5823510533440613,0.36177825927734375,0.6440562261119147,0.9600721371173859,0.6382217407226562,1.3852291344301193,55.388458132743835,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,17,393,37," Yes.
+Question: Which was more successful?
+Answer:
+? Ambroise Thomas
+Question:Which composer went to your elementary school?
+Answer:Ambroise Thomas",0.029411764705882353,0.4799183263195146,0.4532087503731447,0.22480732685810811,0.49154774512920746,0.8718147391241949,0.7751926731418919,1.9771589658953048,48.216848579612936,5,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,18,439,64," Nancy A. Counter was Assistant Secretary of Health and Scientific Affairs during the administration of what years?
+
+References
+
+http://www.memorial.edu/sites/WebArchive/Document/Office_of_Science_and_Technology/LSA_Guidance_on_Political_Partisans",0.0,0.6433221375873147,0.6428681786609324,0.5037002563476562,0.5628261455270388,0.9794115364551544,0.49629974365234375,2.237598815379897,61.258700489997864,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,19,262,7," Henry Roth
+
+External links",0.0,0.4658162231799355,0.4658162231799355,0.11453683035714286,0.6053956184620247,0.8324520983014788,0.8854631696428571,1.6321869024208613,48.027627672467915,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,20,401,64," Sergio Pérez Mendoza: Sergio Pérez Mendoza (    ; born 26 January 1990) also known as ""Checo"" Pérez, is a Mexican racing driver, currently driving for Force India. He was born on 26 January 1990 in Mexico City, Mexico. While dominating throughout",0.06557377049180328,0.5689894298710211,0.5559586522701719,0.110931396484375,0.805815241449726,0.9703261470794677,0.889068603515625,0.7599792912484418,58.81258922815323,8,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,21,393,64," Kate Higgins did voice 4 out of the 22 hedgehogs in ""Winnie the Pooh and the Blustery Day"".
+
+Question: What one of the group also voices seven out of the 22 hedgehogs in the ""This Is the House That Jack Built""?
+Answer: Kate Higgins did voice 4",0.11475409836065574,0.6045076544354809,0.6041118467358019,0.3848686218261719,0.6033548222469299,0.9575440716743469,0.6151313781738281,1.6383898707081244,56.01760470867157,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,22,414,64," Apple TV and some latest models of iMac
+
+Answer: Universal Remote for Apple TV
+
+Teacher’s guidance: Using the examples above, you can use your notes from the presentation to answer the questions that the student raised in their journal. You can also add the audience of Apple Remote to the list",0.0,0.4975236081617798,0.4277367769197413,0.3881034851074219,0.28989436570738786,0.9632767444849014,0.6118965148925781,2.889083610207308,58.30952230095863,11,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,23,431,64," Wolf Alice have a higher instrument to person ratio, with 13 musicians (including the singer) and nine instruments present. However, Badly Drawn Boy have a lower instrument to person ratio, with 10 musicians and four instruments present.
+
+Question: The instrument in Badly Drawn Boy's song ""One Week"" has a",0.06557377049180328,0.4962348567719087,0.4596846817153456,0.1638946533203125,0.5447561338614354,0.9600493943691254,0.8361053466796875,1.8527201474935282,57.63867270946503,6,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,24,375,64," Kasper Völter von Schmeichel was my German grandfather.
+
+3. Determine the country that nominated Völter in 1992.
+
+Answer: Germany
+
+4. Make a world map of the sport in which Kasper won the Best Goalkeeper accolade in 1993.
+",0.01639344262295082,0.47735607728152996,0.4248332710272975,0.212005615234375,0.4329534262359007,0.9640805280208588,0.787994384765625,2.3313751304376638,57.04673391580582,5,5,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,25,405,64," These Boots Are Made for Walkin' is a 1967 song by singer Nancy Sinatra from her debut solo album, Nancy.
+
+The song was written by Amy Essex and titled ""These Boots Are Made for Walkin'"" when it was initially performed by Amy Essex on the UK singles chart on July 12, 1967,",0.04918032786885246,0.5651768337784022,0.586144545140186,0.33661651611328125,0.5322098448440604,0.9770271265506745,0.6633834838867188,1.9172810433956329,58.01049190759659,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,26,383,64," Virginia Commonwealth University
+
+Question: The 2011–12 VCU Rams men's basketball team, led by third year head coach Shaka Smart, represented Virginia Commonwealth University which was founded in which year?
+Answer: 1838
+
+Question: The 2011–12 VCU Rams men's basketball team, led by third",0.26229508196721313,0.6433545197285044,0.6080937418275891,0.27886962890625,0.8355255683935339,0.9574908769130707,0.72113037109375,0.6250028401045711,56.42321139574051,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,27,273,64," Yes, both were published as a genus in 1810.
+
+Problem: We have been told that the genus Dictyosperma was published a year before Huernia, and this seems to be true, since Dictyosperma appeared first in a catalogue of medicinal plants in 1809.",0.04918032786885246,0.45583297302089415,0.4347511187038924,0.1208648681640625,0.47319707543402295,0.9674721974134446,0.8791351318359375,2.0880929448321695,59.40824720263481,8,8,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,28,384,64," His name is...
+
+Answer the question using the evidence. Keep the answer concise.
+
+Evidence:
+Chrysler: Chrysler Corporation is a United States multinational corporation headquartered in Auburn Hills, Michigan, United States. The company is a major passenger car manufacturer and the eighth largest automotive manufacturer in the world based on",0.0,0.5037040694091582,0.5326153397888227,0.1212158203125,0.6124537617064274,0.9634356987476349,0.8787841796875,1.5585788114003662,60.96928721666336,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,29,390,10, St. Andre (Goa Assembly constituency),0.0,0.5233211369916404,0.5233211369916404,0.15185546875,0.7078220709178009,0.8593648986816407,0.84814453125,1.184356426075101,50.0900260925293,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,30,391,64," ""Shut Up, Make Love"" was released in 2001 as part of the collection of the compilation album ""Girl Talk!""
+
+Question: What is an obscure ZZ Top song?
+Answer: The obscure ZZ Top song (and Rock Award in Australia of the year 2000 for best local band) is ""Way",0.03278688524590164,0.5337726450802706,0.560981714349044,0.31558990478515625,0.4720585995747426,0.9692646932601928,0.6844100952148438,2.195504458490177,55.552633821964264,13,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,31,343,64," Buck-Tick is from Whatcom County, Washington.  They have been active since 1983, when their original drummer, Sakurai, joined the band.  In 2006, Sakurai, the band's singer-songwriter for the last 20 years, died from stomach cancer, aged 52.
+
+Explan",0.01639344262295082,0.455242854542586,0.44474948716781243,0.11980438232421875,0.483508673841195,0.9523722630739212,0.8801956176757812,2.002106006810209,58.60215774178505,9,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,32,297,53,"**François Coli**
+
+Editorial Comment: Not bad. Not as good as Jean Moulin, Georges Félix Madon,  or ""Lady"" Ramon Mardieu, however it was not a bad guess.",0.0,0.41372074892959915,0.412316339484563,0.11867998231132075,0.37975949986958957,0.9333317242028578,0.8813200176886793,2.724422078702669,54.22949035212679,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,33,382,64," No.
+
+Answer the question using the best evidence.
+
+Explanation
+
+Contextual Information
+The two films were made in 1995, a time when information technology was alien to most Americans and the internet was still in its infancy. The film Hacker is referenced in the name ""Hackers"" which is",0.0,0.4465919650912187,0.46387247897684575,0.13927459716796875,0.4241675393410811,0.9696939498186111,0.8607254028320312,2.3218148383311927,59.577941566705704,6,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,34,428,38," Letters to Cleo.
+
+Question:  In what way, if any, are the songs of both bands similar?
+Answer: The songs of both bands are very similar.",0.02857142857142857,0.5224274604756015,0.5142694898827713,0.29061729029605265,0.5096343340361207,0.9112341097781533,0.7093827097039473,1.9054970525229644,52.560960016752546,6,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,35,565,64," During the Russian Civil War, the Red Army defeated and eventually conquered all other forces of the old regime.
+
+Prepare a timeline of events: The April, 1917 Bolshevik coup.
+Look at the dates and time of the Bolshevik Revolution.
+Look at the Red Army's battles against the armies of the old regime",0.04918032786885246,0.5680394720156237,0.5883311650313828,0.5230979919433594,0.3419253227595044,0.9565056490898132,0.4769020080566406,2.6255291900597513,54.224305272102356,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,36,410,64," Enrico Fermi (1901–1954) was an Italian physicist that has worked in France since his accidental stay in the country in 1926. Enrico Fermi was born in Rome on 29 September 1901. His father was an architect and his mother was a widow. By 1927, Enric",0.04918032786885246,0.48462687301649565,0.5083665390065379,0.1323089599609375,0.5421010031022888,0.9678717517852784,0.8676910400390625,1.782519430405955,57.90648192167282,10,4,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,37,345,64," World War I (1914-1918)
+
+Question: Over 5,000 British soldiers and over 1,000 British sailors had died in the First World War. Over 20,000 British men had died in which of the following battles?
+Answer: The Somme, Battle of Passchendaele",0.0,0.5946613467637325,0.5731735376235293,0.39410400390625,0.5587487521352159,0.965830727815628,0.60589599609375,1.714342979112189,56.262606143951416,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,38,421,64," Both Elko Regional Airport and Gerald R. Ford International Airport are located in Nevada. The Grand Rapids airport is also in Michigan, north of Lansing and the city is a suburb of Grand Rapids and home of the Grand Rapids Griffins NHL team.
+
+Question: How many airports are there in the United States?
+",0.0,0.5115465268709981,0.5636744053597855,0.14599609375,0.6053358423479183,0.965122178196907,0.85400390625,1.570171138344449,57.49237617850304,13,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,39,424,64," Princeton University
+
+Question: What are some of the characteristics of the work of two psychologists in the 1960s?
+Answer: Goodrad, David, Walker, William.  1960.  The Ethical Treatment of Animals.  Louisville: University of Louisville Press.
+
+Question: What is the scientific name for",0.03278688524590164,0.4464399862928181,0.4147845908515155,0.1696624755859375,0.3973938313674329,0.9579486203193665,0.8303375244140625,2.868245297402609,55.34166347980499,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,40,324,64," The English Setter and Scottish Collie are closely related.  However, the English Setter has more body structure in its shoulders, torso and shoulders than the Scots Collie.  Besides these relatively small differences, both the English Setter and Scotch Collie resemble closely the current Manchester Terrier.
+
+ Disclaimer
+",0.03278688524590164,0.483730250256581,0.4793662933076389,0.16472625732421875,0.5168980908034044,0.9477016621828079,0.8352737426757812,1.9978169397290912,56.250958770513535,12,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,41,346,64," I'm not familiar enough with the company to give a detailed answer, but there are probably some obvious clues in the name of the company and the fact that they're hiring in their headquarters in Malaysia. Perhaps you could use the company as a clue in the search.
+
+You could also use some of the other clues",0.0,0.4066866638519997,0.4016549979879668,0.14678192138671875,0.30324747115618694,0.9673491215705872,0.8532180786132812,2.80408333404921,57.93646788597107,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,42,389,64," My Hero Academia (Manga, Japanese:マッピー大乱闘師 students Bakiō Kenō)  was created and illustrated by Kohei Horikoshi, better known under his pen name, Todoroki. It was published in 2016 by Shueisha and debuted in the",0.0,0.45960111515393165,0.42518362427022505,0.14658355712890625,0.4457495004412761,0.9798214685916901,0.8534164428710938,2.421566845594498,60.8425315618515,6,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,43,424,64," It secured a beautiful landscape, the Tirana National Park which today protects the kharraza Marshes, a wetland formation based on brackish marshes. It secured a tradition of battle sports, including the Downhill Jeep Competition and downhill mountain bike races, which to some extent are still part of the",0.0,0.410171046137096,0.36344015886673803,0.166717529296875,0.2829298143707044,0.9778343975543976,0.833282470703125,3.3500605931913015,63.29759865999222,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,44,539,64," James J. Hunter: James J. Hunter (born February 14, 1934) is an American businessman and politician who served as the 47th U.S. Secretary of the Department of Labor during the administration of President Bill Clinton.  Previously, from 1978 to 1982, he served as the president of American Millwork Products",0.01639344262295082,0.5972568583335516,0.48156784439430034,0.3960304260253906,0.5583177131828913,0.9737339532375335,0.6039695739746094,1.8621071363304509,57.97347831726074,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,45,363,64, In Medieval Scotland the sea was the main threat to castle defence. In medieval times the use of the castle fortifications was primarily on the east coast of Scotland. Portsoy was one of the principal coastal fortifications at Portsoy (Scottish Gaelic ‘Pór Oisig’) on,0.0,0.42957878583750386,0.37007100616513117,0.17823410034179688,0.32935050879436617,0.9720498704910279,0.8217658996582031,2.7868805381440325,59.64085376262665,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,46,644,64," The idea for the tune ""Until The Sea Runs Dry"" came from various anthropological sources including a list of words on a tombstone for Colonel Nathaniel West, I think, by Pope Pius XII.   However, the song (""which featured in a speech by Winston Churchill in support of a now demolished Japanese air",0.0,0.5235890834308596,0.5184829396127086,0.4438285827636719,0.2937324265005851,0.9730052042007447,0.5561714172363281,3.2748799939872697,59.787400901317596,12,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,47,608,64," A more polite response? Perhaps. More serious? Perhaps not. Mostly it comes off as overly respectful, if not outright appreciative, of his taking the time to respond to a question, but that's just me.The answer is ""Question"": In the early 1980s, Mikhail Suslov – better known in",0.0,0.4512850607095032,0.41389774614258823,0.27591705322265625,0.29135409910277776,0.9557772189378737,0.7240829467773438,3.1251384495553793,59.65369710326195,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,48,367,64," No
+Origin of question: The so-called 'silene' (=teasal -nutt).
+Arguments for answer: Silene (the specific name of the genus) is a ""dioecious annual herb in the family Caryophyllaceae"", whereas the yellow plant (ferocactus)",0.0,0.44506694509815514,0.4106207639594611,0.1601409912109375,0.39657745997767624,0.9688337504863739,0.8398590087890625,2.698234318449977,59.549917817115784,6,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,49,458,64, The British E-7 Valiant is commonly used as an example of the first-generation jet-powered medium bomber.  Amongst its notable features were its Pratt & Whitney PT6-108 engine (after the model of the same name) and the use of a wing-mounted fly-by-wire control system.,0.0,0.6237114639355729,0.6019136842691193,0.5695877075195312,0.4353256058902939,0.9740496754646301,0.43041229248046875,2.5460130186475,59.7579111456871,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,50,420,64," 2017 Pac-12 Conference
+Reasons: (a) In 2011 and 2014, the Pac-12 added two new members for the second time in its history, who both qualified for the division by virtue of being a sub-regional division of another conference.  This means that that both Colorado State and California were",0.0,0.5517671033468076,0.5544644928273843,0.45626068115234375,0.371748833067709,0.9566029572486877,0.5437393188476562,2.4418972574785585,56.51418608427048,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,51,247,64," Tazweed Center was not among the companies interested in Euromarché until earlier in 2016, when the supermarket chain Distribuidora Oriental de Petróleo y Crudo (DOP), owned by General Electric (GE), offered $760 million for the operator of several hypermarkets, along with a",0.0,0.4527744133604114,0.44690019075802867,0.14110565185546875,0.43502745751328276,0.9762901699542998,0.8588943481445312,2.4265286075533368,58.44874310493469,6,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,52,418,64," The Indianapolis Motor Speedway
+
+Question: What race track has had three different garages in its history?
+Answer: The Indianapolis Motor Speedway
+
+Question: The Indianapolis 500 is a who?
+Answer: The Indianapolis 500
+
+Question: At which location in Virginia and Ohio does the race finish?
+Answer:",0.18032786885245902,0.5080972429899664,0.4613662889267466,0.2267608642578125,0.5129456860077641,0.951447628736496,0.7732391357421875,1.92266290038242,54.23263078927994,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,53,475,64," New York City: The ""Prince of Tenors"" (born Vincenzo Gatti, August 20, 1940, Luna de Castro, Cosenza, Italy) was one of the world's best-known opera performers and singing couples, singing with and/or representing Nicola Benedetti, Christine Goerke",0.0,0.510595529347361,0.5183475963100792,0.27884674072265625,0.44265483055711036,0.9765105694532394,0.7211532592773438,2.304226539185038,61.10141459107399,11,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,54,388,64,"
+
+Question: What is the first name of the singer, who wrote the album's lead single, ""I Need Your Love""?
+Answer:
+
+Question: What is the first name of the singer, who wrote the album's lead single, ""Outside""?
+Answer:
+
+Question: What is the",0.4426229508196721,0.5602647753964074,0.454026435463052,0.255462646484375,0.6423817015574681,0.9329844850301743,0.744537353515625,1.420848066889448,53.431612461805344,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,55,553,64," Marion, South Australia.
+
+Therefore, the answer to the question is Poona (Maharashtra, India).
+
+Take Home Test:
+
+Answer the questions using the evidence. Keep the answer concise.
+
+Evidence:
+Why we have Indian Dr. Abdu Ali at Geraldton Sports Ground",0.0,0.5032279845765535,0.48294553909754667,0.29982757568359375,0.4184027611333141,0.9474239516258239,0.7001724243164062,2.606779547815677,54.67052114009857,8,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,56,481,17," ONNI ONNI ONNI
+
+References
+
+External links",0.21428571428571427,0.5477327009112842,0.5477327009112842,0.3871495863970588,0.4593746406559605,0.9283669684914981,0.6128504136029411,2.226657630766139,55.007496553308826,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,57,274,64,"
+Keith Bostic: Keith W. Bostic (born June 22, 1959, in Washington, D.C.) is a former software engineer, currently the founder and CEO of the open source software distributor company OpenSUSE and a Free Software enthusiast and advocate, who created the first version of the BSD Linux kernel",0.0,0.4541247091140279,0.4774997082641348,0.10874176025390625,0.47718405310481193,0.974454345703125,0.8912582397460938,2.142774708918296,60.33479481935501,4,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,58,421,64," 40,976 (You need not answer with an estimate of more than 35,000 for the census purposes.)
+Evidence: According to Wikipedia the 2001 census of England and Wales: Edinburgh City Council Election 2001: In the 2001 local election held on 21 May 2001, the City of Edinburgh Council was returned as a single",0.0,0.5616512975676635,0.5379835281666172,0.4426116943359375,0.41339939976981105,0.9596673196554184,0.5573883056640625,2.3673246291582473,56.344128459692,6,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,59,366,13," Yes
+
+References
+
+Flax
+Quercus",0.0,0.43270489778294247,0.43270489778294247,0.22430889423076922,0.3302193571802092,0.9096182603102464,0.7756911057692307,2.7406297406324973,54.587078681358925,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,60,456,64," Larry Brown was an elite point guard in the NBA during the 1990s, and served as head coach for the Charlotte Hornets for five seasons.
+
+Answer: Alonzo Mourning is an elite center in the NBA during the 1990s, and was a member of the Charlotte Hornets during their 1992–93 season.",0.09836065573770492,0.6149156401869003,0.5677241610833688,0.37554931640625,0.6335118399677795,0.9718670785427094,0.62445068359375,1.4320996722431119,59.71679753065109,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,61,424,26," Steven Spielberg
+
+This illustration, with full credit, is kindly presented by:Deirdre Tallman Waddell.",0.0,0.43262932966421797,0.4405738714659881,0.2642352764423077,0.2589322489991724,0.945235727750338,0.7357647235576923,3.5843434553020277,56.98430692232572,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,62,395,64," Virginia Woolf was born on December 13, 1954, while Emma Bull was born on December 13, 1954.
+
+According to modern date calculations, Virginia Woolf was born on December 13, 1954.
+
+According to modern date calculations, Emma Bull was born on December 13, 1954, the exact 365th day",0.4426229508196721,0.5604391610531954,0.5800444108896988,0.20648956298828125,0.6793661491953045,0.9602607345581055,0.7935104370117188,1.28643074799038,57.136684119701385,7,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,63,301,4, 865.,0.0,0.30263636532582733,0.30263636532582733,0.1561279296875,0.20637003873523913,0.6718227195739745,0.8438720703125,3.604294180870056,35.217169761657715,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,64,404,64," The corporation has operations in every country.  Exxonmobil has profit margins of more than 6%.  Halliburton has fat margins of more than 9%.
+
+Question: What service is commonly traded on the NASDAQ?
+Answer: Halliburton has a number of different business divisions but it is",0.03278688524590164,0.42198097792112477,0.3783386309954681,0.1436920166015625,0.3704472370614224,0.9393905532360077,0.8563079833984375,2.524514367367374,56.46638697385788,8,4,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,65,454,64,"
+I Dream of Jeannie (titled ""All in the Family,"" ""The Jeffersons,"" ""The Real McCoys"" and ""Blackstreet""): Back in the late 1960s, CBS suggested a TV show starring Jackie Gleason and Mary Tyler Moore.  President Lyndon B. Johnson suggested Gleason.",0.0,0.5276763142322096,0.5217092540407565,0.3490257263183594,0.4116823659552258,0.9759087824821472,0.6509742736816406,2.4654691852520045,61.85833889245987,7,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,66,886,64," The International Boxing Federation (IBF) was recognized by what smaller Hall of Fame?
+Answer: The International Boxing Federation was recognized by the World Boxing Association (WBA), which was recognized by the World Boxing Council (WBC) whose president was who of the following sportsmen of the newly–organized International Boxing Federation",0.06557377049180328,0.5647767721969055,0.5726769058748247,0.27068328857421875,0.6095147769673005,0.9726931393146515,0.7293167114257812,1.5335281008592574,56.702248334884644,4,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,67,508,64," Lisa Lopes: Lisa Lopes of TLC recorded her hit single ""U Know What's Up"" as the lead single from her second studio album, ""Where I Wanna Be"", which was released on September 26, 1999.  In her song she tells her lover, ""If you don't know what's",0.0,0.5817691611453195,0.5735546237531511,0.318756103515625,0.6028335947945858,0.9730998462438584,0.681243896484375,1.550513894926553,59.69307568669319,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,68,343,64," Henry Thomas
+
+Full Info:
+'Drew has a lot going on and is still finding his way in the world. Solloway is trapped in that world and is thrust back in to the world of successful lawyers. David. A long time ago, Gordon was a Hollywood film star. In his personal life",0.0,0.4099274909812467,0.402995681126651,0.21173858642578125,0.24298121767902844,0.960754520893097,0.7882614135742188,3.4551155720837414,58.81159007549286,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,69,387,30," Wigan Athletic F.C.
+You do not need to answer this question again.
+(Your screen name is within the answer box).",0.0,0.5434468957318092,0.5781282086445411,0.3419921875,0.47560470618895795,0.9607534942626953,0.6580078125,2.1816861195489765,58.93968187967936,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,70,395,3,Speedy,0.0,0.3957962661511019,0.3957962661511019,0.2568359375,0.3664711332112028,0.659187978108724,0.7431640625,2.563530216614405,38.81129455566406,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,71,485,64," The capital city of the region Alsace of France in 2014 had 276,170 residents.
+
+Answer: Strasbourg.
+
+ Question: What is the name of battalion of 122nd SS-Standarte in eastern Germany
+Answer: Standarte 122
+Question: What regiment was formed at Konstanz-En",0.0,0.5507382498207458,0.5505350707230698,0.38388824462890625,0.47190249080395963,0.9280683207511902,0.6161117553710938,2.153567426634254,50.779417753219604,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,72,338,64,"
+Greens: Leprechaun green is the national color of the Netherlands. In the years 2009 and 2011, after a difficult 2009 political year, Antwerp university and a Belgian research institute developed a green dye used as paint that would give a prominent light greenish tint to the whole sward after the application",0.0,0.40805082303113427,0.4356964609359245,0.1589508056640625,0.2940766333633004,0.9661747163534165,0.8410491943359375,3.1641269109095447,60.011668771505356,4,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,73,517,42," The answer you are looking for is, ""Romeo"". ""Romeo + Juliet"" is not the movie you are looking for.
+
+External links
+ RFI: Actors on Screen",0.05128205128205128,0.5067147320326426,0.532408141980879,0.27916899181547616,0.46062215739828444,0.9353175208682106,0.7208310081845238,2.272329768343341,53.705056508382164,8,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,74,391,64," Senator Orrin Hatch
+
+References
+
+Official
+Bureau of the Census (United States Census Bureau): Bureau of the Census 2010 population estimates at population origin and source.
+
+ ""Army Intelligence:  History and Administration"" World War II Era. Defenestration Events (World War II Era)
+ ""B",0.0,0.5249080645333972,0.5465022891675319,0.4214363098144531,0.3181401650937531,0.9799379312992096,0.5785636901855469,3.1153472099540522,60.15447676181793,8,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,75,278,64," Coco Malia Camille Ho (born April 28, 1991) is a professional Hawaiian surfer born in Honolulu, Hawaii.  She began surfing at 7 years old, following in the footsteps of her family.  Today, Coco has won over 25 surfing awards and has been voted a top three fan favorite in Surfer",0.0,0.7140612938842595,0.6557341937316263,0.36074066162109375,0.9407528595814878,0.9620061135292053,0.6392593383789062,0.22513913359034632,57.86605250835419,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,76,321,64," A masculine variant of the name Bobbi.
+Barend: Barent, a Dutch or German male given name and an occasional middle name given to girls.
+
+Answer: Marion Christopher Barry
+Answer: Mar-cion
+Barend: Marion, a French male given name.
+Marion /",0.03278688524590164,0.45727767942518094,0.4280173613251629,0.15525054931640625,0.45827869129096044,0.9391196709871292,0.8447494506835938,2.2089030647548498,55.29060962796211,14,7,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,77,432,64," It was not to a tribal people but to an Aztec trading town of Chontal Maya people, called Zipata.
+
+Answer: The settlement of the Totonac was the original Totonac territory. But when it was explored by the Viceroy, he discovered that Totonac were distant and",0.0,0.4158487812694358,0.40857142245142086,0.18254852294921875,0.2910428343830924,0.9638575202226639,0.8174514770507812,2.936527056619525,57.00064066052437,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,78,283,64," Gell was born in Germany to a German mother and an English father, and died in Germany of cancer.  Leach was born in the United States to a British mother, and died in the United States of AIDS.
+
+Answer the question using the evidence. Keep the answer concise.
+
+Evidence:
+",0.03278688524590164,0.49751989517242595,0.4448352324114621,0.113006591796875,0.6054428714692843,0.9616490137577056,0.886993408203125,1.5461563530479907,56.44827628135681,13,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,79,468,64," In which year was the King who made the 2017 Birthday Honours born?
+
+Reasons
+
+1. Demonstrate evidence. (See the law on evidence and evidence bearing evidence.) The best way of demonstrating which person deserves what is to support your answer with data, examples, interviews or personal witness statements that are",0.0,0.4439310161606064,0.5322907182035943,0.12969207763671875,0.4266299805004229,0.9709347677230835,0.8703079223632812,2.455774106369063,60.16910141706467,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,80,322,64," The county seat of Sullivan County is Newport, and East Lempster is in Franklin County. The nearest parts of Franklin County, New Hampshire are the Town of Berlin, and the Town of Malta.
+
+Question: What was the first business opened by an East Lempster resident?
+Answer: East Lemp",0.01639344262295082,0.5839405481183406,0.600704387215291,0.37221527099609375,0.5669533068690629,0.9464831292629241,0.6277847290039062,1.7994958828821837,54.362926840782166,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,81,418,64," Bob Seger born Bob Clark
+
+Powerpop, defined by Digital Homemusic
+
+Powerpop is a musical style that is characterized by its intense use of vocal harmonizing and overlapping acoustic guitar and bass, yet with a danceable demeanor. The term was first used in the mid-1970s by Rolling Stone",0.01639344262295082,0.46119262940100225,0.44033074945711387,0.29097747802734375,0.2876921655567314,0.9764375209808349,0.7090225219726562,3.0002474700449966,63.51179218292236,9,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,82,518,64," Because the argument is not to fill in the gaps with women, the question is how the military (and government) will ensure the gender equality that it holds as being legitimate for filling any vacancy. The answer is, ultimately, that government can fill any vacancy by appointing women, whether or not they are otherwise qualified for the",0.0,0.4743326663000871,0.4334315896034241,0.4147987365722656,0.18470120444850946,0.9750710004568099,0.5852012634277344,3.3905001828388777,60.055654019117355,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,83,414,64," Rücker Foods
+
+Question: What American food, snack, and beverage company offers its popular lemon–lime soft drink as an alternative to water in non-sugary drinks?
+Answer: Klement's Hardwood Soda
+
+Question: What American food, snack, and beverage company produces Beef Jerky",0.16393442622950818,0.44919998045967846,0.40630320061360925,0.14714813232421875,0.42777065113064294,0.9624839985370637,0.8528518676757812,2.36161872476805,59.10001587867737,10,5,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,84,548,64," Author Kimberly Strassel:
+
+Originally, author Kimberly Strassel referred to the woman as  who was a former white house intern and a prominent Republican operative, Kathy Sullivan.  (Nexis cited a Nexis search for ""Kathy Sullivan"", November 21, 2007)
+
+True: N
+
+False",0.0,0.530868847480478,0.4888893597757836,0.47725677490234375,0.29333612311755514,0.9491939777135849,0.5227432250976562,2.9894530197707354,55.53523823618889,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,85,429,64," Paul John Manafort Jr. was born April 1, 1949 in Newport News, Virginia.
+
+Answers
+Answer: Donald Trump was born February 21, 1946.
+Answer: Paul Manafort Jr. was born April 1, 1949.
+Answer: Donald Trump was born February 21, 1946.
+Answer: Paul Manafort",0.3442622950819672,0.5992039267325124,0.5725130852157936,0.2727813720703125,0.7428995561326461,0.920306133031845,0.7272186279296875,0.9963983899797313,49.96866923570633,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,86,379,64," The novel that had an impact on ""Nina"", ""When I Was Alive"", was written in 1851 by Brazilian author Lourenço Mutarelli.  A portion of this novel was later adapted into the Brazilian film ""Quando Eu Era Vivo"", produced by Lucas Filho Filho (director",0.0,0.5033253521809361,0.4973544980930165,0.1631622314453125,0.5625064588982096,0.9647327959537506,0.8368377685546875,1.8017781323578674,57.195509016513824,8,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,87,343,45, Teide National Park and Garajonay National Park are located on the northern part of the Canary Islands in the Las Palmas archipelago on the edge of the Atlantic Ocean in the east of the Canary Islands.,0.023809523809523808,0.6385017289806931,0.6679447032374968,0.38887803819444444,0.6924081992221811,0.9624305759006075,0.6111219618055556,1.1746620219718251,56.71393915812175,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,88,327,64," 50 copies and up!
+
+Answer the question using the evidence. Keep the answer concise.
+
+Case Study #2: Louis L'Amour
+
+Question: To what extent is Louis L'Amour novel not true of what most of his readers read as factual?
+Answer: That depends. ",0.03278688524590164,0.4539349205835759,0.4959788137747858,0.11175537109375,0.48683344254723604,0.9553642690181732,0.88824462890625,2.106778880523052,57.26054888963699,8,7,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,89,293,24," Chris Menges is an actor and writer. Aram Avakian is an architect, museum director and computer programmer.",0.0,0.4685471256830824,0.4799843292952343,0.09578450520833333,0.5668561402555113,0.92733469804128,0.9042154947916666,1.710620512002303,54.81303842862447,4,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,90,371,64," Andrew Jaspan, (b. 20 April 1952) British-Australian journalist, the co-founder of ""The Conversation"", an independent not-for-profit website of analysis and news from the university and research sector  and its Editor-in-Chief from The Conversation's launch in March 2011 until March 2017",0.0,0.7564961869122386,0.7143632179750129,0.4552192687988281,0.9426890902864933,0.9778691911697388,0.5447807312011719,0.21778145691132522,59.22560340166092,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,91,414,64," Gregory Burke
+
+Random fact: Take five: Identify the core story depicted in films from 1950 through today as well as the four genres within each of these stories.
+Answer:
+
+Historical and regional genres: The genres of Western, Science Fiction, Horror and Fantasy, and Romance.
+Modern genres:",0.0,0.4431341534002537,0.40976347097754473,0.2409820556640625,0.29303713842344126,0.976713330745697,0.7590179443359375,3.224524310324341,60.14491522312164,5,5,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,92,245,64," The music on the album ""Bill Cosby Is Not Himself These Days"" is from a 30-song set that was recorded on 4/13/2003 at The Soma Showroom in Philadelphia, Pennsylvania.  The supporting music for the album (except track 2) was recorded at the Rockwood Studios in Baltimore, Maryland",0.0,0.43685123231782774,0.48131635168194775,0.14972686767578125,0.3900402532240964,0.9617855864763261,0.8502731323242188,2.475963876233436,55.395045787096024,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,93,438,64," No.  Gibsons does not contain the preservative or artificial flavors commonly found in commercial domestic and foreign gin.
+
+Question: Why is Morris Bros. (per www.morrisbros.com) branded with the Gibson's logo?
+Answer: Morris Bros. first began offering its blends in 1935",0.0,0.45153427190642104,0.4423553785548398,0.1697998046875,0.41633680355153047,0.9515858751535415,0.8302001953125,2.590577154973289,58.69913664460182,10,6,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,94,257,64,"
+March
+
+Answer the question using the evidence. Keep the answer concise.
+
+Evidence:
+
+ American Film Institute: The American Film Institute is a nonprofit organization devoted to cultural preservation, recognition and education.  AFI of the Americas is AFI's affiliate organization based in New York. AFI currently presents 42",0.0,0.4813746813963141,0.5229639033663676,0.12584686279296875,0.5473519153624166,0.9578510636091232,0.8741531372070312,1.8255304027625243,58.72595778107643,8,4,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,95,434,64," Fairfax County, Virginia.
+
+Can you tell me the date and time this question was published?
+Answer: This question was posted on 2015-02-12.
+
+Date: 2015-02-12
+
+Time: 06:31:49 UTC
+
+Can you show me the location of this question",0.04918032786885246,0.5942294619784929,0.5587209686166361,0.41226959228515625,0.5336479923004701,0.9701793110370637,0.5877304077148438,1.843864302354632,58.069834649562836,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,96,490,64," Bordan Tkachuk was the CEO of a company known from his appearances on the BBC-produced ""The Apprentice"" and can be identified by his middle name.
+
+Watch the video for the answer:
+
+Question: Can you tell me the name of the company he worked for prior to taking over from",0.0,0.6270884571110946,0.7020284501714633,0.5044746398925781,0.5249458434002008,0.9662702238559723,0.4955253601074219,1.8905948524770793,57.75264799594879,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,97,495,16, This question uses the evidence which shows that Pamela Green directed some animated movies.,0.0,0.415594491397864,0.415594491397864,0.321502685546875,0.17646951855797516,0.9009163427352905,0.678497314453125,3.29949564486742,52.30364203453064,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,98,565,64," This is the question which was asked in the first round of the Westin Challenge. Given the careful consideration given to all the policy answers and the respect for criteria, most people expected that the answer to the first round would be found in Tandag in Leyte. The answer was found in Bacolod City in",0.0,0.4976688008237843,0.4547582754304534,0.36318206787109375,0.3141675298352933,0.9697493529319763,0.6368179321289062,3.0196042234429115,58.18836498260498,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,99,238,64," No
+
+Crossword Prizes:
+Number of Pieces in Crossword: 0
+Number of Crossword Pieces that match the correct answer in the above crossword: 60
+
+The best method for crossword clues that are difficult to understand is: Answer the question using the evidence. Keep the answer concise.
+",0.0,0.4437870545144649,0.4108079039881888,0.14012908935546875,0.4111542108387527,0.975325779914856,0.8598709106445312,2.4871592982235597,57.2943000793457,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,100,344,47," The descendants of the group of black Indians associated with the Seminole people settled in East Texas.
+
+(100)
+
+Word search:
+
+Search the site using the letters in the words to reveal the full words.",0.0,0.4451105319734867,0.5199215085856419,0.15553316156914893,0.4097738993686831,0.9579056102671523,0.844466838430851,2.548649911312981,56.92773490256452,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,101,509,64," Yes, it was the Rambos version.
+
+Question: Yes, it was The Clark Sisters, but the month was not July.
+
+Answer: No, it was not The Clark Sisters, but the month was not February, but February is/was (heavily) censored.
+
+Question",0.13114754098360656,0.5871983515141275,0.5603598574349951,0.4960365295410156,0.447925238642768,0.9280396246910094,0.5039634704589844,2.201519841037225,52.48358207941055,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,102,350,64," This player was born in 1972 and is now playing professional football. This is one of the subjects included in the his brother's yearbook photo.
+
+Question: What school was this student in?
+Answer: This question should be answered using the evidence listed in this section.
+
+Evidence:
+8.1",0.0,0.4664326140078667,0.44559076808157716,0.22512054443359375,0.3996044277556633,0.9460913860797882,0.7748794555664062,2.546111909672618,54.49721074104309,8,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,103,452,64," Choctaw Stadium is located in Fulton County, Georgia.  Choctaw Stadium opened in 1942.  For the 1984 and 1991 season, the stadium served as home to the Georgia Braves, who played in the Major League Baseball (MLB) Atlanta Braves franchise.  The stadium's capacity was 9,755 seats",0.01639344262295082,0.522312899188702,0.5135320828474634,0.269439697265625,0.49624483828460814,0.9634053075313568,0.730560302734375,1.9831596714266198,58.30308896303177,8,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,104,435,64,"
+Enda Kenny: Enda Patrick Kenny (born 24 April 1951) is an Irish Fine Gael politician who served as Taoiseach from 2011 to 2017, Leader of Fine Gael from 2002 to 2017, Minister for Defence from May 2014 to July 2014 and 2016 to 2017, Leader of the Opposition from 2002 to 2011,",0.03278688524590164,0.6108793087612412,0.578606713899154,0.08051300048828125,0.9596573711323799,0.9711761146783828,0.9194869995117188,0.1533019896969563,57.21684965491295,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,105,329,64," George Raft
+John: George Raft (1926-1989) was an American actor best known as the ageless superman of Hollywood and the last member of the ""Radio City Rockettes"" group.  Raft became so popular by appearing in so many prominent films that his career spanned six decades,",0.0,0.45802973951134174,0.4739509945502749,0.16268157958984375,0.4287879687046179,0.9715252745151519,0.8373184204101562,2.4926901237486163,62.186231791973114,6,4,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,106,376,64," George Abbott (born George Abbott Gilchrist; 12 September 1878 – 7 March 1928) was an English playwright born in which year ?
+
+Answer the questions using the evidence. Keep the answer concise.
+
+Evidence:
+George Abbott began playing second-rate carnival sideshow attractions with Sylvia Mineham and",0.0,0.4597280749968884,0.3850741937827123,0.1291656494140625,0.47338163222363955,0.9695129758119583,0.8708343505859375,2.1779827454301994,57.42775675654411,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,107,377,64," They both indicate an ability to adjust investor attitude to changing market conditions.
+
+Answer: Warren Buffett: Warren ""Buffett"" Buffett (August 30, 1930 – September 26, 2018) was an American business magnate, investor, philanthropist, and founder of the Omaha-based investment company Berkshire Hathaway, which",0.0,0.500817443408435,0.39690759213582466,0.14801788330078125,0.5732593527233755,0.9638780665397644,0.8519821166992188,1.7486579715186963,60.294692158699036,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,108,358,64," The former Indian cricketer who made his ODI debuts during the 2000 ICC KnockOut Trophy was born on 7 October 1978, is Amit Mishra.
+
+This question may bring up a lot of incidents in the Indian cricket history. One of these, an episode played in the 1998 edition of the knock-",0.0,0.5251346988130978,0.6255335954826043,0.20935821533203125,0.5712396402158542,0.9658301544189454,0.7906417846679688,1.6985107868717932,56.78816765546799,5,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,109,426,64," The photograph shown is of the B-52H Stratofortress flying a Bomber Exercise of 50th Task Force with the 314th Bombardment Squadron, recently upgraded, 49th Troop Carrier Wing and the 397th Air Refueling Wing; in actuality the photograph was taken during the early stages of",0.0,0.4534036238731565,0.4172946602222754,0.18163299560546875,0.39573054448241907,0.9689789402484894,0.8183670043945312,2.7365451152145397,56.108407378196716,10,5,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,110,363,64," Randy Travis
+
+Question:Who is the narrator of My Eyes?
+Answer: Blake Shelton
+
+Question: The Boy's Room was a slang term for the brothel of which famous country star?
+Answer: Johnny Cash
+
+Question: What is the name of Blake Shelton's wife?
+Answer",0.04918032786885246,0.4713049979948437,0.4600788419623331,0.1327972412109375,0.5245557134899173,0.9383664071559905,0.8672027587890625,2.0471480959554356,54.5596165060997,7,5,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,111,458,11, They were built over the course of three centuries.,0.0,0.4939429556403719,0.4939429556403719,0.21848366477272727,0.5363895354801388,0.8752526092529297,0.7815163352272727,1.8091890256513248,48.927060560746625,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,112,478,30," The British author who wrote the novel on which ""Here We Go Round the Mulberry Bush"" was based was born in 1886.
+
+References",0.0,0.6229240118874851,0.6548199634370532,0.32150065104166664,0.7387330210247902,0.9430687764485678,0.6784993489583333,1.0759624527941924,55.011879475911456,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,113,405,64," About one second after 8:00AM.  Archainbaud is a playwright and screenwriter who died first.  Murphy died a little later.
+
+See also
+List of American films of 1937
+
+References
+
+External links
+
+RKO Movietone Database - RKO Murders -",0.0,0.561794335207424,0.4940651360732552,0.3893280029296875,0.4807838281310213,0.9511551767587662,0.6106719970703125,2.3033946707146242,58.6973138153553,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,114,432,21,"
+O, nitrogen, hydrocarbon (OH) group in primary or secondary structure.
+
+References",0.0,0.41232940325760903,0.408001680716088,0.19463820684523808,0.30296546564365084,0.9137448301769437,0.8053617931547619,2.7966632559185935,50.39248838878813,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,115,377,64,"
+A: 12
+B: 11
+C: 9
+D: 10
+E: 14
+
+Resumes the question using the evidence. Keep the answer concise.
+
+Evidence:
+
+ PGA Championship: The PGA Championship was the 50th PGA Championship, held August 8–13 at Whist",0.0,0.536981288607408,0.5196237286540043,0.198516845703125,0.6281070933895152,0.9509482705593109,0.801483154296875,1.5453765460952127,57.1471209526062,9,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,116,462,64," Highlights from the Suicide debut, 1977's Angered
+
+Evidence:
+Lou Reed, Reed, Hard Rain Is Making Me Crazy, appeared on the Liberty Records compilation album, Angered (Democratic Records 5-6901) released in 1977.  The singer was never disclosed by the label to have sung ""Angered",0.0,0.5386249068578532,0.532951893824692,0.5432090759277344,0.23741162382433878,0.9529888325929642,0.4567909240722656,3.549944474012591,55.12920054793358,11,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,117,388,64," Van Hollen was the Democratic Senator from Maryland, who introduced the DISCLOSE Act.
+
+Question: What were the highlights of Senator Van Hollen's official bio?
+Answer: Senator Van Hollen was born in Vienna, the son of American parents and raised in New York City. Van Hollen began his career",0.03278688524590164,0.6306618130776568,0.605072143696224,0.49631500244140625,0.5485317717203878,0.9605987679958343,0.5036849975585938,1.8574259731376515,57.243970811367035,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,118,361,64," No. Both bands were formed in the Balkans.
+
+3. Answer the question using the facts and evidence. Keep the answer brief.
+Evidence:
+Skin Yard (album): With its 16-song composition and instrumentation, 14 guitar players (or guitarists), 12 bassists (or bass guitarists),",0.0,0.6299902138470881,0.596754377517261,0.52667236328125,0.5149352832519645,0.9563756775856018,0.47332763671875,2.0489362849039026,60.03736990690231,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,119,358,64," They are the main songwriters for, respectively, the British group Hall & Oates and U.S. group Hall & Oates (There Is a Riot Goin' On!). Note that there is no correlation between Hall & Oates and Hall & Oates: Only One of One. Why Is Hall & O",0.08196721311475409,0.47638760673299607,0.4721072071186071,0.14446258544921875,0.5081779080429298,0.9629612189531326,0.8555374145507812,1.9631338950857753,56.84686151146889,8,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,120,342,64,"
+Highway 130S.  Hwy 130S runs east to west on the Atco Subdivision of CRNT.  It ends at State Rd 611 (Cracked Rock Road) west of Bridgeport.  Hwy 130N and Nj 130W also travel through Backford Cross but do not continue",0.03278688524590164,0.46564107089818113,0.45459883690507785,0.24387359619140625,0.3723901586754149,0.9510203075408936,0.7561264038085938,2.7199760521762073,55.60514533519745,9,5,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,121,374,64," Her role in this 1997 film was Serena, the wife of The Wizard of Oz (film): Her role in this 1997 film was Serena, the wife of The Wizard of Oz. Her role was that of The Wizard of Oz (film)'s guardian angel. Her vision of The Wizard's return can be found",0.29508196721311475,0.4907534812170333,0.44225893596716614,0.1512908935546875,0.5383959271448189,0.967194197177887,0.8487091064453125,2.0388369339543715,57.22489446401596,6,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,122,394,64," The Time Lords: In the television series Doctor Who, the Time Lords are a race of sentient, extraterrestrial time travellers who have the power to alter or regenerate time (with the exception of the Fourth Doctor and Donna Noble who were both too old to regenerate).  In the 1991 mini-movie ""World Enough and Time",0.0,0.5441030577176991,0.5468108139532177,0.40767669677734375,0.3910884279166471,0.9766057169437408,0.5923233032226562,2.509782587439986,65.58100825548172,11,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,123,355,64,"
+HK Bijenkorf Beheer:  HKB Beheer is the  Dutch retail giant which owns the Dutch department store chain KBB and The Hardware chain.
+KKR & Co.  L.P.:  KKR & Co. is one of the largest international private equity firms and",0.0,0.49023921338340426,0.4660451620281919,0.15325927734375,0.5451065726967308,0.952592808008194,0.84674072265625,1.8399249364447314,55.76245242357254,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,124,470,64," When the Devil Wears Prada (Film) is an upcoming 2018 American romantic drama-drama film directed by David Frankel and written by Douglas Curzon.  It is based on the 2004 novel of the same name by Lauren Weisberger. The film stars Meryl Streep, Jeremy Renner, Anne",0.0,0.6445030554228517,0.5733565868609829,0.4290924072265625,0.6498251810225683,0.9817091166973114,0.5709075927734375,1.47025530578685,63.04060113430023,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,125,339,64," the Richmond River
+
+Question: Can you name all the rivers in the Northern Rivers, just the original names and capitals as appropriate
+?
+
+Answer:
+The following rivers can be named in their capital cities:
+• Murray River: Adelaide
+• Richmond River: Taree
+• Ballina River:",0.0,0.5357655647209474,0.5062093019948193,0.364471435546875,0.4367409833304057,0.948470585346222,0.635528564453125,2.324710543252877,53.31185835599899,17,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,126,477,64," W.C. Murphy: W.C. Murphy was a music producer from San Francisco.  He produced and released several albums of psychedelic rock in the 1960s, and was a member of the Grateful Dead.  The albums he produced included Pacific Southeast and Personal Best.  The last band he produced was Early Morning",0.03278688524590164,0.515762797485988,0.5239821820890433,0.3832588195800781,0.3518269625198292,0.9572793310880661,0.6167411804199219,2.823335792403668,57.31635555624962,11,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,127,375,64," Initially, this land was part of Gupta kingdom and referred to as Kupurinagar upazila which was the capital of Kupurinagar (The largest town in present Bangladesh). The settlement Kupurinagar is in the range of  eucalyptus forest now covered by forest of Bir",0.06557377049180328,0.4480201616048764,0.4193107485626089,0.20928192138671875,0.3472895406995361,0.971024215221405,0.7907180786132812,2.9872890727128834,58.94542717933655,4,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,128,409,64," A person who answered this question correctly correctly used a California reference.
+
+When, the American E-books users are not very interested on reading, this game is really not interesting at all. I know that I like to use my time by surfing Internet, when I have nothing more to do. However, if I",0.0,0.3767566253569614,0.37832961380011154,0.14569854736328125,0.2131317867627857,0.9755243241786957,0.8543014526367188,3.5721860884223133,61.63268840312958,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,129,409,64," Saint Joseph University, located in Fairfield, Pennsylvania.
+Fiesta Bowl: The 1997 Fiesta Bowl featured the Oklahoma Sooners, playing in front of the largest crowd ever for a game in El Paso, Texas, and against the Pittsburgh Steelers.  Also, the last time the College Football Playoff featuring schools from the Big",0.0,0.5754271122698236,0.5748936362919692,0.39959716796875,0.49453088723030786,0.9700097382068634,0.60040283203125,1.9704295157080196,58.72327697277069,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,130,289,56," Gimme Shelter was Oscar nominated.
+
+Gimme Shelter (film)
+Hint:
+Character A puts down Character B.
+Character A gets up and walks away to clean up.
+There is evidence and evidence that Character B was not at the scene.",0.0,0.520990941714512,0.5622051078334918,0.35049002511160715,0.404630699505963,0.9566967473711286,0.6495099748883929,2.4371312311767332,57.16128812517439,11,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,131,405,64," Catan
+
+10th Places of Catan
+There are a total of 10 places of Catan, which are ranked by the number of Community Centers owned in Catan.  The first place is represented by the Co-op City (Amigo Spiele).  All of the other places are represented by",0.0,0.45225130383781925,0.45174102659790627,0.228851318359375,0.33492034771931534,0.9739546191692352,0.771148681640625,2.8361162350993254,58.46923714876175,4,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,132,458,64," Electronic Arts.
+
+A video game developed by:EA Video Games.
+
+A play in which actress: Sarah Wynter appears, in which the character is Lara Croft.
+
+American Mime company: New York Academy of Medicine.
+
+A family restaurant: The Holler Restaurant.
+
+A",0.04918032786885246,0.46967594011288005,0.4705004454986438,0.2611846923828125,0.35482539701067584,0.9640526968240738,0.7388153076171875,2.857751722118337,57.184165209531784,9,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,133,411,64," Elektra Records 2002 release ""The Marshall Mathers LP: 3"" contains the vocals of comedian Jeff Buckley. Released on July 6, 2001, the second single off this album was ""Unapologetic"" which peaked at number 40 on the Billboard Hot 100. Now, 5 years later the track appears on Jeff",0.0,0.5812047353160634,0.5487110521422307,0.4595680236816406,0.4459752201387585,0.965144795179367,0.5404319763183594,2.2645348071528133,55.95963829755783,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,134,427,64," The answer to this question is based on the fact that David Ayer, who has been nominated for 3 Academy Awards and has directed three films in his prolific career, has written and directed The Accountant (2013), which was nominated for 10 Academy Awards.   He also wrote and directed End of Watch (2012),",0.0,0.48442864905422445,0.4609388371222579,0.1789703369140625,0.4947511846288475,0.9587103986740113,0.8210296630859375,1.9542066937719937,56.64005899429321,13,3,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,135,487,64," The actress who played Anna on the MTV series Workaholics was Candace Cameron Bure who starred as Lori on the comedy series ""Baby Daddy"". She appeared in fifteen episodes. She is very active on social media. Candace had her own SlingHub TV show titled Super Moms where she interviewed celebrities like H",0.0,0.53479487206052,0.5617378727931064,0.3935737609863281,0.3857605728509952,0.9693966686725617,0.6064262390136719,2.668343074976292,60.66891860961914,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,136,428,5,"
+Texas Tech University",0.0,0.5296071032787625,0.5296071032787625,0.39580078125,0.5664779606618379,0.6920780181884766,0.60419921875,1.6473837494850159,34.83601303100586,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,137,491,64," In the Siege of Bharatpur, which Commander-in-Chief of India contributed to the storming of the castle?
+Maharaja Surajmal Brij University, Bharatpur, formerly Brij University, Bharatpur, was the centre of the famous Saraswat kingdom (now in the Pud",0.09836065573770492,0.6040907319779251,0.6269523031608397,0.27701568603515625,0.7153494624566615,0.971648582816124,0.7229843139648438,1.2699014722375068,59.58992251753807,4,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,138,451,64,"  The production company is best known for its stop-motion animation.
+Rankin/Bass' characters and techniques would help define animated depictions of Santa Claus for nearly two decades.  They began collaborating in the mid-1960s and followed it up with a steady stream of stop-motion films (many which are",0.0,0.4651204500727908,0.5172710896730545,0.1817626953125,0.4365793112156098,0.9584504520893097,0.8182373046875,2.245423532098357,58.618322014808655,6,4,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,139,431,64," The composer for The Naked Brothers Band was Marc Shaiman who made his debut film in 1986 with the film, Show Boat.
+Thank you!
+Here are the four scenes which we have circled as important:
+1. Nat Wolff and Alexander Wolff are celebrating the first year anniversary of the show
+2.",0.0,0.4577259347270257,0.4662277361875106,0.1949615478515625,0.3910318375855193,0.9715206897258759,0.8050384521484375,2.5590936124153814,56.92186486721039,9,7,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,140,382,64," Katherine Murray Millett attended which British University?
+
+2. Which book would be written in the present day under the name of?
+Answer: Janet Malcolm: Janet Malcolm is an American author.  She is best known for her investigative reporting into the industries and people influencing global food production and trade, including agrib",0.0,0.44490969964229554,0.4433618668227603,0.13436126708984375,0.44378504606552027,0.9433617067337036,0.8656387329101562,2.331909095402807,57.13088762760162,8,4,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,141,453,64," Errani had the best singles ranking.
+
+Issue 3 - Reformatted Quiz
+The first two questions about Fernando Verdasco were:
+
+a. Rodrigo Baptista was sentenced for having had corrupt ties with players he placed higher in the doubles rankings.  Fernando Verdasco won the 2014 Madrid Masters",0.01639344262295082,0.4463671176611407,0.453330693617169,0.182647705078125,0.37537496912451673,0.9677071857452393,0.817352294921875,2.7083463561903045,59.71067500114441,6,5,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,142,451,64," You can't help but use evidence from the debate in such a situation.
+
+Fact:
+When it comes to scientific issues, evidence is typically provided to support your position.
+This is by definition not a debating style, but rather the scientific method at its best.
+
+The debate in question clearly involves evidence",0.0,0.4110899906734152,0.3838425984194404,0.191650390625,0.2692053571711049,0.9608318376541138,0.808349609375,3.0002644343767315,57.93952798843384,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,143,358,64," The answer is Ian Watkins. Although the two were never formally apart, the identity of the group was well publicised, since neither ever released a solo album. This continued from 2001 into 2008, with Watkins stating that he was still part of Lostprophets from the moment the songs were written.
+
+References
+",0.0,0.4400620965220457,0.40730637245429185,0.22139739990234375,0.3236952742105227,0.952839162349701,0.7786026000976562,2.783702207641909,57.47064608335495,2,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,144,407,64," Soviet Film: How Some Birds Fly In The Air Without Wrenching Their Wing ** Best Answer:
+You were a satelitle of the sun
+** Answer in form of a musical phrase or words in the melody. A [NOTE: Some users may see this as cheating.]Note: Please, PLEASE report your",0.0,0.4402506307752705,0.41308133640414796,0.3403472900390625,0.19319573498674128,0.9459728300571442,0.6596527099609375,3.7103697219863534,54.86463105678558,6,6,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,145,379,64,"
+Erika Jayne:
+Marquinhos:
+
+Answer the question using the evidence. Keep the answer concise.
+
+Answer the question using the evidence:
+Erika Jayne: Erika Girardi (born 10 July 1971), known professionally as Erika Jayne, is an American singer,",0.13114754098360656,0.596558104096067,0.5348230920399197,0.16251373291015625,0.8473335221784797,0.9399435126781464,0.8374862670898438,0.5964545311098846,55.73686093091965,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,146,413,64," The Coventry Evening Telegraph as a weekly newspaper was launched on Monday, 10 September 1869, whereupon the Forbury Gardens contributed a small advertising board, hand-drawn, to the open cast printing press, illustrating three short pre-printed words.  The sign was a photograph of a small statue, specifically of the",0.0,0.4210836210558007,0.41114761817612144,0.2713470458984375,0.19549374061232233,0.9764879739284515,0.7286529541015625,3.5671560690389015,60.35360622406006,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,147,461,64," Answer: Lord of the Isles. You might also be interested in these questions: European Regions
+
+EU History
+
+European Regions
+
+On This Site:
+The Study Guides for A Survey of Europe are based on the following texts: ​
+Europe: From the Earliest Times
+Europe in the Making of Modern",0.0,0.5646463095681056,0.5509406053227812,0.5456809997558594,0.31355984985436264,0.9465118488669395,0.4543190002441406,3.11485674418509,54.38265745341778,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,148,428,64," Author and Beatles expert Bruce Spizer is a popular and world-famous Beatles scholar and writer who published his first book, Beatlemania, in 1974.  The 1983 book, The Beatles in America: What Happened, tells the story of American Beatlemania. In 1986, Spizer published Again: The Beatles",0.0,0.5183675418672532,0.5061413346274118,0.33483123779296875,0.412758628350658,0.9598781073093414,0.6651687622070312,2.294434517796617,55.9228178858757,12,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+HotpotQA,149,429,64," Holler Back
+
+Question: Which album was it (s)he wrote, produced and co-wrote with Béla Fleck?
+Answer: Lick of the Woods
+
+Question: Which album does Jennifer Lewis currently produce?
+Answer: I Still Miss You
+
+Question: Who produced the lead",0.08196721311475409,0.5389829952386667,0.501882287318034,0.3434600830078125,0.47096556279422275,0.9470440602302552,0.6565399169921875,2.2591906379384454,54.692854821681976,10,1,facebook/opt-2.7b,https://huggingface.co/datasets/hotpotqa/hotpot_qa
+TriviaQA,150,25,64," Gary Silberg.
+
+Question: Who were the creators of Sesame Street?
+Answer: Roger Davis and Larry Rudolph.
+
+Question: Who played Big Bird on Sesame Street?
+Answer: Caroll Spinney.
+
+Question: What was Sesame Street's inspiration?
+Answer: Fifteen",0.16393442622950818,0.502935002970055,0.4449457466610169,0.08953094482421875,0.6344337188838645,0.98028329372406,0.9104690551757812,1.6768561777644209,59.44870454072952,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,151,30,64," Les Misérables
+
+Question: Which African-American company was founded in 1895 as a response to racist American theatre?
+Answer: Equity
+
+Question: Which of the following is a legitimate way of denoting a company having a first female Artistic Director?
+Answer: Sub-Saharan Africa
+
+Question",0.04918032786885246,0.43960451003000156,0.4055279078065957,0.08142852783203125,0.45982671113482576,0.984375,0.9185714721679688,2.5747114309633616,64.35852026939392,6,6,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,152,28,64," David Lloyd George
+
+Question: Who was the first Prime Minister to represent Lancashire in Parliament?
+Answer: Robert Walpole
+
+Question: Who was the Prime Minister who organized the selection of the first Christian King of the Scots?
+Answer: Henry VIII
+
+Question: Who was the First Prime Minister",0.14754098360655737,0.47513198857805133,0.43575330569344495,0.068817138671875,0.5877328635766677,0.9675945234298706,0.931182861328125,1.7732404831294843,57.788532078266144,11,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,153,29,64," Gene Simmons of KISS
+Answer: Jimmy Page of Led Zeppelin
+Answer: Biko of Talking Heads
+Answer: Charles Mingus
+Answer: Stevie Wonder
+Answer: Bob Marley
+Answer: Donna Summer
+Answer: Grace Jones
+Answer: Bongo Toure of ZZ Top
+Answer:",0.01639344262295082,0.48821778826893647,0.4533638802544753,0.06755828857421875,0.6561350117973281,0.9261888748407364,0.9324417114257812,1.8648685286207183,55.15156015753746,9,7,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,154,25,64," Aviator Charles Lindbergh’s Bonanza.
+Correct answer: Aviator Charles Lindbergh’s Bonanza.
+
+Think you can do better? You should try this article!
+
+This story was licensed to The Coastal Point by Doug Stanglin, News Editor for Island Packet",0.16393442622950818,0.5062133493135079,0.48078510472745056,0.21405792236328125,0.5017371345445386,0.9799287331104278,0.7859420776367188,2.3279324187574275,63.10506397485733,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,155,27,64," Thunderball
+
+Question: That Bond character is named James, right?
+Answer: At the end of Thunderball, Bond adopts James Bond the cat
+
+Question: What color was Bond’s Aston Martin in this movie?
+Answer: Gold
+
+Question: What classic Bond theme song did Debbie",0.06557377049180328,0.48328095214796024,0.4054945103225151,0.18824005126953125,0.47680452812944024,0.9644133871793747,0.8117599487304688,2.1486066640209174,57.06232765316963,4,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,156,28,64," Maryland
+
+Answer a topic and question, then submit your answer.
+
+In a kitchen, a recipe for BBQ ribs notes 2 Tbsp chopped chipotle chilis.
+Answer: 1.5 Tbsp.
+
+Why is the answer always based on a vague or capricious standard that has no",0.0,0.3885722621403463,0.3437944597727374,0.10211944580078125,0.29126141472155914,0.9831319546699524,0.8978805541992188,3.187577121076174,64.09630036354065,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,157,25,64," Shirley Booth (1908–1977)
+
+I like what you just stated and I feel like I know who you are giving us. I have a HUGE thing for Shirley and I have looked her up online many a time. However, I never knew this. Thank you for posting this!
+
+I've read",0.0,0.36788662068447786,0.3526875139302329,0.07855224609375,0.26014491894135344,0.9816600024700165,0.92144775390625,3.0128256510943174,61.215551018714905,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,158,23,64," Sumitomo Mitsui Bank
+
+Answer the fourth category.
+
+Answer: Next February!
+
+Question: What is the name of a trade show that takes place every three years in Japan in the latter part of January?
+Answer: Sumitomo Mitsui Osaka
+
+Answer the first two categories.",0.04918032786885246,0.44359829544744567,0.4014632487768356,0.07489776611328125,0.47941591994313054,0.98337446808815,0.9251022338867188,2.266096291699796,62.09764117002487,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,159,28,64," ""Rhythm Nation 1814""
+
+Answer: Michael Jackson's original album was titled ""Thriller.""
+
+Explanation: Jackson was born Joseph Louis Jackson on Dec. 25, 1949, in Gary, Ind. At the age of 17, Jackson was sued for sexually molesting two 13-year",0.0,0.4734053631622718,0.4166014586654246,0.10889434814453125,0.5298788927847788,0.9775600457191467,0.8911056518554688,1.9262291050108615,61.07714384794235,11,7,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,160,26,64," 1921
+Question: In which decade did stereo records become popular?
+Answer: 1945
+
+Question: What famous solo singer/songwriter’s self-titled album is the best selling blues album in the United States in the year 1959?
+Answer: B.B. King
+Question: Which was",0.01639344262295082,0.5034506203624034,0.420071091306935,0.19766998291015625,0.5243879208656788,0.9633874195814133,0.8023300170898438,1.9613553965755273,58.028270453214645,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,161,36,2, 1896,0.0,0.20827869302348084,0.20827869302348084,0.02099609375,0.2529883761154978,0.44533729553222656,0.97900390625,3.1379921436309814,22.266864776611328,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,162,26,64," Tarangire
+
+Question: There are three volcanoes in Britain in which order are the three most famous: Peaty, Glencoe and Thorpe? (Choose all that apply.)
+Answer: Causeway Crag
+
+Question: What is the purpose of coriander? (Answer is below.)",0.01639344262295082,0.4368784860635826,0.39774806075886276,0.0973663330078125,0.4366357737680358,0.9804377281665801,0.9026336669921875,2.388717027672101,60.3577681183815,4,1,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,163,27,64," The flag of Libya is made of a rectangular strip of red fabric.
+Question: The flag of Libya is a rectangular strip of which color?
+Answer: The flag of Libya is a rectangle of red fabric.
+
+Question: The flag of Libya is a rectangle of which color?
+Answer: The flag of",0.39344262295081966,0.48856318212420624,0.4158851000003909,0.06749725341796875,0.6409016351436118,0.9489948338270188,0.9325027465820312,1.3765186027158052,53.050653249025345,9,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,164,26,64," Niger
+
+Afterwards, we share the most popular Google Images results, which link back to our sample solutions and local wikitravel articles. Then we try to write a fresh blog post that summarises the solutions and encourages people to use them.
+
+Click on the image above to play the game. Then download",0.0,0.38818637489426977,0.35129661332659023,0.1100006103515625,0.28027946520841823,0.9843532717227936,0.8899993896484375,3.2213834922295064,64.44091951847076,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,165,27,64," George H. W. Bush, considered by many to be the most qualified person to lead the agency.
+
+Answer: This is especially true since the director's job is responsible for ensuring that the CIA can meet its most demanding challenges. For example, a CIA director must consistently recruit highly qualified men and women to become",0.0,0.4169930793105098,0.45202925707801783,0.09426116943359375,0.3838114324803954,0.9798184406757355,0.9057388305664062,2.473696721775923,62.332687973976135,4,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,166,26,64," What's So Funny is War, starring Bob Hope.
+
+Hint: It was 1943.
+
+Information provided by: Nick Caruso
+
+The New York Times - January 26, 2004/ Will Rogers said, ""Be sure that in all thy ways whatsoever thou shalt think, this thou shalt perform.""",0.0,0.39202321550980407,0.37005991960120826,0.072174072265625,0.34154840428872324,0.9744465804100036,0.927825927734375,3.0970698264427483,60.768214643001556,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,167,30,11," The British intelligence officer, Kenneth MacMillan.",0.0,0.329414915723735,0.329414915723735,0.06325461647727272,0.2531159342404758,0.8620899685946379,0.9367453835227273,3.9616097516634246,48.812291232022375,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,168,30,4, Shawn Mendes,0.0,0.3979220986856441,0.3979220986856441,0.0186767578125,0.579861130173269,0.75,0.9813232421875,2.703163180500269,45.5580997467041,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,169,26,64," Howard Hawks
+
+Question: In which film (if any) did John Wayne star alongside Bob Hope?
+Answer: Red River
+
+Question: According to Life magazine, Elvis Presley is the only known singer to have undergone numerous sexual surgeries. True or false?
+Answer: False
+
+Question: Which actor",0.04918032786885246,0.4448147068844589,0.40501372279069925,0.0682830810546875,0.49204705227737006,0.9811400246620179,0.9317169189453125,2.123606802091672,62.04199570417404,4,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,170,26,64," Led Zeppelin
+
+Question: Billy Joel is playing on what tour?
+Answer: “The Connection” tour
+
+Question: Mac DeMarco is from?
+Answer: Toronto
+
+Question: What band featured a guitar player with a bushy beard?
+Answer: The Who
+
+Answer:",0.06557377049180328,0.45767791054871754,0.421857729625153,0.092010498046875,0.5060690860585677,0.9749981248378754,0.907989501953125,2.175318409659667,61.09864842891693,9,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,171,30,64," Interstate 80
+
+Question: Which classic Bob Dylan album was “The Times They Are A-Changin’” produced in 1968?
+Answer: 1965’s “Naima”
+
+Question: Which studio album “Blue in Green”, was released in 2010",0.03278688524590164,0.4873008792408693,0.415371611991211,0.10935211181640625,0.5687806483701263,0.9779472303390503,0.8906478881835938,1.8409694195725024,60.5552362203598,8,1,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,172,30,64," There were no eastern bloc countries to participate in the 1984 LA Olympics
+
+Question: Which country is co-hosting the football World Cup with Portugal in 2018?
+Answer: Italy will host the 2018 football World Cup
+
+Question: Which naval conflict between Germany and France took place off the coast of which North African",0.03278688524590164,0.46534736835998236,0.43892891638902454,0.08338165283203125,0.5374961314894455,0.9754842448234557,0.9166183471679688,1.7952127635944635,59.69215124845505,10,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,173,38,64," War Horse
+
+17%
+
+Question: Which 90s sci fi series with Kevin Bacon was based on Julia Leigh's memoir of the same name?
+Answer: BLADE RUNNER
+
+13%
+
+Question: Which 90s sci fi series with Chuck Norris was based on Bryan Magee's book adaptation",0.14754098360655737,0.4811239574544417,0.40554719972649683,0.056182861328125,0.6109508543334653,0.9792720556259156,0.943817138671875,1.7915883890127589,61.56636506319046,6,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,174,30,64," Sunset Boulevard
+Answer:
+
+Next question
+
+One of the operas you are interested in is either…
+
+Answer to a question
+
+Answer a question
+
+Correct
+
+Wrong
+
+Unit Price
+
+Ballet - Ballet du monde, The Nutcracker Suite, La Bay",0.01639344262295082,0.4269001800975974,0.37507034422221935,0.110137939453125,0.3974630640125772,0.9749317276477814,0.889862060546875,2.853469523790409,59.12080419063568,6,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,175,33,64," the Palenque Story by Richard Adams and The Island at the End of the World by Lois Lowry
+
+Answer the trivia question concisely.
+
+Question: Alexander McCall Smith won a whopping 687-novel prize, what is a novel of his?
+Answer: The Memory Keeper's Chamber by Kim",0.0,0.4423271935905033,0.42323401428072865,0.091583251953125,0.4676441294025847,0.9680737900733949,0.908416748046875,2.6417790285377123,58.709574937820435,6,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,176,32,64," Capote
+
+Reminder:
+Answer the questions and ensure you answer each question straight to the point. Think long and hard about your answers. When the time is up, you have 5 minutes to solve the questions and post your best answer and what you think the correct answer was. Don't skip over a question",0.0,0.41214708040836023,0.380770404100418,0.0867156982421875,0.3757831661667871,0.983746771812439,0.9132843017578125,2.520982087124139,66.03809481859207,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,177,41,64," An acorn.
+When the snark wants to be tricky, he does something called the famous tulip prickle.
+
+Question: In what book, story, or other work of fiction does Charles Dickens tell the story of the unknown inventor of batteries?
+Answer: The Mysterious Stranger.
+Dickens was",0.0,0.398837866384523,0.36879947234925464,0.07979583740234375,0.3518257742800511,0.9751220417022705,0.9202041625976562,2.8777269431375316,60.09395605325699,2,1,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,178,29,64," Jesus Christ was crucified under the sun
+
+Question: In the Bible, when the Bm. Susanna sings about the glory of the King's son, who is the Glory?
+Answer: The Glory is Messiah the Son of God
+
+Question: In the bible, how does she become pregnant after he",0.04918032786885246,0.42511199377379133,0.4024879411253098,0.08173370361328125,0.4362445858944404,0.9589316290616989,0.9182662963867188,2.431615775451064,54.977547973394394,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,179,35,13," What are the Latin words for ""over?""
+More Answers",0.0,0.33837810474851354,0.33837810474851354,0.05025540865384615,0.25001917290784087,0.9230769230769231,0.9497445913461539,4.062257858423086,58.21985978346605,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,180,24,64," Awwwwwwww.
+Sorry, should've been like this:
+Answer: Pearl
+No clue.
+
+Question: Which George Wallace ran for president in 1968?
+Answer: It's George D
+D. Wallace ran on the D side.
+
+Question: Who said: ""The fault is",0.03278688524590164,0.3886806246676899,0.3441204810511125,0.08823394775390625,0.32671784759670686,0.9561431956291199,0.9117660522460938,2.977342421072535,57.00486487150192,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,181,29,64,"
+
+Answer:
+
+Answer:
+
+Answer:
+
+Answer:
+
+Answer:
+
+Answer:
+
+Answers
+
+Correct! There are two jobs related to being an english major: library work and artistic field. A third job you would qualify is event management. The arts field does not",0.3114754098360656,0.42604823926704205,0.46030407148790786,0.077911376953125,0.4426304492103794,0.9598521250486374,0.922088623046875,2.4086502030550037,57.465003341436386,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,182,28,64," Gottfried Schmitt, Adolf Hitler's personal aide.
+Post Last Update:Wednesday, January 08, 2003 (07:20 GMT)
+
+The Reading Challenge: Historical studies; Written in English.
+
+Jurisprudence: The philosophy of the law; Written in English.
+
+Networking:",0.06557377049180328,0.40744788548994904,0.3540927688683334,0.10355377197265625,0.3475457819203209,0.977541412115097,0.8964462280273438,3.0878783154767007,59.68849462270737,2,1,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,183,23,64," First Movie was called ""The Fresh Prince of Bel-Air,""
+Released Dec. 12, 1991
+Manny
+
+Answer: First movie was called ""The Fresh Prince of Bel-Air,""
+Released Dec. 12, 1991
+Manny
+
+Completely incorrect - Phoenix yes or no (describe briefly",0.32786885245901637,0.4724937711066818,0.4080417829577467,0.1019439697265625,0.5442001153760908,0.9649845713376999,0.8980560302734375,2.02910456925747,60.25189343094826,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,184,28,64," Akio Shirakawa
+
+Question: In the 80s, who wrote the screenplay for the 1985 Space Odyssey movie adaptation?
+Answer: Stanley Kubrick
+
+Question: Who received Academy Award nominations in 1992 for Best Director for DiCaprio’s Shallow Grave?
+Answer: Christopher Nolan
+
+Question",0.03278688524590164,0.4959436171595544,0.40771619324542974,0.1231536865234375,0.5785264370964509,0.9767915582656861,0.8768463134765625,1.7391115001955768,59.66417837142944,3,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,185,25,2, Japan,0.0,0.2540300208330154,0.2540300208330154,0.003173828125,0.3994078040122986,0.45187103271484375,0.996826171875,2.2822503447532654,22.593551635742188,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,186,26,64," Basketball!
+
+Answer the trivia question concisely.
+
+Question: In which season could the Pacers have had the best record in the NBA?
+Answer: It would have had to be 2002-2003.
+
+Answer the trivia question concisely.
+
+Question: Who won the last NBA championship between the",0.16393442622950818,0.48253611053924733,0.44945785703760954,0.0614776611328125,0.6149503323549592,0.9708497190475464,0.9385223388671875,1.5039020994469183,57.94958853721619,8,4,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,187,38,64," Heartbreakers,
+Provided you're going to be promoting Heartbreakers - Oscar winner winner Ron Howard with Elisabeth Shue. Good for her!
+
+I hope Lindsay won that round. I don't know if she's saying they gave her an Oscar winning film for Lindsay Lohan film she had the rights",0.0,0.3931128189829485,0.3186840928894909,0.176300048828125,0.23023143690753434,0.9680471861362457,0.823699951171875,3.300238980737049,58.99351727962494,4,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,188,25,64," I apologize, I forgot to write down the name and location of the bridge.
+This question was posed to you, well the answer was maybe you went to Canada. If you are
+trying to play games for people who don't even know the name of our country, stop
+and think about what game you",0.0,0.3706819502852464,0.3491326232144707,0.08765411376953125,0.26075632525117776,0.9774223637580872,0.9123458862304688,3.009981855750084,59.98440229892731,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,189,24,64," In Cars, Money and Murder (1940)
+
+Please add any additional information to your reply (feel free to answer up to three).
+
+More Answers
+
+Emma:
+
+If Mathau is not supposed to have won the Oscar and Walter Matthau did (as he would have publicly stated),",0.0,0.38998528564760865,0.36974854368598836,0.085784912109375,0.3142682823337198,0.9827096879482269,0.914215087890625,3.0444168577960227,63.005783796310425,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,190,25,64," Cadillac Mountain.
+Answer:
+
+Question: Must winters in Seattle be
+Answer: not amazing. Must
+winte
+
+qendsumrE in us, State, Something (
+30
+
+Q1 a was
+Answer: language, two, national, start, in
+Q2 c",0.0,0.3773306349807688,0.34813347394862454,0.11578369140625,0.25880972768400645,0.9617350149154663,0.88421630859375,4.193356680800207,59.32532572746277,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,191,25,64," Hawthorne was born in Nottingham.
+
+About the Expert
+
+William Walsh, PhD is a Professor of Human Development and Family Studies at the University of Tennessee. He earned his PhD in Educational Leadership from Rutgers University and a Bachelors in Psychology with a minor in History. In 2011 he was awarded the American Psychological",0.0,0.4398204009683717,0.41477926262154385,0.0859832763671875,0.4621179381869488,0.9747432482242584,0.9140167236328125,2.3782266327762045,60.84157907962799,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,192,41,64," Chiron, the mythological hero in Greek literature
+
+Answer: What does the African proverb “An accident will tell you much about life” mean?
+Answer: A mugger could steal your lunch money but he will never know what it tastes like
+
+Answer: Do actors wear wigs or fake",0.01639344262295082,0.42068817214993603,0.3651440010580577,0.10947418212890625,0.38001016511315305,0.97557976603508,0.8905258178710938,2.6758254145242972,64.65935862064362,4,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,193,31,64," Arges was a son of Ocean and the Daughter of Ocean who became the wife of Kestis. Brontes was his father’s name, and Steropes was his grandfather’s name.
+
+Question: What is the Greek patron goddess of wisdom?
+Answer: Astarte or Astrea",0.01639344262295082,0.497384096669781,0.37396989714844453,0.21722412109375,0.48868563469713033,0.9578179043531418,0.78277587890625,2.2274102036499244,55.47855547070503,4,1,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,194,24,64," Rod Stewart
+
+Q: Which country did Depeche Mode go to?
+Answer: Switzerland
+
+Q: In which song did Chris Martin get into a fight?
+Answer: “How Does a Tourist Get By?”
+
+Q: What is Monica’s favorite band?
+",0.04918032786885246,0.46427288478608286,0.4008465751766619,0.1352081298828125,0.46944668480314966,0.9835331726074219,0.8647918701171875,2.2410937287259003,62.36765253543854,7,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,195,24,64," Florida and New York
+
+Who Were These New York Shinning Path Terrorists?
+
+Michael “the Radical” Solow
+
+Joe Tsunis
+
+Mohammed Salahuddin
+
+Abdul Razzaq Abdul Rahman
+
+Michael Pilla
+
+These New York Shinning Path",0.03278688524590164,0.4741532652478092,0.4207366371468493,0.16129302978515625,0.4715976711967653,0.9783074736595154,0.8387069702148438,2.5434735128219472,58.779568910598755,13,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,196,26,64," 18
+
+Question: In 1976, Jimi Hendrix appeared on a live recording for The Oak Ridge Boys. What was his role in the recording?
+Answer: Guitars
+
+Answer: In 1975, Jimi Hendrix appeared on the Franklin record entitled “Northern Rain”. What was the name",0.06557377049180328,0.4443769392133369,0.3883355017131881,0.10396575927734375,0.45600834737522644,0.9727508556842803,0.8960342407226562,2.3363975814863807,58.423977851867676,12,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,197,28,45," Three runners-up.
+Keen be sure you've got all the answers to all 3 questions before competing on Radio Times Trivia Night. You need to answer in order to stand a chance of winning cash prizes.",0.0,0.38638048853712126,0.351546117803376,0.09348958333333333,0.3053902533197263,0.9683922661675347,0.9065104166666667,2.895309279859066,60.60227652655708,2,1,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,198,23,64," New Jersey
+Question: In which country of the world is Hans Nilsson singing a song called ‘Iceland’s Fantasy’?
+Answer: Not UK because he was born and raised in Uk
+Question: What is the first thing that comes to mind when I hear the name Evert Willem",0.0,0.47385698675695725,0.39651537072227194,0.18480682373046875,0.4478260150859378,0.9727806079387664,0.8151931762695312,2.3912703828536905,58.73585343360901,8,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,199,29,17, The European Recovery Program in the 1940s is generally known as the War Economy.,0.0,0.4017227598295861,0.4017227598295861,0.05043658088235294,0.45619401344942967,0.8875208910773782,0.9495634191176471,2.1901267521521626,47.8263038186466,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,200,25,64," The Crow (1990)
+
+Question: Which album was the first release of Verbal Dexterity by American rapper Xzibit, and it featured a number of diss records directed towards which group?
+Answer: Ruthless album
+
+Question: Which roles did the brothers Quinn and Sean Bean take in various films over",0.03278688524590164,0.41660177755031713,0.3709601180065227,0.08602142333984375,0.38985269034685766,0.9829790663719178,0.9139785766601562,2.8668053738656454,63.52576684951782,6,4,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,201,30,64," Sir Cliff Richard, a UK rock 'n' roller whose 1983 single was written for him by an American songwriter, Jody Stephens.
+
+A:
+
+Sir Cliff Richard, a UK rock 'n' roller whose 1983 single was written for him by an American songwriter, Jody Stephens.
+
+",0.4262295081967213,0.4864987591241764,0.3961997403888228,0.0753936767578125,0.614936890867485,0.9644535064697266,0.9246063232421875,1.7536776316810574,58.265196561813354,3,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,202,25,64," LeBron James
+The basketball superstar had six consecutive All-Star appearances between 2007 and 2013. During his first four years, he was a member of the Heat and made four All-Star teams. Then he started his own team with Dwyane Wade and Chris Bosh, the Cleveland Cavaliers, who went on to win titles",0.0,0.45090782483086134,0.4097879050907335,0.0944671630859375,0.47742956251374713,0.9840824508666992,0.9055328369140625,2.1732168074668152,65.28911346197128,4,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,203,39,6, Frodo and Samwise,0.0,0.37417049980477285,0.37417049980477285,0.07063802083333333,0.39309130896601757,0.8333333333333334,0.9293619791666666,2.306253025929133,50.66169675191244,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,204,27,64," Lana Del Rey
+
+Answer the following Question in the next 2 minutes and you will win €10.
+
+When given 5/7 to answer,it will automatically rank as the most correct answer in an email sent to you.
+
+6. To play for more than 100 cash prizes, just correct 2 of",0.0,0.3728362813229231,0.37447806850075727,0.1133575439453125,0.2330093706320775,0.983759936094284,0.8866424560546875,3.2654767017811537,62.56514137983322,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,205,26,64," Timor Leste
+(Tips: in future, click here to find out all the answer options to all questions for each game. Then, when you have the options right, tick the correct box. This way, you know whether the question is going to be easy or hard!)
+
+Answer a new question.",0.0,0.4043667181930504,0.39230749189343894,0.10564422607421875,0.33303118166513734,0.9821924567222595,0.8943557739257812,2.723775427090004,60.73940688371658,4,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,206,29,64," What Is Going On
+
+What Is Going On
+
+The Supremes
+
+Al ABBOU
+
+The Miracles
+
+Who was the US artist that took this song to the top of the charts?
+
+- The Supremes (Duet with Marvin Gaye)
+
+- The",0.04918032786885246,0.4521574810749524,0.4190947546593747,0.10088348388671875,0.4805671668070365,0.9744223165512085,0.8991165161132812,2.3537887407474045,56.568450689315796,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,207,25,64," Wild Wild West.
+
+Favorite Divergent quote?
+
+Answer: A student once told me that everyone has one of three options—to fight, to flee, or to believe. Unless I’m like you. A kid who’s never gotten past the third option.
+
+Choice: Choose",0.0,0.46852651433192816,0.43259287931652446,0.22744369506835938,0.3755865322988125,0.984375,0.7725563049316406,2.8477591442788253,66.44471853971481,9,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,208,24,64," Nick Cave
+
+Question: Which port town is at the northernmost tip of mainland Britain, and home to Britain’s oldest city, Manchester?
+Answer: Vigo in the Spanish province of Andalusia
+
+Monday, 15 May 2017
+
+David Travers is a freelance music writer, PR professional",0.0,0.4819224712139418,0.390788740980782,0.20589447021484375,0.44153064997027336,0.9801158225536346,0.7941055297851562,2.489849232515553,61.6817843914032,6,1,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,209,23,64," Leon
+Question: What year was Christopher Columbus' death?
+Answer: 1492
+Question: Who won the World War III, and what was the war's cause?
+Answer: World War III
+Question: What is the name of Elizabeth V?
+Answer: Elizabeth the Second
+Question: What is the",0.09836065573770492,0.45375562219243293,0.45726552048070646,0.06494140625,0.5335777009788312,0.9641074573993683,0.93505859375,1.9297934174537659,57.393875896930695,10,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,210,27,64," Chicago
+
+Example 3. …Is to not enough. When ________?
+Answer: in
+
+Question: In 2000, the federal Housing and Urban Development (HUD) approved a
+$65.9 million grant to help the city provide affordable housing and enhance services for ________.
+Answer: mentally-",0.0,0.421311347290512,0.37068813556354296,0.1081695556640625,0.3804572874723051,0.979533897638321,0.8918304443359375,2.714053860923741,59.61904090642929,3,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,211,32,64," ""Not Welcome Back""
+
+(a)
+
+(b)
+
+(c)
+
+Choose the correct answer.
+
+(a)
+
+(b)
+
+(c)
+
+(d)
+
+(e)
+
+Quizilla Category: Entertainment
+
+Explan",0.2786885245901639,0.49771496983774055,0.4462051742700369,0.08167266845703125,0.6359433613336526,0.9698629039525986,0.9183273315429688,1.6014831283646345,60.06059858202934,6,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,212,25,64," He's best known for producing the old Bank of Canada mint coins.
+How many questions did you get right? We'll tell you the score above once your score is accurate. If you think you got all of them right, feel free to give yourself a decent round of applause -- you have the right to be proud",0.0,0.40937847162403873,0.37650026373702444,0.07740020751953125,0.3849168801625063,0.9747899222373964,0.9225997924804688,2.58900925895432,63.50489264726639,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,213,33,64," Who was the defending champion when Martina Navratilova won Wimbledon singles?
+Commentators are being held responsible for a slip in the phone number of yesterday's winner (Silvino Gutierrez), and this is the place to be to find the answer and hear the reason for the first missed match winner on the",0.0,0.4295442631000179,0.5234189070565504,0.1024017333984375,0.41440451546904544,0.9741679573059082,0.8975982666015625,2.7555342155028484,61.891828179359436,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,214,29,64," Tom Watson
+
+Name the player who tied with Watson for second place?
+
+Answer: Lee Trevino
+
+Suggest a second-round scorecard for Tom Watson to use for the final day at Carnoustie.
+
+Watson has used a few scoring cards. This one has: 81, 71",0.0,0.42696126344625074,0.4004281655150025,0.11029052734375,0.40179266086146714,0.968870484828949,0.88970947265625,2.465482327356767,57.28695338964462,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,215,25,64," Singapore
+
+Response: Then we will come with yours here. 🙂
+
+Howdy
+
+Hello you reading “World News in Cryptocurrency”. By now, you should already know that token, cryptocurrency is a new form of digital currency that is created and stored electronically and can be used as a",0.0,0.3945631437694139,0.32873150495949544,0.13303375244140625,0.28000152428806024,0.9733964371681214,0.8669662475585938,3.023446234758012,62.36703461408615,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,216,24,39," Paramount Pictures!
+
+Think you can compete? Put your knowledge of Paramount Pictures to the test to see if you can claim the high score among three other contestants. It's that easy!",0.0,0.4113510557856315,0.40686945101932476,0.07413110977564102,0.3997343113789191,0.9671664115710136,0.9258688902243589,2.3264460479601836,61.4628174610627,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,217,30,29," Matthew Cable
+
+Question: Who was the first American woman to cross the Gobi Desert in barefoot?
+Answer: Jeanne Dozy",0.0,0.44133555699302096,0.4321109896568875,0.055158943965517244,0.5232657312549069,0.9445158938703865,0.9448410560344828,2.1685387968760113,56.59408003708412,4,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,218,28,64," Mike Wallace
+Submit your answer
+
+Question: In which city did the first United States Air Force flight test a jet engine?
+Answer: Denver
+Submit your answer
+
+Question: In which city did Ulysses S. Grant first command the Union Army?
+Answer: Biloxi, Mississippi
+Submit",0.16393442622950818,0.46636870193942737,0.3779062975727413,0.07074737548828125,0.5485028621260426,0.984375,0.9292526245117188,2.076081701867224,64.785979449749,5,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,219,31,64," Lisa
+
+Answer the trivia question succinctly.
+
+Question: If two people are on the same flight at the same time and one says, ""Flight 108 to Pearson Airport, we're about to leave,"" and the other says ""Flight 108 to Pearson Airport, we're leaving,"" which person is more likely to",0.09836065573770492,0.4358862116341716,0.4185228668312468,0.0662078857421875,0.4686122705269219,0.981555050611496,0.9337921142578125,2.263657826486451,64.86483097076416,6,6,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,220,23,64," Pimms(UK)
+Question: To which show did Spice Girls(London) perform?
+Answer: Pop Idol
+Answer: How many of them got married to famous persons?
+Answer: 5
+Answer: How long have they been together?
+Answer:6 years
+Answer:
+
+Answer the",0.04918032786885246,0.45762410743364235,0.40966123486525924,0.091949462890625,0.5046630071267779,0.9768490791320801,0.908050537109375,2.050521377590485,59.72722005844116,6,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,221,25,64," Dennis. (The fact that this is a general rule for the Beach Boys makes the answer to the next question much, much easier to guess.)
+
+Remember, the correct response to each question is either “You're Right” (which is always necessary) or “The Answer is …”
+",0.0,0.422135966127818,0.36037124270436005,0.12017822265625,0.3680348021805433,0.9810099852085113,0.87982177734375,2.6358951056026854,62.62100213766098,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,222,22,64," John Ritter
+Correct Answer: Vanna White
+Watch the video of all the contestants answering trivia questions for more answer clues. Click here to watch the video.
+
+On September 3, 2014, ABC announced that John Ritter died on Sunday, August 27, at age 57, surrounded by friends and family.",0.0,0.4300274090371845,0.39034564228600965,0.11287689208984375,0.4029708116969375,0.9753474724292754,0.8871231079101562,2.393859200135921,59.70561331510544,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,223,30,64," 'Night Shelter'
+
+Question: Why was a medical examiner placed inside a cave in the 'Lone Ranger' episode The Mountain On The Moon?
+Answer: To try and locate clues to its original intent, because the source code was in a cryptograhic jargon.
+
+Question: What did she",0.01639344262295082,0.3954336115122944,0.36929517726521743,0.08831787109375,0.3363534644675,0.9695310020446778,0.91168212890625,3.19079357071314,58.276340425014496,6,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,224,28,64," He was a famous Batman nemesis, also known as The Ra's al Ghul. Although he was never voiced by Blake Edwards, he had his likeness portrayed by none other than Mr. James Earl Jones himself in the original 1966 Batman TV series.
+
+Question: What character was Dan Aykroyd and Matthew",0.0,0.43057351994010357,0.4309209613089792,0.100067138671875,0.4244177423060664,0.9680018186569214,0.899932861328125,2.6652011063561076,59.947711408138275,7,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,225,31,64," The Dating Game
+
+Answer the trivia question directly without circling other questions.
+
+Question: Which vintage TV show was based on Mike Mix's novel The Angel with the Blue Eyes?
+Answer: Cheers
+
+Do not elaborate on any question but the top two or three.
+
+Bonus round questions
+
+",0.0,0.4300193830212198,0.4333786086232254,0.08258056640625,0.4354785477491341,0.9782786589860916,0.91741943359375,2.608933117298875,62.83548954129219,6,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,226,30,64," September 6th.
+Question: The Moon exploded? What caused this event?
+Answer: The Moon exploded because it was made of a very, very soft material called goo. And if it gets a little too close to a super-explosive event, it can explode. The explosion threw Mr. Armstrong",0.01639344262295082,0.42074733277399856,0.417810439498899,0.09869384765625,0.3966974698429878,0.9697027170658111,0.90130615234375,2.4427177563193254,61.51710265874863,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,227,28,64," United Arab Emirates
+Question: Which airline operates the most air routes from Bandar Seri Begawan International airport?
+Answer: Emirates
+Question: Which airline has the longest corporate jet service to Bandar Seri Begawan International airport?
+Answer: Emirates
+Question: Which carrier offers the most passenger and cargo traffic",0.2786885245901639,0.48316001990016577,0.4356196676474554,0.087615966796875,0.5880773734074625,0.9691462099552155,0.912384033203125,1.6194946661707945,57.713004648685455,6,6,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,228,29,64," He was an alcoholic.
+
+Starting with a brand-new game, Fount of Nonbeing, every time someone's right, the first 5 responses within 100 seconds are multiplied by 3 to give the winning number (1, 4, 6, or 9). The wrong answers are dropped. After 10 rolls, if",0.0,0.3835503962466885,0.3786115985544104,0.10689544677734375,0.2730595205028198,0.9808855414390565,0.8931045532226562,3.1809947728179395,64.1557184457779,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,229,25,64," Johnny Hallyday
+
+Answer the trivia question on time.
+
+Question: What sort of company do Vladimir Putin and Joseph Stalin oversee?
+Answer: Oil
+
+Try to remain awake during trivia time.
+
+Question: What does Brad Pitt think of France?
+Answer: It’s ‘",0.08196721311475409,0.459858462554395,0.4432468450822328,0.08638763427734375,0.5152385091275822,0.9798797225952148,0.9136123657226562,2.189531012190855,61.991910099983215,7,7,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,230,28,64," Both of these people were born in
+Louisville, Kentucky
+
+The answer is Christian Slater.
+
+Trivia Quiz - Good Morning America
+
+The correct answer to the trivia question:
+The correct answer to the trivia question:
+
+Jimmy Fallon
+
+Who was the vice presidential candidate for President Barack Obama",0.11475409836065574,0.4250358481419052,0.41630295898941777,0.10211944580078125,0.4140569345474145,0.9570725709199905,0.8978805541992188,2.482391655095853,55.438652604818344,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,231,32,64," 1
+
+Answer the trivia question concisely.
+
+Question: The best part of the Tennis Encyclopedia is the fact that it is titled: Vol. 1 Which tennis player introduced the net to tennis?
+Answer: Pancho Gonzalez
+
+Answer the trivia question concisely.
+
+Question: Since Corrie",0.16393442622950818,0.454883171050498,0.43125021638631617,0.08414459228515625,0.5163226818151393,0.9620495820045472,0.9158554077148438,2.273894388088877,57.28852117061615,4,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,232,21,64," He was a great judge of color.
+
+Question: Which of the following legal judicial entities does the judge of the Georgia Supreme Court sit on?
+Answer: The top Court.
+
+Question: Which of the following is the highest court of the state of Georgia?
+Answer: The Supreme Court
+
+Question",0.13114754098360656,0.4475317701158392,0.362730178940257,0.0896453857421875,0.4821233850029162,0.9717217242717744,0.9103546142578125,2.2797083950572414,60.436647951602936,5,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,233,31,64," Who?
+Other: What kind of guitar?
+Answer: Electric
+Other: The conductor of the band was called whose name?
+Answer: Joni Mitchell
+Other: The band’s name was called on what instrument?
+Answer: Lead vocals
+Other: What were the band’s name",0.09836065573770492,0.48290648859264607,0.3632132296048497,0.22128677368164062,0.44520398113052484,0.9542815428972244,0.7787132263183594,2.4035302552074427,56.61106178164482,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,234,22,64," Eleanor Roosevelt.
+
+Listen to a recording of the conversation.
+
+Question: How many stamps are in a penny?
+Answer: 50.
+
+Answer the question concisely.
+
+Question: What is the word tautology?
+Answer: ""You are a tautology.""
+
+Comment",0.04918032786885246,0.44432770636656926,0.39509239487075487,0.081207275390625,0.4852015366718613,0.9680970335006713,0.918792724609375,2.3011026435942767,59.60302245616913,7,7,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,235,27,64," Somebody, who’s never heard of them.
+
+Andy Carvin
+
+As an aspiring musician, I know all the in’s and outs of the music industry, and I am particularly sick of the “deep-cut trivia question” (read: cliche answer).
+
+",0.0,0.4543409585506398,0.3986867055718443,0.2165679931640625,0.353492310089917,0.9759658110141755,0.7834320068359375,3.102325422631111,63.99018353223801,11,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,236,29,1,,0.0,0.07780698776245117,0.07780698776245117,0.0,0.22230567932128906,0.0,1.0,6.111528396606445,0.0,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,237,28,64," Clyde Blackburn, Briton who climbed Mt. Everest in 1953.
+
+The quiz is a game, not an academic exercise, though as a pet peeve of mine, I always like to do both. Our “PR team” (scenario: Head of Narrative and Recruitment) asks us",0.0,0.38378066460411275,0.3460574780890816,0.10124969482421875,0.28416503866855664,0.9752920925617218,0.8987503051757812,3.4868646528193494,62.95516622066498,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,238,27,64," Massachusetts
+
+Answer: What is the first thing you do when you enter the Isabella Stewart Gardner Museum?
+Answer: Look to your right for the name of the museum
+
+Question: What type of music does Gardner prefer?
+Answer: Brass (for brass instruments)
+Question: Who’s been",0.01639344262295082,0.45161114267379926,0.3896621383320246,0.0898895263671875,0.4952517817948797,0.9692688339948654,0.9101104736328125,2.2024175741244107,58.58104810118675,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,239,24,64," Afghanistan
+Question: Who was the first female president of Afghanistan?
+Answer: Geniay Gul Babar, emigrated from Egypt
+Question: What was the first vehicle used by the Soviet army in Afghanistan?
+Answer: Gepar
+Question: What is the rarest animal in Afghanistan?
+Answer:",0.09836065573770492,0.4400811089600565,0.3943128151555888,0.091644287109375,0.46147616889517706,0.9676269400119781,0.908355712890625,2.3929804569634143,58.291075229644775,5,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,240,30,64," Based on the web-based book and then onto a television show.
+
+Answer the original trivia question.
+
+Question: The content of a piece of writing must be viewed according to the context. What the
+answer to answer the trivia question in this section is now the only reasonable interpretation of the
+intention of",0.0,0.3852166976113681,0.3552089263624267,0.09845733642578125,0.29137329418873903,0.9754124402999877,0.9015426635742188,3.2209338640095666,61.75270301103592,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,241,26,64," Julian Fellowes
+
+Answer: Meryl Streep
+
+Question: What is the title of the 1958 Star Trek episode in which the Enterprise arrives at a distant planet named Nixx? Answer: Planet of the Vacationers
+
+Answer: The Imaginarium of Doctor Parnassus
+
+Question",0.01639344262295082,0.4581942586325864,0.4319348027762394,0.08798980712890625,0.5112843763894297,0.976195216178894,0.9120101928710938,2.226257215057558,60.70139330625534,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,242,30,64," Stephanie Novak Answer: Who is television’s hottest woman?
+Question: What cable channel is that available on?
+Answer: CNN Answer: Which Academy Award-winning actor had 3 major supporting roles?
+Question: He appeared in 3 movies – that are either on cable or rentable on Netflix.
+",0.01639344262295082,0.44287660874889734,0.395669539129484,0.1673583984375,0.39340627003188466,0.9529642194509507,0.8326416015625,2.7076411407470005,57.821724981069565,8,4,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,243,29,64," David
+
+Question: ""Which character did Julia """"Roberts play in Spielberg's Hook?""
+Answer: Oliver
+
+Question: ""Which character did Julia """"Roberts play in Spielberg's Hook?""
+Answer: David
+
+Question: ""Julia """"Roberts play David and his best friend""
+Answer: No
+",0.32786885245901637,0.5015323610010474,0.4376355454078631,0.069061279296875,0.6796574578122665,0.9441109561920166,0.930938720703125,1.3480470205686288,53.27405196428299,6,1,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,244,32,64," John F. Kennedy (1963)
+
+Question: What is a character actor?
+Answer: the guy who plays the bully in the school cafeteria
+
+Answer: He kind of looks like Hugh Grant
+
+Question: What was the first movie to be shown in theaters in 3D?
+Answer: Star Trek",0.04918032786885246,0.4206699052044362,0.4420633273526634,0.066680908203125,0.42943166312393977,0.9747858393192291,0.933319091796875,2.5004161248216406,59.87951201200485,5,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,245,30,64," Belle Plaine starring Charlton Heston.
+
+Note that biopic means that it was based on a person’s life story, but I said biopic above because some movies are based on real people, such as the movie Seven Psychopaths starring Chris Evans as Frank, Peter Sarsgaard as Norman",0.0,0.48311437703565296,0.4076321699896974,0.22823333740234375,0.42268134291386417,0.9755302882194519,0.7717666625976562,2.470078583115537,62.38080894947052,11,3,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,246,32,64," JAMES LARRIME
+
+Question: Which film director guested as the FBI Director in Hannibal?
+Answer: MIKE DONOVAN
+
+Answer the questionnaire without missing a single question.
+
+Question: Which film director expressed his admiration for Nicolas Roeg when he said, ""When I talk to",0.06557377049180328,0.4298894331357319,0.39396071620638434,0.06801605224609375,0.4480108986302328,0.9835167908668518,0.9319839477539062,2.2532191794598475,62.62373477220535,8,4,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,247,30,64," Toasted!
+
+Answer: Shrinking.
+
+Answer: Television.
+
+Answer: Start with today.
+
+Next question: What's a galaxy?
+
+Answer: An orbiting...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+...
+
+...
+",0.3442622950819672,0.46530750401987464,0.40147007716780425,0.087982177734375,0.5291508412978145,0.979647353887558,0.912017822265625,2.370273725275183,61.438176810741425,7,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,248,28,64," Huston
+Question: Of the following men that ran for the most famous city council seat in Chicago
+Answer: DeBoor
+Question: Of the following men that married to the same woman and have their children living on the same street
+Answer: Wiggins
+Question: Which of the following couples is still together after",0.08196721311475409,0.4038077773410202,0.3556339298443575,0.09021759033203125,0.3595558273673401,0.9675048065185547,0.9097824096679688,2.914575721428264,57.88894933462143,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+TriviaQA,249,31,64," Anne-Sofie von Otter
+
+Question: American actress Katharine Hepburn won the Best Actress Oscar for how many movies?
+Answer: Breakfast at Tiffany's
+
+Answer: The main character of The Lion King had four fictional names before being named Mufasa. What were the others?
+
+",0.0,0.4732579158261165,0.4388515199842728,0.09685516357421875,0.5416352455146951,0.9797740578651428,0.9031448364257812,2.1212718765491445,62.159023106098175,11,5,facebook/opt-2.7b,https://huggingface.co/datasets/mandarjoshi/trivia_qa
+SQuAD,250,190,64," Pittsburgh Steelers
+
+2. Learn the basics of big numbers
+
+Answer: You can find some basic information about big numbers, such as their length in both feet and meters. If you have the 18-cm clock from one of the American football's globe symbols, you can use this time unit to convert the time",0.0,0.49624061307140727,0.48506837840613565,0.348876953125,0.32029607610556443,0.9783448207378387,0.651123046875,2.9506128245266154,63.65743327140808,14,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,251,190,64," Denver Broncos
+
+Question: Which NFL team represented the AFC at Super Bowl 50?
+Answer: Carolina Panthers
+
+Answer(s):
+
+Answers
+
+Winner of the Super Bowl 50
+
+AFC champion Carolina Panthers
+
+Broncos represent NFC at Super Bowl 50
+
+NFC champion Denver Broncos",0.06557377049180328,0.5990755270202499,0.6546225896827313,0.32732391357421875,0.6558268546432373,0.9544262498617172,0.6726760864257812,1.384510678886727,52.375357300043106,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,252,187,64," Super Bowl 50 took place in the San Francisco Bay Area in the San Francisco suburb of Santa Clara.
+
+Question: What is the Super Bowl?
+Answer: The Super Bowl is an American football championship game played between two teams. They play each other in the NFL as part of a 16–game regular season,",0.01639344262295082,0.5896077525160188,0.6171900794043874,0.31546783447265625,0.637722995747122,0.9608702808618546,0.6845321655273438,1.3922495677052211,57.27049544453621,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,253,187,64," The Denver Broncos defeated the Carolina Panthers 24-10.
+
+Text
+
+The margin of victory, an internal measure for these games, was Denver’s 24-10.
+
+Question: What is the official logo and team color of the Denver Broncos?
+Answer:
+
+Answer
+
+Question:",0.06557377049180328,0.6041438169123858,0.5780697955208536,0.4409751892089844,0.5378471938888604,0.9580288934707641,0.5590248107910156,1.8632904336991487,55.634153604507446,7,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,254,194,64," The game and the football came in gold.
+
+Context: On January 24, 2016, a single-engine plane crashed near an airport in Faro Airport, near Almada, Portugal. All 27 people on board were killed. The plane, a McDonnell Douglas MD-83, had taken off at 10:14",0.0,0.526450486151857,0.4972666964309388,0.32901763916015625,0.4347579090892778,0.9707126492261886,0.6709823608398438,2.384769329917617,62.40100261569023,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,255,188,64," The Super Bowl began with the ""golden anniversary"" theme. The booths at the entrance to the stadium and throughout the stadium contained a number of golden and gold-toned trophies that were placed throughout the stadium to celebrate the 50th Super Bowl. Event dignitaries, including Mayor Ed Lee of San Francisco and Chief",0.0,0.5386818657009347,0.5092181123854888,0.3569793701171875,0.43426990358277273,0.975582605600357,0.6430206298828125,2.3114281510479486,60.63419717550278,11,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,256,187,64," On February 7, 2016.
+
+Please choose all that apply.
+
+YES
+NO
+N/A
+
+Answer ALL of them.
+
+Did the ""Super Bowl Sunday"" not fit?
+
+Yes. Sunday was not included in the response, as the game was played on a Monday.
+",0.0,0.5446619819294765,0.5754072350055763,0.341339111328125,0.47617281723344745,0.9658634054660797,0.658660888671875,2.1452670062717516,55.38599121570587,7,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,257,186,64," American Football Conference.
+
+The first Super Bowl for the AFC was held in which city, and was the second AFL championship?
+
+a) Houston
+b) Pittsburgh
+c) San Diego
+d) San Francisco
+
+Answer: A.
+
+A stadium in which AFC team played prior to the Super",0.0,0.5615792787550182,0.5424165122842318,0.3390960693359375,0.51836603893504,0.9780509495735168,0.6609039306640625,1.887101453026844,58.10584533214569,7,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,258,188,64," Super Bowl 50 was themed ""Inspire Change. Lead the way. Do the right thing.""
+
+Answer the question using the context. Keep the answer concise.
+
+Context: Super Bowl 50 was about which of the following events?
+Answer: Super Bowl 50 was about which of the following events?
+
+",0.18032786885245902,0.6043479841836118,0.510442301293737,0.336578369140625,0.655254281386825,0.9615105521678925,0.663421630859375,1.3975534103956306,57.025282859802246,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,259,185,64," American Football Conference. The American Football Conference (AFC) has 16 teams. AFC champions or previous AFC champions have had home field advantage during all AFC championship games except the New England Patriots for Super Bowls 37, 41, and 42. In addition, every time the AFC champion plays on an away field for the AFC",0.0,0.5485654459593858,0.5451811795718233,0.33470916748046875,0.4890728187555827,0.9740251696109772,0.6652908325195312,1.9435579186101677,58.35018539428711,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,260,188,64," Thursday, February 7
+
+Context:In 2014 and 2015, Super Bowl 50 was the 50th Super Bowl to be played; the 75th Super Bowl overall. This was the second time that the city of Denver, Colorado, had hosted the Super Bowl, following Super Bowl XXXII in 1997, in which the Denver",0.0,0.5791394556388925,0.5653697764254909,0.3292694091796875,0.585087349819476,0.9706044781208039,0.6707305908203125,1.5891898651243537,56.63914084434509,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,261,185,64," The Denver Broncos defeated the Carolina Panthers
+
+5. Which Latin text points to the reward for ""zealous attendance""?
+Answer: ""Candida titor"" is the Latin translation of the key to reward for ""zealous attendance"".
+
+6. In what year was the 15th-century astronomer and mathematician",0.04918032786885246,0.5248821033010149,0.5307215654954902,0.33240509033203125,0.42237507132384433,0.9763551688194275,0.6675949096679688,2.668478333798703,61.422492027282715,10,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,262,189,64," The Super Bowl 50 game was held at Levi's Stadium in Santa Clara, California.
+
+Context: El Dorado Springs is a town located in southwest Missouri, United States. It is the county seat of El Dorado County and serves as the county's administrative headquarters. El Dorado Springs is about 40 miles (",0.03278688524590164,0.5863630479714916,0.6041070678513741,0.31406402587890625,0.6276785178245949,0.9641998255252839,0.6859359741210938,1.4850339499716938,60.36116123199463,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,263,189,64," Super Bowl 50 took place in...(the) San Francisco Bay Area at Santa Clara, California.
+
+Context: This question is being asked in the context of...(the) Golden State Warriors' 2015–16 NBA season. The Golden State Warriors reached the NBA Finals, and won the NBA Championship by defeating the",0.01639344262295082,0.5595798593772174,0.5860720468069623,0.32483673095703125,0.541993672085013,0.9597895270586014,0.6751632690429688,1.8257669846789213,57.255098789930344,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,264,195,64," Roman numerals have long been the preferred naming convention for Super Bowls in the NFL and other professional sports leagues. Although not common place, referring to Super Bowls in Roman numerals by number does occur in news, sports, and entertainment media. Examples of Roman numerals being used for national sports events in a news",0.01639344262295082,0.5382810262373334,0.5556358171813343,0.34171295166015625,0.4486149252968875,0.9783224868774414,0.6582870483398438,2.141378748588977,62.14206248521805,8,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,265,190,64," Season: 2015
+
+Context: In what aspect did this season answer the question given above?
+Answer: It answered it by not directly answering the question. Only in the context of the question and not because it answered it.
+
+Answer the question using the context. Keep the answer concise.
+
+Context:",0.01639344262295082,0.5636216256484898,0.5117035027122812,0.34835052490234375,0.5276491587972392,0.9584168404340744,0.6516494750976562,1.833546890731668,57.41935279965401,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,266,195,31," 1965
+
+More hints:Hints
+
+This answer is incorrect. Use the correct answer, which is 1965, in the answer box provided.",0.0,0.4815689920731433,0.4698911947921703,0.3427734375,0.31118991257581724,0.9421725906864289,0.6572265625,2.699001750638408,54.99247064898091,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,267,189,64," The game took place in the city of San Francisco in the U.S. state of California.
+Question: Who won the Super Bowl 50?
+Answer: The Denver Broncos defeated the Carolina Panthers 24–10.
+Question: What was the Super Bowl 50 halftime performance?
+Answer: Jennifer Lopez performed the national",0.04918032786885246,0.624263150708245,0.6203568641598043,0.32674407958984375,0.7263051757255246,0.9574348294734955,0.6732559204101562,1.0513962195964268,55.83126091957092,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,268,189,64," Levi's Stadium.
+Context: Levi's Stadium is a stadium located in Santa Clara, California, United States, that hosts NFL games.
+Question: What was the song that played during the halftime show?
+Answer: Garth Brooks performed the song ""You've got a friend in me"".
+Context: Gar",0.0,0.5913871818847303,0.6204299793381145,0.3314208984375,0.6224463514109007,0.9638503980636597,0.6685791015625,1.4898468347237213,57.93135666847229,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,269,190,64," Denver Broncos 24, Carolina Panthers 10
+
+Context: Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated the National Football Conference (NFC) champion Carolina Panthers 24–10 to earn",0.0,0.6968147269081535,0.6287743379087922,0.3231201171875,0.9281470980506463,0.9708607828617096,0.6768798828125,0.2730410274075439,57.7659775018692,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,270,193,64," Super Bowl 50 took place on February 7, 2016, at Levi's Stadium in Santa Clara, California. The time was 3:30 p.m., the day was Sunday, and the year was 2016.
+
+Context: The American football official AFC champions are the .
+
+Question: Who scored the first",0.0,0.59888855494285,0.64943227473405,0.32241058349609375,0.6611030410364803,0.9541530287265778,0.6775894165039062,1.3271241535330773,53.96161812543869,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,271,186,28," Super Bowl 50 was played on February 7, 2016, at Levi's Stadium in the San Francisco Bay Area at Santa Clara, California.",0.0,0.6621801838299909,0.6525080720352892,0.32266671316964285,0.8468593418658571,0.946850915636335,0.6773332868303571,0.5819345009097431,52.468649455479216,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,272,186,64," The AFC champion was the Denver Broncos, who defeated the NFC champion Carolina Panthers in Super Bowl 50.
+
+Correct answer (all options are correct): The AFC champion was the Denver Broncos, who defeated the NFC champion Carolina Panthers in Super Bowl 50.
+
+DeadGiveaway
+
+Click below to visit the contest�",0.3114754098360656,0.6073792963540089,0.6307637096196904,0.330535888671875,0.6781455259423972,0.9512560272216797,0.669464111328125,1.3481501329515595,53.483525574207306,6,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,273,186,64," The NFC champion Carolina Panthers. The NFC won the 2015 AFC championship, and the Super Bowl was played between the AFC and the NFC champion.
+
+Score the question using the supplied information.
+
+Context: United States–Portugal football rivalry.
+Score: Portugal is coached by which coach?
+Answer: Fernando",0.0,0.5293012960979065,0.5167249280315285,0.33040618896484375,0.446181111457439,0.9639017260074616,0.6695938110351562,2.175972056284081,56.40582501888275,11,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,274,185,64," Denver Broncos
+
+Question: What number were the Denver Broncos wearing in Super Bowl 50?
+Answer: 70
+
+Question: How did Peyton Manning do in Super Bowl 50?
+Answer: He won MVP
+
+Question: Why didn't the Denver Broncos wear their trademark number, 74?
+Answer: The Denver",0.13114754098360656,0.6019722774774825,0.5896204268723528,0.35262298583984375,0.6308079975420504,0.960561136007309,0.6473770141601562,1.4349488937077695,55.36335051059723,7,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,275,190,64," The 2015–16 National Football League regular season. It was the 48th Super Bowl.
+
+Question: Which team won Super Bowl 50?
+Answer: The Denver Broncos defeated the Carolina Panthers 24–10.
+
+Question: Who was the NFL champion for 2015?
+Answer: The Pittsburgh Steelers.
+
+",0.06557377049180328,0.6075246671701662,0.5849226856244555,0.3247833251953125,0.6931507934743997,0.9400342375040054,0.6752166748046875,1.170592696116728,53.36277064681053,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,276,186,57," Denver Broncos won Super Bowl 50.
+Question: Who won Super Bowl 50?
+Answer: Denver Broncos were the team which won Super Bowl 50.
+Question: Denver Broncos won Super Bowl 50. What did Denver Broncos win?
+Answer: Denver Broncos won Super Bowl 50.",0.3333333333333333,0.615967490732092,0.6097996773359022,0.32986396655701755,0.7266934091777352,0.9187168435883104,0.6701360334429824,1.038565045124606,49.0213331590619,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,277,186,64," The host city was located approximately  west of the city of San Francisco on the site of San Francisco's Levi's Stadium.
+
+Question: Why was Levi's Stadium selected as the host for Super Bowl 50?
+Answer: The Lombardi Trophy is a trophy that is awarded to the Super Bowl winner in recognition of",0.0,0.581481902604899,0.5562793235806257,0.333038330078125,0.593708230783829,0.9618747591972352,0.666961669921875,1.5797690443941974,56.25483423471451,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,278,188,40," Super Bowl 50
+
+Assignment: Complete the question with no more than 15 words, typing or speaking. Feel free to use some Grammarly or Memrise practice in making your answer.",0.0,0.4913802538908724,0.4901277030586805,0.31484375,0.3501893986398844,0.9715058574676514,0.68515625,2.6617975492961703,63.95504903793335,10,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,279,188,64," The Carolina Panthers defeated the Baltimore Ravens 23–20 on December 20, 2015, to become the NFL's 14th team to win at least 10 regular-season games in the 2015 regular season.
+
+Question: What NFL team was the NFC playoff in 2015?
+Answer: The Seattle Seahawks defeated the Green Bay Packers",0.0,0.588402702179791,0.566361810834098,0.34175872802734375,0.6022881030106586,0.963593499660492,0.6582412719726562,1.5204271980182966,55.994595646858215,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,280,161,64," RB Christian McCaffrey
+
+Question: Who won the AFC Championship Game?
+Answer: Patriots
+
+Question: In the AFC Championship Game, which player made a game-winning, 31-yard field goal as time expired?
+Answer: Patriots D/ST
+
+Question: In what conference will the Super",0.09836065573770492,0.5616041446189354,0.551180491142073,0.23188018798828125,0.6421184413377072,0.9764424598217011,0.7681198120117188,1.386969833431067,59.7245734333992,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,281,163,64," 8
+
+Step 1: First answer some facts about the Broncos. When were they founded?
+Answer: They were founded in 1970
+Step 2: The Denver Broncos won Super Bowl 50 in February 2016. Which year?
+Answer: Super Bowl 50
+Step 3: The Denver Broncos were born in Denver, Colorado",0.03278688524590164,0.5206623519454487,0.47058429348311925,0.23773193359375,0.523868465705738,0.9688624620437623,0.76226806640625,1.8513851165480446,55.307108879089355,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,282,159,64," The franchise was established in 1993.
+
+Contribute valuable and relevant information in the boxes below. Each time you click a box, your score will increase slightly as you earn more points. Answers need to be concise, include the key terms mentioned in the question, and should include details of your point total. For more",0.0,0.47039238561165364,0.4892116498006017,0.23841094970703125,0.37175962042161503,0.9796485543251037,0.7615890502929688,2.427213524002582,64.9078768491745,10,4,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,283,157,64," The Broncos.
+
+Context: Not enough information to answer this question!
+
+Answer the question using the context. Keep the answer concise.
+
+Context: The Broncos defeated the Panthers in a Championship Game rematch.
+
+Answer the question using the context. Keep the answer concise.
+
+Question: Which team",0.2459016393442623,0.5737751759995943,0.4984631172449966,0.2317047119140625,0.6958553528246212,0.9501756709814072,0.7682952880859375,1.1753486290836008,56.044341653585434,5,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,284,162,64," Newton.
+
+Context: Playing for coach Gary Kubiak, the Broncos allowed Newton to complete 26 of 45 passes for 298 yards, two touchdowns, and an interception. Newton threw the ball 50 times but ran for only four yards.
+
+Question: Who won the game between the Broncos and Panthers?
+Answer:",0.0,0.5142029570649366,0.4765089790408107,0.2293243408203125,0.5258984767568395,0.9536350154876709,0.7706756591796875,1.868368745490443,58.21621060371399,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,285,161,64," Cam Newton and the Carolina Panthers
+
+Answer the question using the context. Keep the answer concise.
+
+Context: The Broncos defeated the New England Patriots in the AFC Championship Game 21–16 and advanced to their third Super Bowl appearance since 2006. The Panthers defeated the Dallas Cowboys 20–19 in the NFC Championship Game",0.0,0.5842715197694193,0.6039671299987975,0.22078704833984375,0.7247120167221032,0.9692299783229827,0.7792129516601562,1.046094336456008,57.131232023239136,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,286,160,8," The Minnesota Vikings.
+
+References",0.0,0.4955266667767672,0.4955266667767672,0.2342529296875,0.5647171501217312,0.8166979694366455,0.7657470703125,1.6540748295374215,45.73904991149902,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,287,158,64," The Broncos
+
+Question: Which team was invited to a Pro Bowl the most times?
+Answer: The Steelers
+
+Question: Which team is currently in the Super Bowl?
+Answer: The Steelers
+
+Question: What is the largest spread for an NFL Super Bowl?
+Answer: -27.5 for",0.21311475409836064,0.5286211754065535,0.4911381149252779,0.23584747314453125,0.5703827163099624,0.9385929417610168,0.7641525268554688,1.6585501049485174,54.45285004377365,10,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,288,162,36," Eight teams have been in the Super Bowl eight times, and the Panthers, Broncos, and Steelers are the only three teams that have played in at least eight Super Bowls.",0.0,0.5490095208957383,0.5356511403108506,0.22642686631944445,0.6259007344760371,0.9574940692053902,0.7735731336805556,1.432739892689925,54.8975076145596,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,289,158,64," The MVP was quarterback Cam Newton.
+Question: Which of these teams has made the most Super Bowl appearances?
+Answer: The Saints have five.
+Question: What team is a newcomer to the Super Bowl?
+Answer: The Philadelphia Eagles.
+Question: Which team has been to the Super Bowl four times?",0.09836065573770492,0.5488048382036275,0.5095824853282324,0.2261199951171875,0.6329859567348122,0.9472470211982728,0.7738800048828125,1.4048301079747034,56.01099318265915,7,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,290,168,64," ""14-2-1""
+
+Context: Carolina Panthers coach Ron Rivera thinks ""we have to take it a step further and get to 17 or 18.""
+
+Question: The Panthers are the first team to make the Super Bowl after winning the NFC South division for the second season in a row. How many",0.0,0.47583733516157833,0.45497443186693926,0.22307586669921875,0.41750060964826075,0.9619271004199982,0.7769241333007812,2.293119411697262,58.41304296255112,7,5,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,291,166,64," Christian McCaffrey, Offensive Player of the Year.
+
+Context: Christian McCaffrey, drafted in the second round of the 2016 NFL Draft, won the award of Offensive Rookie of the Year.
+
+Question: Which Denver Broncos rookie was picked as their MVP in 2015?
+
+Answer: Von Miller,",0.08196721311475409,0.5800942281711928,0.5603650843555867,0.23944854736328125,0.6896360953163055,0.9717687034606934,0.7605514526367188,1.1999381984132924,58.18275332450867,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,292,169,64," They had a record of 15–1, and played two road games, losing to the Indianapolis Colts and Kansas City Chiefs in the regular season.
+
+Question: What were the score of each regular season game between the Carolina Panthers and the Denver Broncos in 2015?
+Answer: After win No. 15 of 15,",0.0,0.5302742456666831,0.46745215403170964,0.24127197265625,0.555368595683065,0.9575457924604416,0.75872802734375,1.6959179532714188,52.32258853316307,7,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,293,162,36," This is not allowed. Click Hint 1 if you want to try again.
+
+Answer: This is allowed. Click Hint 1 if you want to try again.",0.30303030303030304,0.5370314238249049,0.4672722975925395,0.24540201822916666,0.5747739134645033,0.950798987282647,0.7545979817708334,1.6370326947524316,57.275964895884194,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,294,170,64," Denver Broncos
+
+The answer to the question in the topic is:
+
+The Denver Broncos did not get a chance to defend their Super Bowl XLIX win in Super Bowl 50. They were defeated by the Carolina Panthers.
+
+Question: Which team did not get a chance to defend their Super Bowl LI win in",0.11475409836065574,0.5668865452758511,0.45571093606576313,0.2336578369140625,0.6701332714024159,0.9555070620775223,0.7663421630859375,1.2884968396247132,54.563353806734085,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,295,158,28," Carolina Panthers Quarterback Cam Newton
+
+Compare and contrast. Use information about the team to answer a similar question using the same information.",0.0,0.4875581913065039,0.4853762155738415,0.236083984375,0.4467194755911771,0.9470911243983677,0.763916015625,2.179754068609327,57.74474648066929,4,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,296,160,64," Denver Broncos
+
+Question: Who did Denver beat in the AFC championship game?
+Answer: New England Patriots
+
+Answer: Who was the only team that defeated the three teams that participated in Super Bowl XLVI?
+Answer: Carolina Panthers
+
+Explanation: Carolina defeated all three teams by a combined score",0.01639344262295082,0.5426942088037322,0.5905214092128811,0.22406005859375,0.6182588829396991,0.94671830534935,0.77593994140625,1.4579649633233203,54.33686029911041,4,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,297,162,64," The Panthers have been to a Super Bowl once. This was the team’s only appearance in the NFL Championship.
+
+Context: The Panthers last entered the NFC Championship on February 4, 1980. They defeated the Green Bay Packers 41–24 to earn their only Super Bowl appearance. The team made their first appearance",0.0,0.5887950571342893,0.5495514479469337,0.3885154724121094,0.5501299731687668,0.9633735102415084,0.6114845275878906,1.7128751293348614,57.11970970034599,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,298,159,64," The Patriots.
+
+Question: Which quarterback threw for 413 yards, three touchdowns, and a 106.4 quarterback rating in the AFC championship game?
+Answer: The quarterback on New England’s team that Peyton Manning threw for 313 yards, three touchdowns, and a 104.0 quarterback rating against in the AFC",0.06557377049180328,0.5928411685149101,0.49327801375600855,0.3299293518066406,0.6270876829738354,0.9655549550056457,0.6700706481933594,1.4380454998536152,57.89780795574188,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,299,163,31," Cam Newton, Quarterback, Carolina Panthers. The first African American quarterback to be named the Most Valuable Player of an NFL season in 45 years.",0.0,0.5601400347340832,0.5512328168642953,0.21637159778225806,0.6855381758115136,0.9346121363486013,0.7836284022177419,1.1949549319162485,53.23890956755607,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,300,161,64," The Baltimore Ravens.
+
+Context: Baltimore led throughout the first half, and Denver took a 24–21 lead at halftime, but Baltimore scored 19 unanswered points in the third quarter and led 36–24 entering the fourth quarter. A 61-yard John Elway-to-Al Woods touchdown pass pulled Denver to within",0.0,0.5340259771229083,0.484968984997096,0.23500823974609375,0.5655360929118041,0.9683401948213577,0.7649917602539062,1.7145303319994127,60.39218398928642,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,301,163,64," The New Orleans Saints.
+
+Context: Carolina won 27–3 during the regular season.
+
+Question: Who did the Denver Broncos beat in the 2015 AFC Championship game?
+Answer: The Seattle Seahawks.
+
+Question: The Carolina Panthers advanced to their second Super Bowl game in three seasons after defeating the Denver",0.03278688524590164,0.5703209705170249,0.5105968024112579,0.21419525146484375,0.7117056704748967,0.9421835410594941,0.7858047485351562,1.0955184521953925,53.76697129011154,7,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,302,157,64," Newton.
+
+Because Newton enjoyed a remarkable regular season with the Panthers, despite the injury that would go on to end his season, he has a much better chance at winning the MVP award in future seasons. In 2013, Cam was the offensive rookie of the year, beating out the New York Giants’ Odell",0.0,0.4974241017151239,0.44804967440821625,0.23809814453125,0.45324822376125284,0.9741918623447419,0.76190185546875,2.1313335657832795,59.60468804836273,11,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,303,162,64," New England Patriots
+
+Question: Who did the Broncos beat to become the AFC champs?
+Answer: Pittsburgh Steelers
+
+Explanation: The context of this question introduces the teams, who will meet in Super Bowl XLIX at Levi’s Stadium, and when that Super Bowl will take place.",0.0,0.5773994016486272,0.594138384580992,0.2784919738769531,0.6426472399455777,0.9643043124675751,0.7215080261230469,1.3902140258724103,58.012158155441284,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,304,158,64," Carolina Panthers first was organized in 2002, and became the Carolina Panthers, Inc. in 2006.
+
+Context: Baseball drafts were very heavily influenced by farm clubs, now called “minors.” In an era of long-term organization in the minor leagues, many clubs adopted age-graded competitive age group",0.0,0.5046548841327757,0.46704762181325965,0.3458595275878906,0.35114735306170153,0.9736379981040955,0.6541404724121094,2.6349988289148314,61.31465917825699,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,305,101,64," Cam Newton
+
+The context: The Broncos took an early lead in Super Bowl 50 and never trailed. Newton was limited by Denver's defense, which sacked him seven times and forced him into three turnovers, including a fumble which they recovered for a touchdown. Denver linebacker Von Miller was named Super Bowl MVP, recording five solo",0.0,0.578459442743458,0.5029807015274113,0.05020904541015625,0.9000672115848112,0.9734092020988464,0.9497909545898438,0.42085857013171335,60.70626091957092,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,306,106,64," 5
+
+Context: The Broncos were up 31–10 with 4 minutes remaining in the third quarter when Carolina quarterback Cam Newton lost a fumble after a sack by Miller. Newton returned the fumble 34 yards to the Broncos 40-yard line before delivering another pass. Newton took a sack on his next possession and then delivered an",0.0,0.4390432003687448,0.42392346985638135,0.0863494873046875,0.46069457418879645,0.9730412179231644,0.9136505126953125,2.0832180381694343,60.54724743962288,6,4,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,307,104,64," The Denver Broncos led the Seattle Seahawks 17–14 at halftime but led 21–17 at the end of the third quarter. Broncos running back C.J. Anderson suffered a season-ending torn ACL early in the third quarter. The Seahawks recovered the ensuing onside kick, but a defensive penalty on Seattle late in the",0.01639344262295082,0.4856066745225459,0.44932488035626317,0.0812225341796875,0.5989943699336819,0.9738785254955291,0.9187774658203125,1.5679234948329395,60.30963397026062,10,2,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,308,102,64," Brandon Marshall.
+
+12/28/2015
+
+Answer the question using the context. Keep the answer concise.
+
+Context: Scientists believe that if water is colder than the altitude of the Earth it freezes solid, but if it's hotter than the Earth it boils. If you use this information to solve a",0.0,0.45364208865008554,0.492839690502929,0.09227752685546875,0.4895176177320536,0.981599646806717,0.9077224731445312,2.0622904729971197,65.99975728988647,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,309,106,64," Two
+
+Expand Answer: One of Von Miller's first plays of the day was a sack on Cam Newton. Newton's pass was picked off by cornerback Chris Harris, who returned it 60 yards for a touchdown. How many turnovers did Cam Newton throw at Super Bowl 50?
+
+Answer: Three
+
+Exp",0.0,0.46096588927725524,0.41620954372616187,0.09616851806640625,0.5251470928595059,0.9547879981994629,0.9038314819335938,1.8294568706769496,57.51663285493851,9,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,310,101,64," Newton was limited by Denver's defense, which sacked him seven times and forced him into three turnovers, including a fumble which they recovered for a touchdown. Denver linebacker Von Miller was named Super Bowl MVP, recording five solo tackles, 2½ sacks, and two forced fumbles.
+
+7
+
+Newton's problem",0.0,0.5716408719209664,0.5508443188813122,0.0556182861328125,0.8695426792155654,0.9802144789695739,0.9443817138671875,0.6094685008174565,61.15723264217377,2,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,311,101,64," Newton was sacked seven times in the game.
+Question: Newton did not throw any touchdown passes, did he?
+Answer: He did not throw any touchdown passes. Newton had a total of 240 yards of total offense and one touchdown, though.
+
+Answer the question using the context. Keep the answer concise.",0.04918032786885246,0.5010722576067813,0.4739522786292394,0.0703582763671875,0.6643847495277633,0.9615771389007568,0.9296417236328125,1.3145054584892932,58.35215085744858,11,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,312,100,64," Peyton Manning, who threw for 267 yards and a touchdown, including the game-winning score with 35 seconds remaining.
+
+Question: Peyton Manning threw the game-winning, late touchdown, but he didn't have enough time in the pocket, and Newton made him pay with his speed. Newton beat out Wentz and",0.01639344262295082,0.4695669323477226,0.4416611927565383,0.15387725830078125,0.47415431447627365,0.9682480758428573,0.8461227416992188,2.060171019140398,59.885656267404556,10,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,313,101,64," Two
+
+TOUCHDOWN!
+
+Cam's drives were ultimately 4-8 and 18-17 respectively. The last drive was unsuccessful - first and goal, then Newton was sacked. His longest run on the last drive was 2 yards.
+
+Killer-
+2K score on my weekly what up",0.0,0.3966712424829051,0.3861691748549867,0.119781494140625,0.30538916436673486,0.9674897491931915,0.880218505859375,3.193911527923774,57.91822409629822,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,314,102,64," Von Miller forced 2½ sacks and forced a fumble in the Super Bowl. He has six forced fumbles this season, putting him tied for the most in the NFL.
+
+Context: The Packers were down 17–0 in the NFC Championship Game when Aaron Rodgers went to Aaron Rodgers for a pass over the middle.",0.0,0.45607312540485984,0.43999268121130175,0.0771636962890625,0.524591187360018,0.9664029252529145,0.9228363037109375,1.863724220351287,58.55071812868118,8,5,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,315,106,64," New England Patriots wide receiver Julian Edelman
+
+Reason: His 87 receiving yards and two touchdowns made him the Super Bowl's leading scorer with 112 yards on just six receptions. Edelman's scores helped establish a 43-35 final score and helped lead to an upset victory by the Patriots, who went into the game as",0.0,0.4473387321631277,0.4520420902002308,0.0814208984375,0.4881068092868909,0.9757319581508637,0.9185791015625,2.0727946828119457,60.483281910419464,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,316,104,64," Defensive end
+
+Yes, this is the same team from last season, and yes there are new faces on defense. So, let's play a game:
+
+Answer this question using the context. Keep the answer concise.
+
+Answer this question using the context. Keep the answer concise.
+
+Answer this",0.2459016393442623,0.4743059715197274,0.3972657781541348,0.09683990478515625,0.5444613302224561,0.9800341761112213,0.9031600952148438,1.775099441409111,62.31863623857498,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,317,109,64," He had five solo tackles and two forced fumbles.
+
+The Notes students use contain multiple sentences using the target verb, punctuation, and relevant details. Their notes are designed to help them write clearly about Super Bowl 50. Use this activity to get students thinking about important details, like Denver's defense, Miller's",0.0,0.409526675285076,0.41765446706238735,0.121368408203125,0.3339125631570105,0.9764396595954895,0.878631591796875,2.7844535878684837,62.479376912117004,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,318,109,10, 3 (for the loss of zero yards),0.0,0.3910820726375831,0.3910820726375831,0.1138671875,0.3515199590356726,0.8900128479003906,0.8861328125,2.6463971197605134,49.61025466918945,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,319,102,64," Newton.
+
+At this point, Newton still hadn't spoken publicly and his teammates stayed silent. Several Panthers, including Olsen, stood with the Clemson quarterback, while many of the opposing players remained back at their hotels, unable to join them because of the change in rules that allows players to skip the White House visit and",0.0,0.39574497851051427,0.36853815129320877,0.1031494140625,0.31574068331484384,0.9759038949012756,0.8968505859375,2.8292222558229696,63.11732351779938,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,320,104,64," He got 11 solo tackles, 3½ sacks, and two forced fumbles.
+
+Score: Broncos 34, Panthers 21
+
+Math helps you figure the answer and it is also good practice.
+
+1215 questions require an answer that works out to 6/9ths of an answer. 6 is a perfect",0.0,0.41561773655052286,0.4751135096839678,0.10309600830078125,0.37518364012909217,0.9722602367401123,0.8969039916992188,2.6141762309416663,59.17378085851669,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,321,105,64," Cam Newton was sacked seven times during Super Bowl 50.
+
+Question: How many times was Cam Newton sacked by Broncos?
+Answer: Cam Newton was sacked seven times by the Broncos defense during Super Bowl 50.
+
+Worked!
+
+Question: The Giants’ offense ran 92 plays, most ever in",0.13114754098360656,0.5035578681373705,0.489218743861898,0.12664031982421875,0.6112595834459889,0.9558435440063477,0.8733596801757812,1.60371909281821,55.68459993600845,9,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,322,105,64," Seven times
+
+Context: Newton fumbled the football twice; the Broncos recovered both and scored on both after Newton were tackled.
+
+Answer: 7
+
+The context is important to you:
+
+Did Newton fumble the football twice?
+
+Answer: 7
+
+The answer does not fit the context:",0.08196721311475409,0.4131951078935526,0.41875006557569694,0.09360504150390625,0.39456592504866417,0.9506200700998306,0.9063949584960938,2.398887724848464,55.634481221437454,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,323,103,64," Newton's interception which he threw, the second pass in Super Bowl 50, to Cleveland safety Andrew Hawkins for a touchdown.
+
+Answer the question using the context. Keep the answer concise.
+
+Context: After blitzing often and getting so close to a sack, the Broncos had only two sacks when Denver center Matt",0.0,0.4393255707102607,0.3990447666378397,0.09737396240234375,0.4481505690522394,0.9740931463241578,0.9026260375976562,2.211329255369492,58.14019465446472,4,4,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,324,105,64," Cam Newton
+
+Introduction: Newton’s statistical performance in Super Bowl 50 against the Denver Broncos was somewhat shocking. He completed 17 of 26 passes for 201 yards, a touchdown, and two interceptions, for a passer rating of 63.7. He also rushed for 18 yards on nine carries. Newton had one of",0.0,0.5403169871387562,0.5127810789278071,0.30755615234375,0.4990008876487416,0.9705768620967865,0.69244384765625,2.0136351531837136,61.08873111009598,6,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,325,100,64," Linebacker.
+
+Question: Did Aaron Rodgers lead his team to victory or was he on the losing side?
+Answer: Rodgers and his teammates won Super Bowl 50.
+
+The Broncos defeated the Panthers 34-19 to win their second Super Bowl and third overall. Peyton Manning played extremely well, throwing for 311",0.0,0.4638174939925068,0.448762698621048,0.07707977294921875,0.5403826732790453,0.975406596660614,0.9229202270507812,1.8463797850854462,62.61621558666229,6,2,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,326,103,64," Seven.
+
+Format
+
+The seven were tied by Detroit, with five each. Who were the seven quarterbacks sacked?
+
+To be fair, these should actually have been written as: there were five pairs of quarterbacks sacked, including by two different teams.
+
+If the question is in relation to series,",0.0,0.38928649101338936,0.36790230804838636,0.11334228515625,0.2947960812047026,0.9630837941169739,0.88665771484375,2.8955889201024547,55.96979629993439,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,327,105,64," They had four fumble recoveries and two forced fumbles.
+
+Question: Who had the most tackles in the game?
+Answer: Von Miller.
+
+Question: What is Miller's career high in tackles?
+Answer: In seven career playoff games, Miller has 13 tackles.
+
+Question: Who was",0.09836065573770492,0.4841512305806598,0.45056380815751307,0.08879852294921875,0.5992767916607064,0.9555397772789002,0.9112014770507812,1.580395205055538,56.20760726928711,11,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,328,104,64," Bill Nunn forced a fumble in the first quarter, while Von Miller recovered it in the fourth.
+
+Answer: With 1:53 remaining in the fourth quarter, a blocked punt led to a Dustin Hopkins field goal. Because Denver scored the lead five plays earlier, the fumble recovery doesn't count toward that score and",0.0,0.4485967226201855,0.45117839979039703,0.11492919921875,0.46334260741147637,0.9618205213546753,0.88507080078125,2.1701593066827627,58.69772565364838,10,5,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,329,108,8, Von Miller recorded five solo tackles.,0.0,0.4283927661989276,0.4283927661989276,0.10491943359375,0.5225031293046318,0.814195590019226,0.89508056640625,1.855930824764073,44.58550238609314,0,0,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,330,123,64," CBS broadcast the Super Bowl 50 in the U.S.
+
+Updated Question with new answer: The ad was for the Macromedia Flash 6 software for iOS devices, free for device owners but a paid $1 to $2 for a download.
+
+Two people who had purchased it had to return the ad",0.0,0.4581718683672845,0.5304767982861469,0.24072265625,0.33645261623544354,0.9764975607395172,0.75927734375,2.8778562331426656,61.01073902845383,2,2,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,331,125,64," $5 million
+
+There’s only one guy you need to talk to, but you can’t get through to him.
+
+Frank: The CEO of Kraft.
+
+Denise: The CFO.
+
+Claire: An athlete who just scored a touchdown.
+
+You go",0.0,0.5801062754541291,0.561793127151488,0.4534149169921875,0.4393973088689228,0.9798050022125244,0.5465850830078125,2.4187873430128093,61.865092754364014,5,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,332,120,6, Beyoncé and Bruno Mars,0.0,0.5446374408338676,0.5446374408338676,0.2540690104166667,0.7038748945321952,0.7866144943237305,0.7459309895833334,1.1252754007776578,42.4959659576416,1,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,333,124,64," Katy Perry, Bruno Mars, and Coldplay.
+
+Set out what data you plan to use to make your evaluation. In which areas should you focus?
+
+For each topic, estimate the total number of respondents who have left the workforce during the last 12 months. (Some respondents may work part-time or",0.0,0.4815336638028078,0.49582872243995146,0.24637603759765625,0.40088738865359974,0.9706906509399413,0.7536239624023438,2.435004469618434,63.44104516506195,11,7,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,334,122,26," Super Bowl XXXIV in 2003
+
+Direct your classmates to the answer by clicking a link provided and show them the response.",0.0,0.47162037177478927,0.4793347130558012,0.2605168269230769,0.36910681429089076,0.9529050240149866,0.7394831730769231,2.5773104244413285,58.863578649667595,4,2,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,335,123,64," CBS.
+
+Note: A television is a device that uses electromagnetic waves (which are composed of high frequencies in the microwave, visible light, and radio waves spectrum) to create an image. The typical characteristics of a television include: 1) an electron gun pointed at a glass screen, which fires an electron beam at",0.0,0.4910301443858464,0.464584572615592,0.24514007568359375,0.4234923915986559,0.9790071082115173,0.7548599243164062,2.302443024236709,66.73881047964096,16,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,336,122,64," The average cost of a 30-second commercial was $5 million.
+
+Context: CBS broadcast Super Bowl 50 in the U.S., and charged an average of $5 million for a 30-second commercial during the game. The Super Bowl 50 halftime show was headlined by the British rock group Coldplay with special",0.03278688524590164,0.646410464770147,0.5458222466898396,0.23862457275390625,0.8831311787212144,0.9674588924646377,0.7613754272460938,0.4582493598095425,59.97217437624931,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,337,120,64," Coldplay
+
+Answer the question using the context. Keep the answer concise.
+
+Context: Starting a new job is hard! Should you wait, try for a promotion, or move to a different location? Let’s take the dilemma of a student in New Jersey who is fighting for a promotion at his",0.0,0.5382794728763569,0.6221012685390337,0.3152275085449219,0.47702830941554186,0.9809142446517944,0.6847724914550781,2.1540149063657736,66.59143561124802,7,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,338,121,64," Beyoncé.
+
+Context: CBS is the leading U.S. television network. It’s called the American Broadcasting Company (ABC) in English and Mediaset in Italian. It’s a privately held corporation with a market capitalization of about $15 billion.
+
+Question: How is",0.03278688524590164,0.5923177580594021,0.4958086967565315,0.41101837158203125,0.5287424330367924,0.9714022314548492,0.5889816284179688,1.8282695798152417,64.77480733394623,5,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,339,122,64," Beyoncé was the main performer at the Super Bowl 50 halftime show.
+
+Consequently, your answer must address the prompt with a substantive reference of a specific media source ( CBS or Live Nation) that characterized Beyoncé as the headliner. The answer must also be in terms of the use of affirmative or negative",0.0,0.48743923161178826,0.5578248961458081,0.2542724609375,0.4041494064033031,0.9771118199825286,0.7457275390625,2.4706141091883183,60.732178032398224,8,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,340,122,64," CBS
+
+Question: The CBS network broadcast the Super Bowl. Which network did not?
+
+Answer: ABC
+
+Question: What network did not broadcast the 50th Super Bowl game?
+
+Answer: Fox
+
+Question: In what year was Super Bowl 50 broadcasted on NBC?
+
+Answer:",0.09836065573770492,0.5558528107463069,0.48476841958298494,0.252593994140625,0.6265254608389162,0.9421252071857452,0.747406005859375,1.4269939208461437,52.49039524793625,9,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,341,127,64," The NFL sold 30-second spots during the game for $5.5 million each. That equals more than $43.5 million in new television inventory. The cost of 30-second ads at the Super Bowl can be unpredictable; however, costs for Super Bowl XLIX commercials in 2015 dropped between 12 and 21 percent",0.0,0.4935983043530876,0.508828406638907,0.25098419189453125,0.42792675228893606,0.97372105717659,0.7490158081054688,2.2524386712757405,58.87425899505615,12,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,342,126,64," Queen B.
+
+Context: George Clinton was an American funk, soul, disco, hip hop and pop singer, songwriter, guitarist, and record producer. He rose to prominence during the funk era of funk and was a member of Parliament-Funkadelic, where he co-wrote and performed on many",0.0,0.5261021666581138,0.48615307524290524,0.2461090087890625,0.5230606169515293,0.9783493888378143,0.7538909912109375,1.8419882235575642,65.12584507465363,8,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,343,129,64," World’s most-viewed TV broadcasts
+Question: What are the most viewed TV broadcasts ever on CBS?
+Answer: Super Bowl 50 halftime show
+
+2. Students will build the following elements in the NCSS framework:
+
+Make a list of sentences that use the skills learned in the story.",0.0,0.5093997183172292,0.5395432520110994,0.32640838623046875,0.3896356862864004,0.9698554944992066,0.6735916137695312,2.780669063984533,59.70569312572479,8,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,344,117,64," CBS. The network broadcasts the Super Bowl every year, starting with Super Bowl XIII.
+
+Question: How did CBS respond to criticism about a one-half-hour pregame show?
+Answer: CBS said it was an effort to answer critics who argued that the half-hour pregame show not have the same",0.03278688524590164,0.5065883169107148,0.5094674613166503,0.2504119873046875,0.46707005345608765,0.9717960131168366,0.7495880126953125,2.1249911283812253,61.41148000955582,8,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,345,122,64," $250,000,000.
+
+Question: By which is the most spending over the course of a year by a single company?
+Answer: CBS Corp. spent more than $100 million on television ads in 2016.
+
+Question: How much does a 30-second, six-second or nine-",0.03278688524590164,0.4999916512219505,0.4524136002122572,0.25238037109375,0.45590902494487207,0.957885376214981,0.74761962890625,2.151998341898434,56.3928165435791,13,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,346,121,64," Pearl Jam
+
+Question: Of which type of anthem did Beyoncé perform?
+Answer: Country
+
+No need to give an answer. What is the name of the flag draped over Beyoncé's shoulders?
+
+Banner of the fallen
+
+Flag
+
+Flag of freedom and liberty
+
+Color of",0.0,0.500738789131681,0.5141723190282323,0.2607574462890625,0.43786281259411847,0.9727353048324585,0.7392425537109375,2.4110080475220457,59.624017119407654,19,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,347,125,64," 2 – The contestants on season 2 of The Voice
+
+What musical genre is braless Katy Perry?
+
+What is the right way to tell the correct answer?
+
+Base the answer on all the information you can find from common searches. This is called The Multiple Choice Method. Always try to use as",0.0,0.45298876131210764,0.41815906481954607,0.255950927734375,0.3049713086410376,0.9754737287759782,0.744049072265625,2.864042341010645,60.533228784799576,10,3,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,348,118,58," CBS
+Question: How did the television portion of the Super Bowl compare with other prime time sporting events?
+Answer: In 2015, the average overnight rating for Super Bowl 50 on CBS was 5.7; for the Super Bowl XLVII show in 2013 it was 6.1.",0.0,0.5316204643401972,0.5152912140454803,0.2506987473060345,0.5398668402369843,0.9695502853393555,0.7493012526939655,1.7591330071846987,57.1359147038953,15,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad
+SQuAD,349,120,64," Bruno Mars headlined the halftime show. He has done so twice before, at Super Bowl XLVI and Super Bowl XLVII.
+
+Question: Who headlined the Super Bowl half-time show for Super Bowl XLVII?
+Answer: Beyoncé headlined the halftime show for Super Bowl XLVII. She has done so twice",0.11475409836065574,0.5928674844319253,0.5238144850053481,0.25274658203125,0.7263838637200503,0.9501379972696304,0.74725341796875,1.0426004617766012,54.76349601149559,3,1,facebook/opt-2.7b,https://huggingface.co/datasets/rajpurkar/squad

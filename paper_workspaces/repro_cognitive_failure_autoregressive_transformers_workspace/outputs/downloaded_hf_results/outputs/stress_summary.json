@@ -1,0 +1,48 @@
+{
+  "model": "facebook/opt-2.7b",
+  "position_attention": [
+    {
+      "position": "front",
+      "span": "(1, 13)",
+      "prompt_len": 664,
+      "mean_attention": 0.014849019050598145
+    },
+    {
+      "position": "middle",
+      "span": "(321, 333)",
+      "prompt_len": 664,
+      "mean_attention": 0.012933683395385743
+    },
+    {
+      "position": "end",
+      "span": "(641, 653)",
+      "prompt_len": 664,
+      "mean_attention": 0.021945762634277343
+    }
+  ],
+  "front_middle_ratio": 1.1480889547594557,
+  "front_end_ratio": 0.6766235148923596,
+  "context_length": [
+    {
+      "context": "short",
+      "prompt_len": 104,
+      "mean_attention": 0.9410574776785714,
+      "mean_entropy": 4.148558991295951,
+      "mean_drift": 42.603904724121094
+    },
+    {
+      "context": "long",
+      "prompt_len": 1304,
+      "mean_attention": 0.89228515625,
+      "mean_entropy": 2.8140556782484056,
+      "mean_drift": 50.13678131103516
+    }
+  ],
+  "quantization": {
+    "available": true,
+    "fp16_mean_entropy": 2.660569416731596,
+    "nf4_mean_entropy": 1.9199525158270263,
+    "entropy_delta_nf4_minus_fp16": -0.7406169009045698,
+    "model": "facebook/opt-2.7b"
+  }
+}

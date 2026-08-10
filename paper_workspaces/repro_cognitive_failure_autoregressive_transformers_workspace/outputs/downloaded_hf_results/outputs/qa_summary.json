@@ -1,0 +1,52 @@
+{
+  "model": "facebook/opt-2.7b",
+  "max_new_tokens": 64,
+  "datasets": {
+    "HotpotQA": {
+      "n": 150,
+      "mean_fi": 0.505371086772573,
+      "mean_repetition_ratio": 0.035233340751180675,
+      "spearman_full": 0.2832710559819661,
+      "spearman_full_p": 0.0004438225485951954,
+      "spearman_first20": 0.1948966343014487,
+      "spearman_first20_p": 0.016849128095622484,
+      "static_flips_per_gen": 5.573333333333333,
+      "hysteresis_flips_per_gen": 2.0533333333333332,
+      "hysteresis_reduction_pct": 63.15789473684211
+    },
+    "SQuAD": {
+      "n": 100,
+      "mean_fi": 0.5265487634688921,
+      "mean_repetition_ratio": 0.03636363636363636,
+      "spearman_full": 0.3858418940858258,
+      "spearman_full_p": 7.352867334946796e-05,
+      "spearman_first20": 0.13329183675308373,
+      "spearman_first20_p": 0.1861454921697323,
+      "static_flips_per_gen": 6.03,
+      "hysteresis_flips_per_gen": 1.77,
+      "hysteresis_reduction_pct": 70.64676616915422
+    },
+    "TriviaQA": {
+      "n": 100,
+      "mean_fi": 0.42906932822033533,
+      "mean_repetition_ratio": 0.05754098360655738,
+      "spearman_full": 0.5926539128062653,
+      "spearman_full_p": 8.258343737335371e-11,
+      "spearman_first20": 0.4087429754227964,
+      "spearman_first20_p": 2.4214520809503473e-05,
+      "static_flips_per_gen": 4.78,
+      "hysteresis_flips_per_gen": 2.78,
+      "hysteresis_reduction_pct": 41.84100418410043
+    }
+  },
+  "n_total": 350,
+  "hotpot_auroc": {
+    "n": 150,
+    "severe_positive_rate": 0.3,
+    "threshold_note": "rep_ratio>=0.6; fell back to top quartile if one-class",
+    "fatigue_index": 0.6628571428571428,
+    "entropy_only": 0.7223280423280424,
+    "drift_only": 0.45291005291005293,
+    "attention_inverse": 0.44656084656084655
+  }
+}
