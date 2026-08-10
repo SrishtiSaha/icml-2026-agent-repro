@@ -1,0 +1,27 @@
+\section{Representing the Embedding Space}\label{sec:embed}
+
+\subsection{Partitioning the Embedding Space by the most Likely Next Token}
+
+Let us fix a transformer $\tau$ of embedding dimension $d$. We follow empirical evidence~\citep{brody-etal-2023-expressivity} in assuming that the embedding support---that is the fraction of the embedding space being utilized by $\tau$---of any token at any layer of $\tau$ is a subset of $B^d(0,r):=\{\mathbf x\in\mathbb R^{d},\|\mathbf x\|<r\}$. We refer to $r$ as the embedding radius. Then we can partition the embedding support of the final tokens at the last layer $\mathcal E$ depending on the most likely next token $\mathcal E=\bigcup_{t_i\in\mathcal V}\mathcal E_i$, where for each token $t_i\in\mathcal V$, $$\mathcal E_i=\{\mathbf x\in\mathcal E,\forall j\in[|\mathcal V|], (\mathbf F\mathbf x)_i\geq (\mathbf F\mathbf x)_j\},$$ corresponds to the set of last embedding vectors that most likely lead to the next token $t_i$. 
+
+Figure~\ref{fig:next_token} shows an illustration of the regions corresponding to the most likely next token in the embedding space. Similarly, we can also study the most likely next two tokens, next three tokens, \emph{etc}. As we consider the most likely next $n$ tokens, the regions become exponentially small with $n$. At some point, these regions therefore become inaccessible for a transformer. This is the intuition behind our analysis, which we formalize in the remainder of the paper.
+
+\begin{remark}
+    An important thing to note is that in order to predict the next $n$ tokens, we need to consider the embedding of the whole prompt.
+    This contrasts with simply predicting the next token, where only the embedding of the last token at the last layer is needed. This is why in the following, we denote $\mathcal E\subset\mathbb R^{d\times m}$ the embedding space of the whole prompt of size $m$.
+\end{remark}
+
+\subsection{Accessing these regions through Prompts}
+
+A natural factor affecting which sequences of tokens can be accessed by a transformer is the prompt length: if the prompt length is limited, a transformer is able to access fewer outputs than if the prompt length is arbitrarily large. To study this, we introduce a second partition of the embedding space.
+
+
+For every sequence of tokens $\mathbf t=(t_{i_1},\ldots,t_{i_n})\in\mathcal{V}^n$ and prompt length $m\in\mathbb N$, we can write $\mathcal E^m_{\mathbf t}$ the set of soft prompts of length $m$ that lead to the sequence $\mathbf t$ under greedy decoding, that is
+\begin{align*}
+    \mathcal E^m_{\mathbf t}&=\Bigg\{\mathbf X\in B^{d\times m}(0,r)\colon\forall j\in[n],\\&\operatorname{argmax}\bigg(\mathbf F \mathrm L \Big([\mathbf{X},\mathbf E\mathbf t_{i_1},\ldots,\mathbf E\mathbf t_{i_{j-1}}]\Big)_{-1}\bigg)={i_j}\Bigg\},
+\end{align*}
+Then $B^{d\times m}(0,r)=\bigcup_{\mathbf t\in\mathcal V^n}\mathcal E^m_{\mathbf t}$, where we can replace $\mathcal E^m_{\mathbf t}$ with its closure $\overline{\mathcal E^m_{\mathbf t}}$ depending on how we handle cases where the final vector admits multiple argmax values. In the following, we simply write $\mathcal E_{\mathbf t}$, as $m$ is already implied through $\mathbf t$.
+
+\begin{remark}[Other Decoding Strategies]
+    A direct corollary of our results is that if a sequence is not accessible under greedy decoding, then it cannot be generated with probability greater than 50\% under any stochastic decoding strategy (e.g., beam search or Top-$K$ sampling). As a result, our findings for the copying task extend to discrete decoding strategies, as they provide an upper bound on the success probability.
+\end{remark}

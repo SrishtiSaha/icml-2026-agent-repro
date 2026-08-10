@@ -1,0 +1,121 @@
+\section{The Sequences that are Accessible to a Transformer}\label{sec:main}
+
+With the partitions of the embedding space defined in Section~\ref{sec:embed}, we are now equipped to formalize our problem. Specifically, we aim to study the set of sequences that are accessible to a given transformer $\tau$. A given sequence $\mathbf t$ is said to be accessible if there exists a prompt for which the output under greedy decoding is $\mathbf t$.
+
+\begin{definition}[Accessible Sequence]
+    A sequence of tokens $\mathbf t\in\mathcal V^{n}$ is said to be accessible by a transformer $\tau$ of precision $\varepsilon$ with prompt length $m$ if there exists a sequence $\mathbf X\in\mathbb R^{d\times m}$ such that $B(\mathbf X,\frac\varepsilon2)\subset\mathcal E^m_{\mathbf t}$. A sequence is said to be accessible if it is accessible with prompt length $m$ for some $m\in\mathbb N$.
+\end{definition}
+
+This notion of accessible sequences enables us to formally state our contributions.
+
+\begin{itemize}
+    \item In Section~\ref{sec:finite}, we show that the maximal length $n$ of accessible sequences scales linearly with the prompt length~$m$.
+    \item In Section~\ref{sec:wasserstein}, we show that for every transformer $\tau$, there exists a certain threshold $N\in\mathbb N$, above which almost all sequences of length $n\ge N$ are not accessible by~$\tau$.
+\end{itemize}
+
+Our proofs require the notion of packing number~\citep{Vershynin_R_2018_b_covering-number}, which quantifies how many disjoint balls of a given radius one can pack in a space.
+
+\begin{restatable}[Packing Number]{definition}{defpacking}
+    Let \( (T, \|\cdot\|) \) be a vector space and let \( \varepsilon > 0 \).
+
+    The \emph{\( \varepsilon \)-packing number} of \( T \), denoted \( \mathcal{P}(T, \|\cdot\|, \varepsilon) \), is the maximal number of disjoint open balls of radius \( \frac\varepsilon2 \) that can be placed in \( T \), or equivalently, the largest cardinality of an \( \varepsilon \)-separated subset of \( T \). That is,
+    \begin{align*}
+        \mathcal{P}(T, \|\cdot\|, \varepsilon)=\max\{ M \in \mathbb{N} \colon&\exists (x_i)_{i\in[M]}\in T^M,\\&\forall i \neq j, \|x_i-x_j\| > \varepsilon\}.
+    \end{align*}
+\end{restatable}
+
+We conduct further analysis on the packing number of the spaces we are studying in Appendix~\ref{app:packing}.
+
+\subsection{Finite Prompt Length}\label{sec:finite}
+
+Our study of the finite prompt length setting is based on the trivial assumption that any transformer has limited precision. That is, it cannot distinguish between two inputs that are too close to each other.
+
+\begin{assumption}\label{ass:finite}[Finite Precision]
+Every transformer $\tau$ admits a finite precision $\varepsilon>0$. That is $\mathbb{R}^d$ can be partitioned into axis-aligned cubes of side length $\varepsilon$, and $\tau$ is constant within each cube:
+\[
+\tau(\mathbf X) = \tau\bigg(\Big\lfloor \frac{\mathbf X}  {\varepsilon} \Big\rfloor \varepsilon\bigg)
+\quad\text{for all }\mathbf X.
+\]
+\end{assumption}
+
+\begin{remark}[Extension to Finite $\ell_p$ Precision]
+    We used the $\ell_\infty$ norm in Assumption~\ref{ass:finite} as it is the most intuitive. Note that this directly generalizes to $\ell_p$ precision as $\|\mathbf X\|_\infty\le\|\mathbf X\|_p$ implies that a transformer with precision $\varepsilon$ is also constant on each ball of a grid of $\ell_p$ balls of radius $\varepsilon$.
+\end{remark}
+
+
+Under Assumption~\ref{ass:finite}, we show that the maximal length $n$ of accessible sequences scales linearly with the prompt size~$m$.
+
+\begin{theorem}\label{lem:finite}
+    A transformer of precision $\varepsilon$ and embedding radius $r$ with prompt length $m$ can only access a finite number of distinct sequences: $\big(1+\frac {2r} {\varepsilon}\big)^{dm}$.
+\end{theorem}
+
+\begin{proof}
+    Let us fix a transformer $\tau$ with embedding radius $r$ and precision $\epsilon$. Clearly, this transformer can only distinguish between at most $\mathcal{P}(B^{d\times m}(0,r),\|\cdot\|,\varepsilon)$ different inputs of size $m$. Hence, the number of distinct accessible sequences of tokens with prompt length $m$ is upper bounded by $\mathcal{P}(B^{d\times m}(0,r),\|\cdot\|,\varepsilon)$, and thus by $\big(1+\frac {2r} {\varepsilon}\big)^{dm}$~[Proposition~\ref{prp:packing_finite}].
+\end{proof}
+
+\begin{corollary}\label{thm:finite}
+    When $n>\Bigg(d\dfrac{\operatorname{ln}(1+\frac {2r}{\varepsilon})}{\operatorname{ln}(|\mathcal V|)}\Bigg)m$, there exist some sequences of length at most $n$ that are not accessible by a transformer of precision $\varepsilon$ and embedding radius $r$ with prompt length $m$. Moreover, the proportion of accessible token sequences decays exponentially fast with $n$ when it exceeds the previous threshold, with rate $\dfrac{(1+\frac {2r}{\varepsilon})^{dm}}{|\mathcal V|^n}\in O(\frac1{|\mathcal V|^n})$.
+\end{corollary}
+
+
+\begin{proof}
+   Combine Theorem~\ref{lem:finite} with the fact that the number of distinct possible output token sequences of size $n$ is given by $|\mathcal V|^n$.
+\end{proof}
+
+\begin{remark}
+    Although there is no strict maximal length beyond which no sequence is accessible, the proportion of accessible sequences decreases exponentially once the critical length is exceeded. 
+    In practice, this rapid decay renders the distinction negligible: beyond that threshold, almost all sequences become effectively inaccessible.
+\end{remark}
+
+Note that we made two crucial assumptions in this section:
+\begin{itemize}
+    \item the embedding support is a fully used ball of radius $r$.
+    \item each token sequence $\mathbf t$ corresponds to a region $\mathcal{E}_{\mathbf t}$ of equal volume in the embedding space. 
+\end{itemize}
+
+Those assumptions consider the worst case setting, in the sense that a model not satisfying those assumptions has a smaller (and hence tighter) theoretical upper bound on the slope. Indeed, if the embedding support does not fully occupy the ball of radius $r$, then it is smaller and $\tau$ can access less sequences. And if some tokens correspond to smaller regions $\mathcal{E}_t$, then those tokens are harder to access, and the threshold for which some sequences are inaccessible is smaller.
+
+We describe in Section~\ref{sec:expe} how we can relax these assumptions by better approximating the embedding support $\mathcal{E}$ (Section~\ref{sec:support}) and by empirically estimating the distribution of cell volumes $|\mathcal{E}_t|$ (Section~\ref{sec:cells}). A more formal analysis is provided in Appendix~\ref{app:shapes}.
+
+
+\subsection{Arbitrary Prompt Length via the Mean-Field Generalization}\label{sec:wasserstein}
+
+Our goal in this section is to obtain an upper bound on the length of the sequences accessible by a transformer, independent of the input length. Notice that there is a straightforward way to do this if Assumption~\ref{ass:finite} can be generalized to Wasserstein distance.
+
+\begin{assumption}\label{ass:wasserstein}
+Every transformer $\tau$ admits a finite Wasserstein precision. 
+That is, the space of inputs can be partitioned into finitely many $W_q$-balls of radius $\varepsilon$, and $\tau$ is constant within each ball.
+
+Formally, there exist $\varepsilon > 0$ and $q \ge 1$ such that
+\[
+\tau(\mathbf X) 
+= \tau\!\left(\operatorname*{argmin}_{\mathbf Z \in \mathcal{G}_\varepsilon}
+  W_q\big(\mathrm M(\mathbf X), \mathrm M(\mathbf Z)\big)\right)
+\quad\text{for all }\mathbf X,
+\]
+where $\mathcal{G}_\varepsilon$ is a finite $\varepsilon$-net of reference sequences under $W_q$.
+\end{assumption}
+
+
+Under this assumption (the validity of which is further discussed in Appendix~\ref{app:wasserstein}), we show that for every transformer $\tau$, there exists a certain threshold $N\in\mathbb N$, above which almost all sequences of length $n\ge N$ are not accessible by~$\tau$.
+
+\begin{theorem}\label{lem:wass}
+    A transformer of precision $\varepsilon$ and embedding radius $r$ can only access a finite number of distinct sequences: $\big(e + \frac{e \, (2r)^q}{\varepsilon^q}\big)^{\big(1+\frac{2r}{\varepsilon}\big)^d}$.
+\end{theorem}
+
+\begin{proof}
+    Under Assumption~\ref{ass:wasserstein}, let us fix a transformer $\tau$ with embedding radius $r$ and precision $\epsilon$. Clearly, this transformer can only distinguish between at most $\mathcal P(\mathcal{G}, W_q,\varepsilon)$ different inputs, with $\mathcal G:=\operatorname{Im}(\mathrm{M})=\{\mathrm M(\mathbf X)\colon\mathbf X\in\mathbb R^{d\times m},m\in\mathbb N\}$ the set of discrete probability measures on the token embeddings of dimension $d$ as defined in Section~\ref{sec:mean-field}. Hence the number of distinct accessible sequences of tokens is upper bounded by $\mathcal P(\mathcal{G}, W_q,\varepsilon)$, and thus by $\big(e + \frac{e \, (2r)^q}{\varepsilon^q}\big)^{\big(1+\frac{2r}{\varepsilon}\big)^d}$~[Proposition~\ref{prp:packing_infinite}].
+\end{proof}
+
+\begin{corollary}\label{thm:wass}
+    When $n> \big(1+\frac{4r}{\varepsilon}\big)^d\frac{\operatorname{ln}\big(e + \frac{e \, (2r)^q}{\varepsilon^q}\big)}{\operatorname{ln}(|\mathcal V|)}$, there exist some sequences of length at most $n$ that are not accessible by a transformer of precision $\varepsilon$ and embedding radius $r$. Moreover, the proportion of accessible token sequences decays exponentially fast with $n$ when it exceeds the previous threshold, at rate $\frac{\big(e + \frac{e \, (2r)^q}{\varepsilon^q}\big)^{\big(1+\frac{4r}{\varepsilon}\big)^d}}{|\mathcal V|^n}\in O(\frac1{|\mathcal V|^n})$.
+\end{corollary}
+
+\begin{proof}
+    Combine Theorem~\ref{lem:wass} with the fact that the number of distinct possible output token sequences of size $n$ is given by $|\mathcal V|^n$.
+\end{proof}
+
+\begin{remark}[Arbitrary Prompt Length via Elementary Operations]
+    Contrary to Assumption~\ref{ass:finite}, Assumption~\ref{ass:wasserstein} is non-trivial. We show in Appendix~\ref{app:eo} that it can be replaced by a much weaker assumption, pertaining to what we call elementary operations.
+\end{remark}
+

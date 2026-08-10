@@ -1,0 +1,11 @@
+\section{Conclusion}
+
+We established fundamental limits of transformers, showing that accessible sequence length grows at most linearly with prompt size and that most sequences become inaccessible beyond a critical threshold. These results hold even with unbounded context and computation, explaining the empirical failure of transformers to reproduce long sequences. More notably, we theoretically predict the performance of transformers on the cramming task across several architectures, using only the structure of the embedding space.
+
+Importantly, this close characterization of transformers’ capacities relies solely on the geometry of the embedding space. This suggests that the embedding space, despite representing only a small fraction of a model’s parameters, carries meaningful information about its capabilities.
+
+\section{Future Work}
+
+Besides cramming and copying, another setting closely related to our theoretical results is test-time training, as described in Section 3.1 (``Memory as Context'') of \citet{titans}. The goal of this approach is to mitigate the quadratic cost of attention with respect to context length by compressing a long context into a short sequence of vectors $h$, using a neural network $\mathcal M$. In this setting, $\mathcal M$ is trained to iteratively encode the context into $h$ via gradient-based updates. Our results provide direct insight into this process: they characterize how the size of $h$ must scale with the length of the context in order to preserve accessibility.
+
+Moreover, as mentioned in Remark~\ref{rmk:mamba}, our results can be extended to other architectures of interest.

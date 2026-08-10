@@ -1,0 +1,1975 @@
+
+
+--- PAGE 1 ---
+How Many Different Outputs Can a Transformer Generate?
+Maxime Meyer* 1 2Mario Michelessa* 2 3Caroline Chaux2 4Vincent Y. F. Tan1 5
+Abstract
+We study how we can leverage only a handful of
+characteristics of a transformer’s architecture to
+closely predict the number of different sequences
+it can output, both qualitatively and quantita-
+tively. We provide an upper bound depending
+on the length of the prompt, which we show em-
+pirically to be tight up to a factor less than 10,
+across architectures and model sizes. Our anal-
+ysis also provides a theoretical explanation for
+previously observed empirical failures of trans-
+formers on simple sequence tasks—such as copy-
+ing and cramming. Formally, we prove that (i) the
+maximal length of accessible sequences (those
+that the transformer can output for some prompt)
+grows linearly with the prompt length, (ii) be-
+yond a critical threshold, the proportion of ac-
+cessible sequences decays exponentially with se-
+quence length, and (iii) the linear coefficient relat-
+ing prompt length to accessible sequence length
+admits a theoretical upper bound. Notably, these
+results hold even with unbounded context and
+computation time.
+1. Introduction
+Transformers (Vaswani et al., 2017) have become the domi-
+nant architecture in modern deep learning, achieving state-
+of-the-art results across domains such as natural language
+processing (Wolf et al., 2020) and computer vision (Doso-
+vitskiy et al., 2021; Zhao et al., 2021; Zhai et al., 2022).
+Despite their success, these models fail on surprisingly sim-
+ple tasks—such as copying or repeating sequences (Jelassi
+et al., 2024)—once the input exceeds a certain length. These
+*Equal contribution1Department of Mathematics, National
+University of Singapore, Singapore, 1175432IPAL, IRL2955, Sin-
+gapore3School of Computing, National University of Singapore,
+Singapore, 1175434Aix Marseille Univ, CNRS, I2M, Marseille,
+France5Department of Electrical and Computer Engineering, Na-
+tional University of Singapore. Correspondence to: Maxime Meyer
+<maxime.meyer@u.nus.edu>.
+Proceedings of the 43rdInternational Conference on Machine
+Learning, Seoul, South Korea. PMLR 306, 2026. Copyright 2026
+by the author(s).failures persist even for large models specifically trained
+on those tasks, suggesting that they may reflect intrinsic
+architectural constraints.
+This paper characterizes such constraints by identifying
+structural limitations that hold for all transformers, indepen-
+dently of model size, training data, or available computation:
+•We show that every transformer can output only a finite
+set of output sequences. That is, most sequences are
+fundamentally inaccessible: no choice of prompt, con-
+text length, or inference strategy can cause the model
+to generate them. This impossibility result provides
+a principled explanation for well-documented failures
+of transformers on simple algorithmic tasks, such as
+exact copying.
+•Moreover, we show that for a fixed prompt length, the
+proportion of accessible sequences of length ndecays
+exponentially fast with nbeyond a model-dependent
+threshold. This phenomenon explains a puzzling empir-
+ical behavior observed in practice, where transformers
+perform nearly perfectly up to a critical length and then
+fail abruptly rather than gradually.
+•Finally, we derive an explicit formula to predict those
+thresholds as functions of the transformer architecture
+being used. Remarkably, this theoretical result closely
+matches empirical performance observed across a wide
+range of transformer architectures and model sizes.
+To establish these results, we analyze how the finite preci-
+sion and the geometry of the internal representations of a
+transformer constrain the set of sequences it can represent
+or generate. We formalize this constraint through the notion
+ofaccessible sequences, defined as outputs that can arise
+from some input prompt (Section 3). The main theoretical
+analysis, which yields the results stated above, is conducted
+in Section 4. We also devise experiments that validate our
+theoretical predictions in Section 51.
+Remark1.1 (Broader Applicability of Our Results).Our
+bounds extend beyond transformers and apply to any ar-
+chitecture with bounded internal representations and finite
+1Code is available at github.com/mario-
+michelessa/transformers accessibility
+1arXiv:2605.22223v1  [cs.LG]  21 May 2026
+
+--- PAGE 2 ---
+How Many Different Outputs Can a Transformer Generate?
+precision. This may include state-space models such as
+Mamba (Gu & Dao, 2024). However, the possibility of
+diverging hidden states (Lu et al., 2026) makes the analysis
+more challenging, and we leave this direction for future
+work.
+1.1. Related Works
+Approximation Theory of Transformers.The represen-
+tational power of transformers has been extensively explored
+through the lens of approximation theory. In contrast, we
+study how finite numerical precision constrains this expres-
+sivity—showing that, as rounding errors accumulate, even
+simple functions such as the identity map become difficult to
+approximate in practice. Yun et al. (2020a) established the
+first universal approximation property for continuous func-
+tions, later extended to sparse attention transformers (Yun
+et al., 2020b) and sparse target functions (Edelman et al.,
+2022). Subsequent works refined these results for one-layer
+architectures (Kajitsuka & Sato, 2024; Jiang & Li, 2024)
+and examined approximation under compact output con-
+straints (Kratsios et al., 2022). Architectural factors such
+as relative positional encodings (Luo et al., 2022) have also
+been analyzed. A complementary line of work investigates
+approximation properties under prompt tuning (Wang et al.,
+2023; Hu et al., 2025). Among those, Meyer et al. (2025)
+uses a proof strategy similar to ours, leveraging a packing
+number-type argument.
+Empirical Analyses of Sequence Accessibility.Empiri-
+cal studies have also examined the ability of transformers
+to reproduce or memorize sequences. Barbero et al. (2024)
+showed that transformers struggle to reliably copy long
+sequences, but their analysis focuses on highly synthetic
+settings—sequences differing by only a few tokens or al-
+ternating between two symbols (e.g.0 and 1). In contrast,
+our work studies the capacity of transformers to generate,
+and therefore copy, arbitrary sequences. In this line of
+work, Jelassi et al. (2024) showed that even transformers
+trained on the specific task of copying struggle to reliably
+execute this task as the sequence length increases. The work
+most closely related to ours is Kuratov et al. (2025), who
+introduced the “cramming” procedure as an exact test of
+accessibility. For any target sequence [x1, . . . ,x n], a set of
+trainable memory vectors [mem] = [y 1, . . . ,y m]is opti-
+mized so that the model generates [x1, . . . ,x n]when condi-
+tioned on [mem] . This approach effectively searches over
+all possible prompts—including highly unnatural ones—to
+determine whether a sequence is accessible. Cramming
+thus provides an operational definition of accessibility: a
+sequence is accessible if and only if a corresponding en-
+coding [mem] exists. Our work provides the first rigorous
+theoretical explanation for the empirical findings in Kuratov
+et al. (2025), and extends the experimental analysis beyondthe original setting. We describe this further in Section 5.
+Mean-Field Transformers.To analyze prompts of ar-
+bitrary length, it is useful to interpret a transformer as a
+mapping between probability measures rather than finite-
+length sequences, following the mean-field formulation in-
+troduced by Sander et al. (2022) and defined in Section 2.2.
+This perspective has been further developed in several di-
+rections. Castin et al. (2024) employed it to study the Lips-
+chitz continuity of transformers, while Furuya et al. (2025)
+extended the approximation theory of transformers to the
+space of probability distributions. More recently, Meyer
+et al. (2025) leveraged the mean-field framework to charac-
+terize the memory limitations of transformers. Our analysis
+builds upon this formulation to derive accessibility bounds
+that hold independent of the prompt.
+Representations of the Embedding Space.Prior work
+has visualized and probed LLM embedding spaces in three
+main ways. First, transformer representations have been
+shown to be highly anisotropic, with a large fraction of
+the variance concentrated along a small number of direc-
+tions (Mu & Viswanath, 2018; Ethayarajh, 2019). Second,
+probing methods have shown that certain syntactic and se-
+mantic properties are linearly recoverable from transformer
+hidden representations (Alain & Bengio, 2016; Hewitt &
+Manning, 2019; Kornblith et al., 2019). Third, decoding
+intermediate activations by projecting them through the de-
+coder matrix to logits reveals layerwise sharpening of next-
+token beliefs (Nostalgebraist, 2020; Belrose et al., 2023).
+Inspired by this decoding view, we use the same decoder ma-
+trix to find hyperplanes that partition the embedding space
+into next-token argmax cells in Section 3.
+Expressive Power of Transformers.Complementary to
+the line of work on approximation theory, the expressivity of
+transformers can also be studied in terms of the formal lan-
+guages they can express (Strobl et al., 2024). Transformers
+have been shown to represent Turing machines (Wei et al.,
+2022) and arbitrary computer programs (Giannou et al.,
+2023). The impact of chain-of-thought reasoning (Mer-
+rill & Sabharwal, 2024) and precision (Chiang, 2025) have
+also been studied. Most relevant to our work is the work
+of Huang et al. (2025), who prove the impossibility of copy-
+ing arbitrary sequences for transformers with absolute po-
+sitional encodings and under some idealized assumptions.
+We extend those results by removing those assumptions and
+providing both a qualitative and quantitative analysis of the
+performance of transformers in the copying task.
+1.2. Notations
+Bold lowercase letters (e.g., x) denote vectors, and bold
+uppercase letters (e.g., W) denote matrices. For a matrix
+2
+
+--- PAGE 3 ---
+How Many Different Outputs Can a Transformer Generate?
+W, we write Wi,j,Wi,:, andW:,jto refer to its (i, j) -th
+element, i-th row, and j-th column, respectively. We can
+usei=−1 andj=−1 to denote the last row and column,
+respectively. The concatenation of kmatrices with the same
+number of rows d,W1∈Rd×m i, . . . ,Wk∈Rd×m kis
+denoted as[W1, . . . ,Wk]∈Rd×Pk
+i=1mi.
+We write σto denote the softmax function. The rectified
+linear unit is defined as ReLU(v) = max(v,0) , where the
+maximum is applied elementwise. We use |A|to denote
+both the cardinality of a finite set, and the volume of a set
+A ⊂Rnfor some n∈N (we take Nto be the set of strictly
+positive integers). We denote by V={t 1, . . . , t |V|}the
+vocabulary (that is the set of all distinct tokens) and dthe
+embedding dimension. The probability simplex over the
+vocabulary is denoted as∆V.
+Throughout, ∥ · ∥ denotes a norm, which by default may be
+taken as the standard ℓ∞orℓpnorm for vectors. Unless oth-
+erwise specified, our results hold for all of these norms. Let
+Π(µ, ν) be the set of all joint distributions with marginals
+µandν; this is also called the set ofcouplingsof µand
+ν. When considering distributions, we use the Wasserstein
+distance
+Wq(µ, ν) =
+inf
+π∈Π(µ,ν)Z
+∥x−y∥qdπ(x, y)1/q
+.
+This distance is further discussed in Appendix D.
+2. The Transformer Architecture
+2.1. Standard Transformers
+We consider transformer networks (Vaswani et al., 2017)
+composed of repeated self-attention and MLP layers, to-
+gether with an embedding layer and a final linear projection.
+Definition 2.1(One-Hot Representation).Let V=
+{t1, . . . , t |V|}denote the vocabulary. For a token ti∈ V,
+theone-hot representationoft iis the canonical vector
+ci= (1 i=j)j∈[|V|] ∈R|V|.
+Definition 2.2(Embedding Layer).Let E∈Rd×|V|be
+the embedding matrix. For a sequence of mtokens t=
+(ti1, . . . , t im)∈ Vm, the embedding layer maps the one-hot
+representation[c i1, . . . ,c im]∈R|V|×mto
+Xt=E[c i1, . . . ,c im]∈Rd×m.
+Definition 2.3(Transformer with Hard Prompt Inputs).An
+l-layer transformer with vocabulary Vand unembedding
+matrixF∈R|V|×dis the mapping
+τ:+∞[
+m=1Vm−→∆V,defined as
+τ(t) =σ 
+F(X l):,−1
+,where
+Xl= L(X t)is the output of the final transformer layer,
+Xtis the embedded input with positional encodings.
+The only characteristic of the transformer layers Lrequired
+in this paper is that they keep the embedding space bounded.
+The formal proof and empirical validation, together with the
+formal definition ofLare deferred to Appendix A.
+A transformer can also be seen as mapping soft prompt in-
+puts fromS+∞
+m=1Rd×m(which may or may not correspond
+to sequences of tokens).
+Definition 2.4(Transformer with Soft Prompt Inputs).An
+l-layer transformer with embedding dimension dis the map-
+ping
+τ:+∞[
+m=1Rd×m−→∆V,
+defined as
+τ(X) =σ
+F 
+L(X)
+:,−1
+.
+We consider Definition 2.4 in our analysis. However, since
+a transformer with soft prompt inputs is more expressive
+than its hard prompt counterpart, all of our results directly
+extend to Definition 2.3.
+2.2. Mean-Field Transformers
+To handle arbitrary prompt lengths, we can interpret trans-
+formers as maps over probability measures (Sander et al.,
+2022; Geshkovski et al., 2023). This is possible because of
+two key properties of attention (and hence of a transformer
+as defined in Definition 2.4):
+• Attention layers are permutation equivariant.
+•For any attention block Land input X,L(X) :,i=
+L([X,X]) :,i.
+We can thus replace every sequence Xof length mwith its
+associated empirical measure
+M(X) :=1
+mmX
+i=1δX:,i,
+so that a transformer can be viewed as a transformation of
+probability measures supported on Rd, independent of the
+ordering of tokens. This is called the mean-field extension
+of transformers, and we describe it further in Appendix B.
+Remark2.5 (Positional Encodings and Masked Attention).
+The mean-field framework can also be extended to most
+types of positional encodings and to masked attention, as
+discussed in Appendix B.
+3
+
+--- PAGE 4 ---
+How Many Different Outputs Can a Transformer Generate?
+< , >< jumps >< es >
+< www >
+< world > < _w orld >< leet code >
+Figure 1.Plane cut of the embedding space Eof Qwen-2 (0.5B) (Yang et al., 2024), passing through the final token embeddings of “The
+quick brown fox”, “https://”, and “In a distant future” (red markers). Colors encode, for each pixel, the most probable next token via
+the model’s output projection (decoder readout). This induces regions Etannotated by <t> . Only tokens whose regions have the
+largest areas are annotated for readability. The three embeddings fall respectively in Ejumps,Ewww, andE,,i.e.the predicted next tokens are
+<jumps>,<www>, and<,>.
+3. Representing the Embedding Space
+3.1. Partitioning the Embedding Space by the most
+Likely Next Token
+Let us fix a transformer τof embedding dimension d. We
+follow empirical evidence (Brody et al., 2023) in assuming
+that the embedding support—that is the fraction of the em-
+bedding space being utilized by τ—of any token at any layer
+ofτis a subset of Bd(0, r) :={x∈Rd,∥x∥< r} . We
+refer to ras the embedding radius. Then we can partition
+the embedding support of the final tokens at the last layer
+Edepending on the most likely next token E=S
+ti∈VEi,
+where for each tokent i∈ V,
+Ei={x∈ E,∀j∈[|V|],(Fx) i≥(Fx) j},
+corresponds to the set of last embedding vectors that most
+likely lead to the next tokent i.
+Figure 1 shows an illustration of the regions corresponding
+to the most likely next token in the embedding space. Sim-
+ilarly, we can also study the most likely next two tokens,
+next three tokens,etc. As we consider the most likely next
+ntokens, the regions become exponentially small with n.
+At some point, these regions therefore become inaccessible
+for a transformer. This is the intuition behind our analysis,
+which we formalize in the remainder of the paper.
+Remark3.1.An important thing to note is that in order
+to predict the next ntokens, we need to consider the em-
+bedding of the whole prompt. This contrasts with simply
+predicting the next token, where only the embedding of the
+last token at the last layer is needed. This is why in the
+following, we denote E ⊂Rd×mthe embedding space of
+the whole prompt of sizem.3.2. Accessing these regions through Prompts
+A natural factor affecting which sequences of tokens can
+be accessed by a transformer is the prompt length: if the
+prompt length is limited, a transformer is able to access
+fewer outputs than if the prompt length is arbitrarily large.
+To study this, we introduce a second partition of the embed-
+ding space.
+For every sequence of tokens t= (t i1, . . . , t in)∈ Vn
+and prompt length m∈N , we can write Em
+tthe set of
+soft prompts of length mthat lead to the sequence tunder
+greedy decoding, that is
+Em
+t=(
+X∈Bd×m(0, r):∀j∈[n],
+argmax
+FL
+[X,Et i1, . . . ,Et ij−1]
+−1
+=ij)
+,
+Then Bd×m(0, r) =S
+t∈VnEm
+t, where we can replace Em
+t
+with its closure Em
+tdepending on how we handle cases
+where the final vector admits multiple argmax values. In
+the following, we simply write Et, asmis already implied
+throught.
+Remark3.2 (Other Decoding Strategies).A direct corollary
+of our results is that if a sequence is not accessible under
+greedy decoding, then it cannot be generated with probabil-
+ity greater than 50% under any stochastic decoding strategy
+(e.g., beam search or Top- Ksampling). As a result, our
+findings for the copying task extend to discrete decoding
+strategies, as they provide an upper bound on the success
+probability.
+4
+
+--- PAGE 5 ---
+How Many Different Outputs Can a Transformer Generate?
+4. The Sequences that are Accessible to a
+Transformer
+With the partitions of the embedding space defined in Sec-
+tion 3, we are now equipped to formalize our problem.
+Specifically, we aim to study the set of sequences that are
+accessible to a given transformer τ. A given sequence tis
+said to be accessible if there exists a prompt for which the
+output under greedy decoding ist.
+Definition 4.1(Accessible Sequence).A sequence of to-
+kenst∈ Vnis said to be accessible by a transformer τof
+precision εwith prompt length mif there exists a sequence
+X∈Rd×msuch that B(X,ε
+2)⊂ Em
+t. A sequence is said
+to be accessible if it is accessible with prompt length mfor
+somem∈N.
+This notion of accessible sequences enables us to formally
+state our contributions.
+•In Section 4.1, we show that the maximal length nof
+accessible sequences scales linearly with the prompt
+lengthm.
+•In Section 4.2, we show that for every transformer τ,
+there exists a certain threshold N∈N , above which al-
+most all sequences of length n≥N are not accessible
+byτ.
+Our proofs require the notion of packing number (Vershynin,
+2026), which quantifies how many disjoint balls of a given
+radius one can pack in a space.
+Definition 4.2(Packing Number).Let (T,∥ · ∥) be a vector
+space and letε >0.
+Theε-packing numberof T, denoted P(T,∥ · ∥, ε) , is the
+maximal number of disjoint open balls of radiusε
+2that can
+be placed in T, or equivalently, the largest cardinality of an
+ε-separated subset ofT. That is,
+P(T,∥ · ∥, ε) = max{M∈N:∃(x i)i∈[M]∈TM,
+∀i̸=j,∥x i−xj∥> ε}.
+We conduct further analysis on the packing number of the
+spaces we are studying in Appendix C.
+4.1. Finite Prompt Length
+Our study of the finite prompt length setting is based on the
+trivial assumption that any transformer has limited precision.
+That is, it cannot distinguish between two inputs that are too
+close to each other.
+Assumption 4.3.[Finite Precision] Every transformer τ
+admits a finite precision ε >0 . That is Rdcan be partitionedinto axis-aligned cubes of side length ε, and τis constant
+within each cube:
+τ(X) =τjX
+εk
+ε
+for allX.
+Remark4.4 (Extension to Finite ℓpPrecision).We used the
+ℓ∞norm in Assumption 4.3 as it is the most intuitive. Note
+that this directly generalizes to ℓpprecision as ∥X∥∞≤
+∥X∥ pimplies that a transformer with precision εis also
+constant on each ball of a grid ofℓ pballs of radiusε.
+Under Assumption 4.3, we show that the maximal length
+nof accessible sequences scales linearly with the prompt
+sizem.
+Theorem 4.5.A transformer of precision εand embedding
+radius rwith prompt length mcan only access a finite
+number of distinct sequences: 
+1 +2r
+εdm.
+Proof. Let us fix a transformer τwith embedding radius
+rand precision ϵ. Clearly, this transformer can only dis-
+tinguish between at most P(Bd×m(0, r),∥ · ∥, ε) different
+inputs of size m. Hence, the number of distinct accessible
+sequences of tokens with prompt length mis upper bounded
+byP(Bd×m(0, r),∥·∥, ε) , and thus by 
+1 +2r
+εdm[Propo-
+sition C.2].
+Corollary 4.6.When n > 
+dln(1 +2r
+ε)
+ln(|V|)!
+m, there exist
+some sequences of length at most nthat are not accessible
+by a transformer of precision εand embedding radius rwith
+prompt length m. Moreover, the proportion of accessible
+token sequences decays exponentially fast with nwhen it
+exceeds the previous threshold, with rate(1 +2r
+ε)dm
+|V|n∈
+O(1
+|V|n).
+Proof. Combine Theorem 4.5 with the fact that the number
+of distinct possible output token sequences of size nis given
+by|V|n.
+Remark4.7.Although there is no strict maximal length
+beyond which no sequence is accessible, the proportion
+of accessible sequences decreases exponentially once the
+critical length is exceeded. In practice, this rapid decay
+renders the distinction negligible: beyond that threshold,
+almost all sequences become effectively inaccessible.
+Note that we made two crucial assumptions in this section:
+• the embedding support is a fully used ball of radiusr.
+•each token sequence tcorresponds to a region Etof
+equal volume in the embedding space.
+5
+
+--- PAGE 6 ---
+How Many Different Outputs Can a Transformer Generate?
+Those assumptions consider the worst case setting, in the
+sense that a model not satisfying those assumptions has
+a smaller (and hence tighter) theoretical upper bound on
+the slope. Indeed, if the embedding support does not fully
+occupy the ball of radius r, then it is smaller and τcan
+access less sequences. And if some tokens correspond to
+smaller regions Et, then those tokens are harder to access,
+and the threshold for which some sequences are inaccessible
+is smaller.
+We describe in Section 5 how we can relax these assump-
+tions by better approximating the embedding support E
+(Section 5.2) and by empirically estimating the distribution
+of cell volumes |Et|(Section 5.3). A more formal analysis
+is provided in Appendix F.
+4.2. Arbitrary Prompt Length via the Mean-Field
+Generalization
+Our goal in this section is to obtain an upper bound on the
+length of the sequences accessible by a transformer, inde-
+pendent of the input length. Notice that there is a straight-
+forward way to do this if Assumption 4.3 can be generalized
+to Wasserstein distance.
+Assumption 4.8.Every transformer τadmits a finite
+Wasserstein precision. That is, the space of inputs can be
+partitioned into finitely many Wq-balls of radius ε, andτis
+constant within each ball.
+Formally, there existε >0andq≥1such that
+τ(X) =τ
+argmin
+Z∈G εWq 
+M(X),M(Z)
+for allX,
+whereG εis a finiteε-net of reference sequences underW q.
+Under this assumption (the validity of which is further dis-
+cussed in Appendix D), we show that for every transformer
+τ, there exists a certain threshold N∈N , above which
+almost all sequences of length n≥N are not accessible
+byτ.
+Theorem 4.9.A transformer of precision εand embed-
+ding radius rcan only access a finite number of distinct
+sequences: 
+e+e(2r)q
+εq 
+1+2r
+εd
+.
+Proof. Under Assumption 4.8, let us fix a transformer τ
+with embedding radius rand precision ϵ. Clearly, this trans-
+former can only distinguish between at most P(G, W q, ε)
+different inputs, with G:= Im(M) ={M(X):X∈
+Rd×m, m∈N} the set of discrete probability measures
+on the token embeddings of dimension das defined in Sec-
+tion 2.2. Hence the number of distinct accessible sequences
+of tokens is upper bounded by P(G, W q, ε), and thus by
+ 
+e+e(2r)q
+εq 
+1+2r
+εd
+[Proposition C.3].Corollary 4.10.When n > 
+1 +4r
+εdln 
+e+e(2r)q
+εq
+ln(|V|), there
+exist some sequences of length at most nthat are not accessi-
+ble by a transformer of precision εand embedding radius r.
+Moreover, the proportion of accessible token sequences de-
+cays exponentially fast with nwhen it exceeds the previous
+threshold, at rate 
+e+e(2r)q
+εq 
+1+4r
+εd
+|V|n ∈O(1
+|V|n).
+Proof. Combine Theorem 4.9 with the fact that the number
+of distinct possible output token sequences of size nis given
+by|V|n.
+Remark4.11 (Arbitrary Prompt Length via Elementary Op-
+erations).Contrary to Assumption 4.3, Assumption 4.8 is
+non-trivial. We show in Appendix E that it can be replaced
+by a much weaker assumption, pertaining to what we call
+elementary operations.
+5. Experiments
+Corollary 4.6 makes three concrete predictions. First, for
+a fixed prompt budget m, accessibility stays high up to a
+length threshold n⋆(m), and then the fraction of accessible
+sequences decays exponentially fast as nincreases. Sec-
+ond, this threshold grows linearly with the prompt budget,
+i.e.,n⋆(m) =Cm for some C >0 . Third, the corollary
+provides an explicit upper bound onC.
+We first test the first two predictions through the cramming
+task (Kuratov et al., 2025) in Section 5.1: we measure
+whether a frozen transformer can generate a target sequence
+using optimized soft prompts. We next refine the theoretical
+upper bound and compare it to the empirical slope (Sec-
+tion 5.2, 5.3).
+Finally, we illustrate the saturation regime predicted in
+Corollary 4.10 using the (easier to compute) copying task.
+5.1. The Cramming Task
+We want to test whether a target sequence is accessible,
+i.e., whether there exists some prompt that makes a model
+generate it. Directly searching over discrete prompts is
+intractable, so we optimize a length- msoft prompt and
+check for an exact match. Given a pretrained transformer
+τand a target token sequence x1:n, we say the sequence is
+accessible with prompt length mif there exists a sequence
+ofmsoft prompt vectors Y∈Rd×msuch that greedy
+decoding from Ygenerates exactly x1:n. To search for
+such a prompt, we use the cramming setup of Kuratov et al.
+(2025): we freeze the model weights and optimize only Yto
+maximize the likelihood of the target under teacher forcing.
+6
+
+--- PAGE 7 ---
+How Many Different Outputs Can a Transformer Generate?
+a)
+b)c)
+Figure 2.Mean accessibility for a) PG19 and b) random target sequences of length nas a function of the number of trainable memory
+vectors m. For each m, we fit a sigmoid (solid) and mark n50where the fit crosses 0.5 (vertical dashed line). (c) n50(m) for PG19 (blue)
+and random (red), with linear fits (dashed).
+Concretely, we minimize the cross-entropy
+L(Y;x 1:n) =−nX
+i=1logp τ(xi|[Y, x 1:i−1]),(1)
+After optimization, we evaluate accessibility by generating
+exactlyntokens greedily from the learned promptY:
+ˆxi= arg max
+t∈Vpτ(t|[Y,ˆx 1:i−1]), i= 1, . . . , n,(2)
+and we count a success if ˆx1:n=x 1:n. For each (n, m)
+we estimate accessibility as the mean success rate over 20
+target strings. We consider two target sources: i) contiguous
+token spans of length nsampled from PG19 (Rae et al.,
+2020) using each model’s tokenizer, and ii) random strings
+formed by sampling tokens uniformly i.i.d. from a subset of
+the model vocabulary.
+We test whether, for fixed m, success stays high up to a
+length threshold and then drops quickly as nincreases; and
+if this threshold scales roughly linearly with m. We run
+the same procedure across several model families and sizes:
+Pythia (160M, 410M, 1B, 1.4B, 2.8B) (Biderman et al.,
+2023), Qwen-2.5 (0.5B, 1.5B) (Yang et al., 2024), Llama-
+3.2 (1B, 3B) (Grattafiori et al., 2024), and Gemma-3 (270M,
+1B) (GemmaTeam et al., 2025).
+We report Qwen-2.5 (1.5B) results in Figure 2, results on
+different model sizes of the same architecture in Appendix 7
+and results on different architectures in Appendix 8.
+Figure 2a reports mean accessibility for natural-language
+targets (PG19 spans) of length n, using memory lengths
+m∈ {1, . . . ,5} . For each fixed m, accessibility stays high
+up to a critical length and then drops sharply. We summarizeeach curve by fitting a sigmoid; the fits are consistently good
+(minimumR2= 0.88).
+Figure 2b shows the same experiment for random token
+sequences. Despite being out of distribution, we observe
+the same pattern: beyond a critical length, accessibility
+falls rapidly with n, consistent with the exponential decay
+predicted by Corollary 4.6 for fixedm.
+Figure 2c plots the length nat which accessibility crosses
+0.5. The scaling is close to linear in both domains ( R2
+PG19=
+0.999 ,R2
+rand.= 0.995 ), matching the linearity prediction of
+Corollary 4.6. The slope differs between domains: PG19
+targets remain accessible for longer than random strings
+at the same m. A likely reason is that natural text has
+structure the model can exploit, so the effective amount of
+information to store is smaller; a similar gap was reported
+by Kuratov et al. (2025).
+In addition, the theoretical slope from Corollary 4.6 is a
+close upper bound on the slopes estimated from Figure 2c
+(first row of Table 1), as the factor is between 5and10. The
+small gap is expected: Corollary 4.6 is an upper bound and
+relies on simplifying geometric assumptions. In particular,
+it assumes that i) the embedding support is a fully used ball
+of radius r, and ii) each token sequence tcorresponds to a
+regionE tof equal volume in the embedding space.
+In the following, we relax these worst-case assumptions by
+better approximating the embedding support E(Section 5.2)
+and by empirically estimating the distribution of cell vol-
+umes|E t|(Section 5.3).
+7
+
+--- PAGE 8 ---
+How Many Different Outputs Can a Transformer Generate?
+Table 1.Ratio between the theoretical upper bound on the slope (using the infinity norm) and the empirical one for natural texts (PG19),
+across various models. Rows correspond to different enclosure strategies, and columns to the evaluated models. The detailed theoretical
+analysis is provided in Appendix F.
+Pythia Qwen-2.5 Llama-3.2 Gemma-3
+160M 410M 1B 0.5B 1.5B 1B 270M
+Ball 9.24 9.79 7.77 14.1 20.4 14.3 11.52
+Cone 9.10 9.60 7.70 14.01 20.34 13.98 11.24
+Ellipsoid 7.92 8.15 6.12 10.96 15.30 11.86 11.12
+Ellipsoid + Non-uniform Cells6.66 5.99 4.56 7.92 10.82 10.71 8.79
+Ellipsoid + variableε8.65 9.83 7.71 12.32 18.81 14.63 13.42
+5.2. Support Refinement
+Prior work shows that transformer embeddings occupy a
+small and anisotropic subset of the d-dimensional ball of
+radius r, rather than filling it uniformly (Rudman et al.,
+2022). This matters for our bound: if the effective support is
+smaller than the full ball volume, the accessibility threshold
+n⋆(m) should be reached at smaller n, which lowers the
+predicted slope.
+We upper bound the support by enclosing it within two sim-
+ple shapes that capture anisotropy: an axis-aligned ellipsoid
+and a cone. We compute the corresponding packing num-
+bers for each shape and plug them into the slope bound;
+derivations are deferred to Appendix F. Computing packing
+numbers requires the radius rfor the ball, per-dimension ra-
+diusrifor the ellipsoid, and the smallest opening angle that
+contains all sampled embeddings for the cone. We estimate
+these support-dependent parameters by Monte Carlo using
+10K prompts of length at most ℓ, generated by sampling
+tokens i.i.d. from the model vocabulary and concatenating
+them, and mapping each prompt to an embedding using the
+same extraction procedure as in the main cramming setup.
+Experimental details are in Appendix G.4, and the effect of
+ℓon the resulting upper bounds is shown in Figure 9. In
+practice, ℓ≈1000 tokens is sufficient to obtain a stable
+upper-bound estimate.
+Using cone or ellipsoid supports, we recompute the theo-
+retical slope and compare it to the empirical slope from
+Figure 2c. The updated ratios are reported in Table 1 (rows
+2 and 3). The gap shrinks for all models, while remaining
+slightly larger for Qwen-2.5-1.5B.
+5.3. Cell Volume Distribution
+Corollary 4.6 makes an equal-volume approximation: each
+token (or sequence) corresponds to a region of the embed-
+ding space Etof equal size. In practice this is unlikely.
+Common tokens should occupy larger regions under the
+model’s decoder, while rare or specialized tokens may cor-
+respond to much smaller regions. Here we measure how
+uneven these decoder cell volumes are by considering the
+Figure 3.Conceptual example of using the cell-volume distribution
+to tighten the upper bound. Rather than assuming equal-volume
+cells (Dirac mass), we take the n-fold convolution of the empirical
+one-step volume distributionD1(light violet) and track when the
+median of Dn(violet dashed) drops below the threshold (black
+dashed).
+empirical distribution Dof the cell volumes of every token
+tin terms of proportion|Et|
+|E|.
+Concretely, we first approximate the distribution Dcorre-
+sponding to the next token, then study the n-fold multiplica-
+tive convolution Dnto model the distribution of the next n
+tokens. We compute the smallest nsuch that the median of
+Dnfalls below1
+P(E,∥·∥,ε), that is when at least half of the
+sequences become inaccessible (see Figure 3 for a concep-
+tual example). We describe how we obtain the volumes |Et|
+in Appendix H.
+Remark5.1.In the uniform setting underlying Corollary 4.6,
+the distribution Dcollapses to a Dirac mass at1
+|V|, reflecting
+equal-volume cells for all tokens. Note that the procedure
+described above exactly recovers the bound of Corollary 4.6,
+while nontrivial dispersion in Dyields strictly sharper, data-
+dependent limits.
+Combining this with the ellipsoid support, we recompute
+the theoretical slope and compare it to the empirical slope
+from Figure 2c. The updated ratios are reported in Table 1
+(row 4). The gap shrinks for all models.
+8
+
+--- PAGE 9 ---
+How Many Different Outputs Can a Transformer Generate?
+Evaluation length0 200 400 600 800 1000Copying Accuracy
+0.00.51.0Pythia-160M (R ²=0.97)
+Pythia-410M (R ²=0.95)
+Pythia-1B (R ²=0.97)
+Gemma3-270M (R ²=0.97)Qwen2.5-0.5B (R²=0.80)
+Qwen2.5-1.5B (R²=0.46)
+Llama-3.2-1B (R²=0.70)
+Figure 4.Models are trained to copy strings up to a maximum
+length (grey dashed) and evaluated on generating the exact copy
+of longer strings. We report exact-match copying accuracy versus
+string length. For each model, we fit a sigmoid to the accuracy
+curve (continuous lines) and report the correspondingR2.
+Remark5.2.The assumption of uniform precision εmay be
+too restrictive. We therefore provide a more refined analysis,
+whose results are reported in the last row of Table 1. Details
+are given in Appendix G.2. Although the resulting upper
+bounds remain valid, they do not account for the fact that
+most internal representations lie far from 0, which leads to
+looser bounds in practice.
+5.4. Copying-Length Generalization.
+The first part of this section tested the predictions of Corol-
+lary 4.6 using the cramming task. As prompt length m
+grows, cramming becomes prohibitively expensive, so we
+evaluate Corollary 4.10 through the copying task instead.
+Corollary 4.10 predicts a length threshold beyond which
+most sequences are inaccessible to a fixed transformer τ;
+it should in particular be impossible for τto copy such se-
+quences. Moreover, as for Corollary 4.6, a sharp decline
+in proportion of accessible sequences is predicted past this
+threshold.
+We test this directly by adding a copying-length general-
+ization experiment following Meyer et al. (2025), avoiding
+expensive cramming experiments. We fine-tune pretrained
+models on a synthetic exact string-copying task using next-
+token cross-entropy loss. Training examples are random
+strings x1:nof length at most 50, formatted as x1:n|x1:n,
+where the model is conditioned on the prefix x1:n|and
+trained to generate the target copy x1:n. Training stops
+at100% exact-match accuracy on length 50or after 10K
+optimization steps We then evaluate exact-match copying
+accuracy on longer unseen strings within the model context
+window.
+Figure 4 shows a sharp length-dependent transition. Accu-
+racy stays near 100% on short strings, then falls abruptly
+once string length exceeds a model-specific threshold. Sig-
+moid fits capture this transition well, with median R2=
+0.95across models.These results suggest that the linear regime observed in
+Figure 2b does not continue indefinitely; every transformer
+admits an accessibility limitation, independent of the prompt
+lengthm.
+6. Conclusion
+We established fundamental limits of transformers, showing
+that accessible sequence length grows at most linearly with
+prompt size and that most sequences become inaccessible
+beyond a critical threshold. These results hold even with un-
+bounded context and computation, explaining the empirical
+failure of transformers to reproduce long sequences. More
+notably, we theoretically predict the performance of trans-
+formers on the cramming task across several architectures,
+using only the structure of the embedding space.
+Importantly, this close characterization of transformers’ ca-
+pacities relies solely on the geometry of the embedding
+space. This suggests that the embedding space, despite
+representing only a small fraction of a model’s parameters,
+carries meaningful information about its capabilities.
+7. Future Work
+Besides cramming and copying, another setting closely re-
+lated to our theoretical results is test-time training, as de-
+scribed in Section 3.1 (“Memory as Context”) of Behrouz
+et al. (2025). The goal of this approach is to mitigate the
+quadratic cost of attention with respect to context length by
+compressing a long context into a short sequence of vectors
+h, using a neural network M. In this setting, Mis trained
+to iteratively encode the context into hvia gradient-based
+updates. Our results provide direct insight into this pro-
+cess: they characterize how the size of hmust scale with
+the length of the context in order to preserve accessibility.
+Moreover, as mentioned in Remark 1.1, our results can be
+extended to other architectures of interest.
+9
+
+--- PAGE 10 ---
+How Many Different Outputs Can a Transformer Generate?
+Impact Statement
+This paper presents work whose goal is to advance the field
+of machine learning. There are many potential societal
+consequences of our work, none of which we feel must be
+specifically highlighted here.
+Acknowledgements
+This research/project is supported by the National Research
+Foundation, Singapore under its AI Singapore Programme
+(AISG Award No: AISG3-PhD-2026-01-068T). V . Y . F. Tan
+is also supported by a Singapore Ministry of Education
+(MOE) AcRF Tier 2 grant under grant number A-8004062-
+00-00. This research/project is supported by the National
+Research Foundation, Singapore under its AI Singapore Pro-
+gramme (AISG Award No: AISG2-PhD-2023-01-040-J),
+and is part of the programme DesCartes which is supported
+by the National Research Foundation, Prime Minister’s Of-
+fice, Singapore under its Campus for Research Excellence
+and Technological Enterprise (CREATE) programme.References
+Alain, G. and Bengio, Y . Understanding intermediate
+layers using linear classifier probes.arXiv preprint
+arXiv:1610.01644, 2016.
+Barbero, F., Banino, A., Kapturowski, S., Kumaran, D.,
+Ara´ujo, J. G. M., Vitvitskyi, A., Pascanu, R., and
+Veliˇckovi ´c, P. Transformers need glasses! information
+over-squashing in language tasks. InThe Thirty-eighth
+Annual Conference on Neural Information Processing
+Systems, 2024. URL https://openreview.net
+/forum?id=93HCE8vTye.
+Behrouz, A., Zhong, P., and Mirrokni, V . Titans: Learning
+to memorize at test time. In Belgrave, D., Zhang, C., Lin,
+H., Pascanu, R., Koniusz, P., Ghassemi, M., and Chen, N.
+(eds.),Advances in Neural Information Processing Sys-
+tems, volume 38, pp. 113506–113543. Curran Associates,
+Inc., 2025. URLhttps://proceedings.neurip
+s.cc/paper_files/paper/2025/file/a4c
+a07aa108036f80cbb5b82285fd4b1-Paper-C
+onference.pdf.
+Belrose, N., Furman, Z., Smith, L., Halawi, D., Ostrovsky, I.,
+McKinney, L., Biderman, S., and Steinhardt, J. Eliciting
+latent predictions from transformers with the tuned lens.
+arXiv preprint arXiv:2303.08112, 2023.
+Biderman, S., Schoelkopf, H., Anthony, Q. G., et al. Pythia:
+A suite for analyzing large language models across train-
+ing and scaling. In Krause, A., Brunskill, E., Cho, K.,
+Engelhardt, B., Sabato, S., and Scarlett, J. (eds.),Proceed-
+ings of the 40th International Conference on Machine
+Learning, volume 202 ofProceedings of Machine Learn-
+ing Research, pp. 2397–2430. PMLR, 23–29 Jul 2023.
+URL https://proceedings.mlr.press/v2
+02/biderman23a.html.
+Brody, S., Alon, U., and Yahav, E. On the expressivity role
+of LayerNorm in transformers’ attention. In Rogers, A.,
+Boyd-Graber, J., and Okazaki, N. (eds.),Findings of the
+Association for Computational Linguistics: ACL 2023, pp.
+14211–14221, Toronto, Canada, July 2023. Association
+for Computational Linguistics. doi: 10.18653/v1/2023.f
+indings-acl.895. URL https://aclanthology.o
+rg/2023.findings-acl.895/.
+Castin, V ., Ablin, P., and Peyr ´e, G. How smooth is attention?
+InICML, 2024. URL https://arxiv.org/abs/
+2312.14820.
+Chiang, D. Transformers in uniform TC$ˆ0$.Transactions
+on Machine Learning Research, 2025. ISSN 2835-8856.
+URL https://openreview.net/forum?id=
+ZA7D4nQuQF.
+10
+
+--- PAGE 11 ---
+How Many Different Outputs Can a Transformer Generate?
+Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn,
+D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer,
+M., Heigold, G., Gelly, S., Uszkoreit, J., and Houlsby,
+N. An image is worth 16x16 words: Transformers for
+image recognition at scale. InInternational Conference
+on Learning Representations, 2021. URL https://op
+enreview.net/forum?id=YicbFdNTTy.
+Edelman, B., Goel, S., Kakade, S., and Zhang, C. Inductive
+biases and variable creation in self-attention mechanisms.
+InICML 2022, June 2022. URL https://www.micr
+osoft.com/en-us/research/publication
+/inductive-biases-and-variable-creat
+ion-in-self-attention-mechanisms/.
+Ellis, R. B., Martin, J. L., and Yan, C. Random geometric
+graph diameter in the unit ball.Algorithmica, 47(4):
+421–438, April 2007. ISSN 0178-4617. doi: 10.1007/s0
+0453-006-0172-y. URL https://doi.org/10.1
+007/s00453-006-0172-y.
+Ethayarajh, K. How contextual are contextualized word rep-
+resentations? Comparing the geometry of BERT, ELMo,
+and GPT-2 embeddings. In Inui, K., Jiang, J., Ng, V ., and
+Wan, X. (eds.),Proceedings of the 2019 Conference on
+Empirical Methods in Natural Language Processing and
+the 9th International Joint Conference on Natural Lan-
+guage Processing (EMNLP-IJCNLP), pp. 55–65, Hong
+Kong, China, November 2019. Association for Compu-
+tational Linguistics. doi: 10.18653/v1/D19-1006. URL
+https://aclanthology.org/D19-1006/.
+Furuya, T., de Hoop, M. V ., and Peyr ´e, G. Transformers
+are universal in-context learners. InThe Thirteenth Inter-
+national Conference on Learning Representations, 2025.
+URL https://openreview.net/forum?id=
+6S4WQD1LZR.
+GemmaTeam et al. Gemma 3 technical report, 2025. URL
+https://arxiv.org/abs/2503.19786.
+Geshkovski, B., Letrouit, C., Polyanskiy, Y ., and Rigollet,
+P. The emergence of clusters in self-attention dynam-
+ics. In Oh, A., Naumann, T., Globerson, A., Saenko,
+K., Hardt, M., and Levine, S. (eds.),Advances in Neural
+Information Processing Systems, volume 36, pp. 57026–
+57037. Curran Associates, Inc., 2023. URL https:
+//proceedings.neurips.cc/paper_files
+/paper/2023/file/b2b3e1d9840eba17ad9
+bbf073e009afe-Paper-Conference.pdf.
+Giannou, A., Rajput, S., Sohn, J.-Y ., Lee, K., Lee, J. D.,
+and Papailiopoulos, D. Looped transformers as pro-
+grammable computers. In Krause, A., Brunskill, E., Cho,
+K., Engelhardt, B., Sabato, S., and Scarlett, J. (eds.),
+Proceedings of the 40th International Conference on Ma-
+chine Learning, volume 202 ofProceedings of MachineLearning Research, pp. 11398–11442. PMLR, 23–29 Jul
+2023. URL https://proceedings.mlr.pres
+s/v202/giannou23a.html.
+Grattafiori, A., Dubey, A., Jauhri, A., et al. The llama 3
+herd of models, 2024. URL https://arxiv.org/
+abs/2407.21783.
+Gu, A. and Dao, T. Mamba: Linear-time sequence model-
+ing with selective state spaces. InFirst Conference on
+Language Modeling, 2024. URL https://openre
+view.net/forum?id=tEYskw1VY2.
+Hewitt, J. and Manning, C. D. A structural probe for finding
+syntax in word representations. InProceedings of the
+2019 Conference of the North American Chapter of the
+Association for Computational Linguistics: Human Lan-
+guage Technologies, Volume 1 (Long and Short Papers),
+pp. 4129–4138, 2019.
+Hu, J. Y .-C., Wang, W.-P., Gilani, A., Li, C., Song, Z.,
+and Liu, H. Fundamental limits of prompt tuning trans-
+formers: Universality, capacity and efficiency. InThe
+Thirteenth International Conference on Learning Repre-
+sentations, 2025. URL https://openreview.net
+/forum?id=jDpdQPMosW.
+Huang, X., Yang, A., Bhattamishra, S., Sarrof, Y ., Krebs,
+A., Zhou, H., Nakkiran, P., and Hahn, M. A formal
+framework for understanding length generalization in
+transformers. InThe Thirteenth International Conference
+on Learning Representations, 2025. URL https://op
+enreview.net/forum?id=U49N5V51rU.
+Jelassi, S., Brandfonbrener, D., Kakade, S. M., and Malach,
+E. Repeat after me: Transformers are better than state
+space models at copying.ArXiv, abs/2402.01032, 2024.
+URL https://api.semanticscholar.org/
+CorpusID:267406617.
+Jiang, H. and Li, Q. Approximation rate of the transformer
+architecture for sequence modeling. InThe Thirty-eighth
+Annual Conference on Neural Information Processing
+Systems, 2024. URL https://openreview.net
+/forum?id=ZwS2y21mZV.
+Kajitsuka, T. and Sato, I. Are transformers with one layer
+self-attention using low-rank weight matrices universal
+approximators? InThe Twelfth International Conference
+on Learning Representations, 2024. URL https://op
+enreview.net/forum?id=nJnky5K944.
+Kim, H., Papamakarios, G., and Mnih, A. The lipschitz
+constant of self-attention. In Meila, M. and Zhang, T.
+(eds.),Proceedings of the 38th International Conference
+on Machine Learning, volume 139 ofProceedings of
+11
+
+--- PAGE 12 ---
+How Many Different Outputs Can a Transformer Generate?
+Machine Learning Research, pp. 5562–5571. PMLR, 18–
+24 Jul 2021. URL https://proceedings.mlr.
+press/v139/kim21i.html.
+Kornblith, S., Norouzi, M., Lee, H., and Hinton, G. Sim-
+ilarity of neural network representations revisited. In
+International conference on machine learning, pp. 3519–
+3529. PMLR, 2019.
+Kratsios, A., Zamanlooy, B., Liu, T., and Dokmani ´c, I. Uni-
+versal approximation under constraints is possible with
+transformers. InInternational Conference on Learning
+Representations, 2022. URL https://openreview
+.net/forum?id=JGO8CvG5S9.
+Kuratov, Y ., Arkhipov, M., Bulatov, A., and Burtsev, M.
+Cramming 1568 tokens into a single vector and back
+again: Exploring the limits of embedding space capacity.
+In Che, W., Nabende, J., Shutova, E., and Pilehvar, M. T.
+(eds.),Proceedings of the 63rd Annual Meeting of the
+Association for Computational Linguistics (Volume 1:
+Long Papers), pp. 19323–19339, Vienna, Austria, July
+2025. Association for Computational Linguistics. ISBN
+979-8-89176-251-0. doi: 10.18653/v1/2025.acl-long.948.
+URL https://aclanthology.org/2025.ac
+l-long.948/.
+Lu, P., Huang, J., Zeng, Q., Wang, X., Chen, B., Langlais,
+P., and Cui, Y . Mamba modulation: On the length gener-
+alization of mamba models. InThe Thirty-ninth Annual
+Conference on Neural Information Processing Systems,
+2026. URL https://openreview.net/forum
+?id=QEU047bE8p.
+Luo, S., Li, S., Zheng, S., Liu, T.-Y ., Wang, L., and He, D.
+Your transformer may not be as powerful as you expect.
+Advances in Neural Information Processing Systems, 35:
+4301–4315, 2022.
+Merrill, W. and Sabharwal, A. The expressive power of
+transformers with chain of thought. InThe Twelfth Inter-
+national Conference on Learning Representations, 2024.
+URL https://openreview.net/forum?id=
+NjNGlPh8Wh.
+Meyer, M., Michelessa, M., Chaux, C., and Tan, V . Y . F.
+Memory limitations of prompt tuning in transformers,
+2025. URL https://arxiv.org/abs/2509.0
+0421.
+Mu, J. and Viswanath, P. All-but-the-top: Simple and effec-
+tive postprocessing for word representations. InInterna-
+tional Conference on Learning Representations, 2018.
+Nguyen, X. Convergence of latent mixing measures in finite
+and infinite mixture models.The Annals of Statistics, 41
+(1):370–400, 2013. ISSN 00905364, 21688966. URL
+http://www.jstor.org/stable/41806611.Nostalgebraist. Interpreting gpt: the logit lens., 2020. URL
+https://www.lesswrong.com/posts/AcKR
+B8wDpdaN6v6ru/interpreting-gpt-the-l
+ogit-lens.
+Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J.,
+Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga,
+L., Desmaison, A., Kopf, A., Yang, E., DeVito, Z., Raison,
+M., Tejani, A., Chilamkurthy, S., Steiner, B., Fang, L.,
+Bai, J., and Chintala, S. Pytorch: An imperative style,
+high-performance deep learning library. In Wallach, H.,
+Larochelle, H., Beygelzimer, A., d'Alch ´e-Buc, F., Fox, E.,
+and Garnett, R. (eds.),Advances in Neural Information
+Processing Systems, volume 32. Curran Associates, Inc.,
+2019. URL https://proceedings.neurips.
+cc/paper_files/paper/2019/file/bdbca
+288fee7f92f2bfa9f7012727740-Paper.p
+df.
+Rae, J. W., Potapenko, A., Jayakumar, S. M., Hillier, C.,
+and Lillicrap, T. P. Compressive transformers for long-
+range sequence modelling. InInternational Conference
+on Learning Representations, 2020. URL https://op
+enreview.net/forum?id=SylKikSYDH.
+Rudman, W., Gillman, N., Rayne, T., and Eickhoff, C.
+IsoScore: Measuring the uniformity of embedding space
+utilization. In Muresan, S., Nakov, P., and Villavicen-
+cio, A. (eds.),Findings of the Association for Computa-
+tional Linguistics: ACL 2022, pp. 3325–3339, Dublin,
+Ireland, May 2022. Association for Computational Lin-
+guistics. doi: 10.18653/v1/2022.findings-acl.262. URL
+https://aclanthology.org/2022.findin
+gs-acl.262/.
+Sander, M. E., Ablin, P., Blondel, M., and Peyr ´e, G. Sink-
+formers: Transformers with doubly stochastic attention.
+In Camps-Valls, G., Ruiz, F. J. R., and Valera, I. (eds.),
+Proceedings of The 25th International Conference on
+Artificial Intelligence and Statistics, volume 151 ofPro-
+ceedings of Machine Learning Research, pp. 3515–3530.
+PMLR, March 2022. URL https://proceedings.
+mlr.press/v151/sander22a.html.
+Santambrogio, F.Optimal transport for applied mathemati-
+cians. Springer, 2015.
+Strobl, L., Merrill, W., Weiss, G., Chiang, D., and An-
+gluin, D. What formal languages can transformers
+express? a survey.Transactions of the Association
+for Computational Linguistics, 12:543–561, 2024. doi:
+10.1162/tacl a00663. URL https://aclantholo
+gy.org/2024.tacl-1.30/.
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones,
+L., Gomez, A. N., Kaiser, L. u., and Polosukhin, I. Atten-
+tion is all you need. In Guyon, I., Luxburg, U. V ., Bengio,
+12
+
+--- PAGE 13 ---
+How Many Different Outputs Can a Transformer Generate?
+S., Wallach, H., Fergus, R., Vishwanathan, S., and Gar-
+nett, R. (eds.),Advances in Neural Information Process-
+ing Systems, volume 30. Curran Associates, Inc., 2017.
+URL https://proceedings.neurips.cc/p
+aper_files/paper/2017/file/3f5ee2435
+47dee91fbd053c1c4a845aa-Paper.pdf.
+Vershynin, R.High-Dimensional Probability: An Introduc-
+tion with Applications in Data Science. Cambridge Series
+in Statistical and Probabilistic Mathematics. Cambridge
+University Press, 2 edition, 2026.
+Wang, X. V olumes of generalized unit balls.Mathemat-
+ics Magazine, 78(5):390–395, 2005. ISSN 0025570X,
+19300980. URL http://www.jstor.org/stab
+le/30044198.
+Wang, Y ., Chauhan, J., Wang, W., and Hsieh, C.-J. Uni-
+versality and limitations of prompt tuning. In Oh, A.,
+Naumann, T., Globerson, A., Saenko, K., Hardt, M., and
+Levine, S. (eds.),Advances in Neural Information Pro-
+cessing Systems, volume 36, pp. 75623–75643. Curran
+Associates, Inc., 2023. URL https://proceeding
+s.neurips.cc/paper_files/paper/2023/
+file/eef6aecfe050b556c6a48d9c16b1555
+8-Paper-Conference.pdf.
+Wei, C., Chen, Y ., and Ma, T. Statistically meaningful
+approximation: a case study on approximating turing ma-
+chines with transformers. In Koyejo, S., Mohamed, S.,
+Agarwal, A., Belgrave, D., Cho, K., and Oh, A. (eds.),
+Advances in Neural Information Processing Systems, vol-
+ume 35, pp. 12071–12083. Curran Associates, Inc., 2022.
+URL https://proceedings.neurips.cc/p
+aper_files/paper/2022/file/4ebf1d74f
+53ece08512a23309d58df89-Paper-Confere
+nce.pdf.
+Wolf, T., Debut, L., Sanh, V ., et al. Transformers: State-
+of-the-art natural language processing. In Liu, Q. and
+Schlangen, D. (eds.),Proceedings of the 2020 Conference
+on Empirical Methods in Natural Language Processing:
+System Demonstrations, pp. 38–45, Online, October 2020.
+Association for Computational Linguistics. doi: 10.186
+53/v1/2020.emnlp-demos.6. URL https://aclant
+hology.org/2020.emnlp-demos.6/.
+Yang, A., Yang, B., Hui, B., Zheng, B., Yu, B., Zhou, C.,
+Li, C., Li, C., Liu, D., Huang, F., et al. Qwen2 technical
+report, 2024.URL https://arxiv.org/abs/2407.10671, 7:8,
+2024.
+Yun, C., Bhojanapalli, S., Rawat, A. S., Reddi, S., and
+Kumar, S. Are transformers universal approximators
+of sequence-to-sequence functions? InInternational
+Conference on Learning Representations, 2020a. URLhttps://openreview.net/forum?id=ByxR
+M0Ntvr.
+Yun, C., Chang, Y ., Bhojanapalli, S., Rawat, A., Reddi, S.,
+and Kumar, S. O(n) connections are expressive enough:
+Universal approximability of sparse transformers.Ad-
+vances in Neural Information Processing Systems, 2020-
+December, 2020b. ISSN 1049-5258. Publisher Copyright:
+© 2020 Neural information processing systems founda-
+tion. All rights reserved.; 34th Conference on Neural
+Information Processing Systems, NeurIPS 2020 ; Confer-
+ence date: 06-12-2020 Through 12-12-2020.
+Zhai, X., Kolesnikov, A., Houlsby, N., and Beyer, L. Scaling
+vision transformers. InProceedings of the IEEE/CVF
+conference on computer vision and pattern recognition,
+pp. 12104–12113, 2022.
+Zhao, H., Jiang, L., Jia, J., Torr, P. H., and Koltun, V . Point
+transformer. InProceedings of the IEEE/CVF Interna-
+tional Conference on Computer Vision (ICCV), pp. 16259–
+16268, October 2021.
+13
+
+--- PAGE 14 ---
+How Many Different Outputs Can a Transformer Generate?
+A. Transformer Layers
+A.1. Definition
+Definition A.1(Self-Attention Layer).A h-head self-attention layer maps every query token xwithin a context X∈Rd×m
+to
+Att(x,X) =hX
+i=1Wi
+oWi
+vX·σ 
+(Wi
+kX)⊤Wi
+qx
+,
+where Wi
+q,Wi
+k∈Rs×d,Wi
+v∈Rs′×d,Wi
+o∈Rd×s′,sis the hidden dimension (typically s=s′=d
+h), and the
+normalization factor1/√sis absorbed intoWi
+k. The results for each token are concatenated to produce the output
+f(X): = Att(X,X)
+= [Att(X :,1,X), . . . ,Att(X :,m,X)].
+Definition A.2(Transformer Layers).A transformer layer
+Li:+∞[
+m=1Rd×m−→+∞[
+m=1Rd×m,
+is defined as
+X′=X+f 
+Norm(X)
+,
+Li(X) =X′+ MLP i 
+Norm(X′)
+,
+with
+MLP(X) = [W 2ReLU(W 1X:,1+b1) +b 2+X :,1,
+. . . ,W 2ReLU(W 1X:,m+b1) +b 2+X :,m],
+where W1∈Rdff×d,W2∈Rd×d ff,b1∈Rdff,b2∈Rd,dffis the hidden dimension of the MLP and Norm is a
+normalization operator applied column-wise such that ∥Norm(X)∥ ∞is bounded for any X∈Rd. Anl-layer transformer
+uses the composition ofltransformer layers
+L = L l◦ ··· ◦L 1.
+For simplicity, the positional encoding and masking operation are omitted, following (Kim et al., 2021). Note however that
+including those operations would not modify any theorem of this paper.
+A.2. Transformer Layers Preserve Bounded Embeddings
+For an l-layer transformer, a natural upper bound of the output is therefore ∥Xl∥∞≤(I+kl(A+M))∥E f∥, where the
+maximal initial norm I= sup∥X0∥∞is entirely determined by the initial embedding matrix and positional encoding, N=
+∥Norm(X)∥ ∞,A= sup∥X∥∞≤N∥Attention(X)∥ ∞,M= sup∥X∥∞≤N∥MLP(X)∥ ∞, and Efis the final embedding
+matrix (with the convention∥X∥ ∞= max i∥Xi∥).
+We validate this empirically following the same experimental design as in Appendix G.4 in Figure 5.
+B. Mean-Field Transformers
+To extend the action of transformers beyond empirical measures to general probability distributions, we introduce the notion
+of pushforward.
+Definition B.1(Santambrogio (2015)).Given a probability measure µonRdand a measurable map φ:Rd→Rd, the
+pushforwardofµbyφ, denoted byφ ♯µ, is the probability measure defined on Borel setsB⊂Rdby
+(φ♯µ)(B) :=µ(φ−1(B)).
+Intuitively, φ♯µis obtained by transporting mass from each point xto its image φ(x) , preserving total measure. We now
+define a mean-field transformer, denotingP c(Rd)the set of compactly supported probability measures onRd.
+14
+
+--- PAGE 15 ---
+How Many Different Outputs Can a Transformer Generate?
+0 1000 2000 3000 4000
+max sampled input length max
+5052R
+Pythia-160m
+0 1000 2000 3000 4000
+max sampled input length max
+4050R
+Pythia-410m
+0 1000 2000 3000 4000
+max sampled input length max
+5060R
+Pythia-1b
+0 1000 2000 3000 4000
+max sampled input length max
+275300R
+Qwen2.5-0.5b
+0 1000 2000 3000 4000
+max sampled input length max
+151152153R
+Qwen2.5-1.5b
+0 1000 2000 3000 4000
+max sampled input length max
+37.540.0R
+Llama-3.2-1b
+0 1000 2000 3000 4000
+max sampled input length max
+910R
+Gemma-3-270m
+Figure 5.Maximal radiusRof the internal representations of the transformer for various input lengths.
+Definition B.2(Mean-Field Self-Attention (Castin et al., 2024)).The mean-field generalization Fof any self-attention
+layer—parameterized by projection matricesW q,Wk,Wv, andW oas defined in Definition A.1—is defined by
+F:µ∈ P c(Rd)7→(Γ µ)♯µ∈ P c(Rd),where
+Γµ(x) :=hX
+i=1R
+Wi
+oWi
+vy·exp 
+(Wi
+ky)⊤Wi
+qx
+dµ(y)R
+exp 
+(Wi
+ky)⊤Wiqx
+dµ(y).
+Mean-field self-attention Fgeneralizes discrete self-attention Attin the sense that for any input X∈Rd×m, we have
+F(M(X)) = M(Att(X,X)).
+Definition B.3(Mean-Field Transformer Layer).Similarly, any transformer layer τ, with MLP layer MLP and mean-field
+self-attention layer defined byΓ ·, has the following mean-field generalizationT.
+T:µ∈ P c(Rd)7→(∆ µ)♯µ∈ P c(Rd),where
+∆µ(x) := MLP(Γ µ(x) +x).
+Similarly to mean-field self-attention, a mean-field transformer layer Tgeneralizes a discrete transformer layer τin the
+sense that for any input X∈Rd×m, we have T(M(X)) = M(τ(X)) (Meyer et al., 2025). With a slight abuse of notation,
+we use the same symbolτto denote a transformer and its mean-field counterpart.
+RemarkB.4 (Mean-Field Generalization of Masked Attention).We can easily generalize the mean-field framework to
+masked attention by augmenting the support of the probability measures to [0,1]×Rd, as adding [0,1] allows to encode the
+position of every token (Castin et al., 2024).
+C. Packing Number
+Recall the definition of packing number.
+Definition C.1(Packing Number).Let(T,∥ · ∥)be a vector space and letε >0.
+15
+
+--- PAGE 16 ---
+How Many Different Outputs Can a Transformer Generate?
+Theε-packing numberof T, denoted P(T,∥ · ∥, ε) , is the maximal number of disjoint open balls of radiusε
+2that can be
+placed inT, or equivalently, the largest cardinality of anε-separated subset ofT. That is,
+P(T,∥ · ∥, ε) = max{M∈N:∃(x i)i∈[M]∈TM,
+∀i̸=j,∥x i−xj∥> ε}.
+In this section, we provide upper and lower bounds on the packing number of the sets we are studying.
+THE FINITE PROMPT LENGTH SETTING
+We use the following main result to analyze the setting of bounded length prompts.
+Proposition C.2.Letd∈N,r >0, andε >0. Then
+r
+εd
+≤ P(Bd(0, r),∥ · ∥, ε)≤
+1 +2r
+εd
+THE MEAN-FIELD FRAMEWORK
+We obtain similar results for the study of prompts of arbitrary length in the mean-field framework. Let G:= Im(M) =
+{M(X),X∈Rd×m, m∈N} be the set of discrete probability measures on the token embeddings of dimension das defined
+in Section 2.2.
+Proposition C.3.For anyq≥1, ε >0, there existsC >0such that
+ln1
+C
++1
+εd≤lnP(G, W q,2ε)≤
+1 +4r
+εd
+ln
+e+e(2r)q
+εq
+,
+C.1. Proofs
+A central result we need is the volume of thed-dimensional ball.
+Lemma C.4(Wang (2005); Ellis et al. (2007)).Assumep 1, . . . , p d>0. The volume of the generalized unit ball inRd
+Bd
+p1p2···pd={x= (x 1, . . . , x d) :|x 1|p1+···+|x d|pd≤1},
+is equal to
+Vol 
+Bd
+p1p2···pd
+= 2dΓ
+1 +1
+p1
+···Γ
+1 +1
+pd
+Γ
+1
+p1+1
+p2+···+1
+pd+ 1.
+Note that we can take some of thep i’s to be+∞with the convention1
++∞= 0.
+In particular, the volume of thel pball of radiusris
+Vol 
+Bd
+p(0, r)
+= (2r)dΓ
+p+1
+pd
+Γ
+p+d
+p.
+And the one corresponding to thel ∞norm is
+Vol 
+Bd
+∞(0, r)
+= (2r)d.
+Proposition C.2 can be proved using known bounds for the packing number of a general bounded set K, depending on the
+volume ofK.
+Lemma C.5(Vershynin (2026, Proposition 4.2.10)).Letd∈N,K⊂Rdandε >0. Then,
+|K|
+|εBd(0,1)|≤ P(K,∥ · ∥, ε),and
+P(K,∥ · ∥, ε)≤|K+ (ε/2)Bd(0,1)|
+|(ε/2)Bd(0,1)|.
+16
+
+--- PAGE 17 ---
+How Many Different Outputs Can a Transformer Generate?
+We can then deduce Proposition C.3 from the following two lemmas.
+Lemma C.6(Nguyen (2013, Lemma 4.b)).For anyq≥1, ε >0,
+lnP(G, W q,4ε)≤ P(Θ,∥ · ∥ q, ε) ln
+e+eDiam(Θ)q
+εq
+,
+withΘ =Bd(0, r)ande= exp(1).
+Lemma C.7(Meyer et al. (2025, Proposition 3.6)).For anyq≥1, ε >0, there existsC >0such that
+P(G, W q, ε)≥1
+Cexp(1
+εd).
+D. Permutation-Invariant Norms and Wasserstein Distances
+In this section, we discuss the Wasserstein distance, and specifically how the Wasserstein distance between two empirical
+measures M(X) andM(Y) relates to the classical distance ∥X−Y∥ . This allows us to study the validity of Assumption 4.8.
+Definition D.1(Wasserstein Distance (Santambrogio, 2015)).For q≥1 , theℓqWasserstein distance on Pc(Rd)is given by
+Wq(µ, ν) =
+inf
+π∈Π(µ,ν)Z
+∥x−y∥qdπ(x, y)1/q
+,
+forµ, ν∈ P c(Rd), where Π(µ, ν) is the set of couplings between µandν,i.e.of probability measures π∈ P(Rd×Rd)
+such thatR
+π(·, y) dy=µandR
+π(x,·) dx=ν.
+Theℓ ∞Wasserstein distance is defined as the limit of theW qdistance asqgoes to infinity.
+W∞(µ, ν) = lim
+q→∞Wq(µ, ν)
+In particular, two sequencesX,Y∈Rd×nof equal lengthnare of Wasserstein distance
+Wq(M(X),M(Y)) = 
+min
+π∈Sn1
+nnX
+i=1∥X:,i−Y:,π(i)∥q!1/q
+,
+W∞(M(X),M(Y)) = min
+π∈Snmax
+i=1,...,n∥X:,i−Y:,π(i)∥.
+The permutation invariance of the mean-field transformer architecture prompts us to consider permutation invariant versions
+of theℓ pandℓ∞distances.
+Definition D.2.Consider two sequences X,Y∈Rd×nof equal length n. For π∈S n, letYπ= (Y :,π(1), . . . ,Y :,π(n)).
+Then
+dq(X,Y) = min
+π∈SnX−Y π
+q,1≤q <∞,
+d∞(X,Y) = min
+π∈SnX−Y π
+∞,
+whereS ndenotes the set of permutations of[n].
+We can now relate Wasserstein distance between empirical measures and classical distance.
+Proposition D.3.Consider two sequencesX,Y∈Rd×nof equal lengthn. Then,
+Wq(M(X),M(Y)) =n−1/qdq(X,Y),1≤q <∞,
+W∞(M(X),M(Y)) =d ∞(X,Y).
+17
+
+--- PAGE 18 ---
+How Many Different Outputs Can a Transformer Generate?
+Notice that bounding the Wasserstein distance between two empirical measures M(X) andM(Y) does not directly bound the
+distance between XandY. The latter bound depends on the lengths of both vectors. Therefore, a finite precision on vectors
+does not directly imply a finite Wasserstein precision (that is Assumption 4.3 does not directly imply Assumption 4.8).
+However, one can clearly see that Assumption 4.3 is very weak for large vectors. Indeed, if a transformer cannot distinguish
+two vectors whose ℓ1-distance is at most εwhen their length is 1, then for vectors of length n, this tolerance scales roughly
+asnε. In other words, the same absolute ℓ1-precision becomes increasingly coarse as the vector length grows: small
+perturbations distributed across many coordinates can yield an ℓ1deviation of order nεwhile remaining imperceptible to the
+model.
+Of course, assuming a uniform ε-precision in the ℓ1norm is overly restrictive. Yet, the argument above suggests that
+for some q≥1 , the effective distinguishability of the model may scale as n−1/qε. Therefore, Proposition D.3 provides
+theoretical support for Assumption 4.8: a finite vector precision naturally induces a finite Wasserstein precision when the
+appropriate scaling withnandqis taken into account.
+E. Arbitrary Prompt Length via Elementary Operations
+Contrary to Assumption 4.3, Assumption 4.8 is non-trivial. We show in this section that it can be replaced by a much weaker
+assumption, pertaining to what we call elementary operations.
+Definition E.1(Elementary Operations on a Sequence of Vectors).Let X= [x 1, . . . ,x n]be a sequence of nvectors. An
+elementary operation onXconsists in duplicating or removing one of its tokens.
+Assumption E.2(Elementary Operation Precision of a Transformer).Let τbe a transformer. There exists a constant p∈N
+such that, if a sequence of tokens Ycan be recovered from another sequence X∈Rd×nof length nthrough at mostn
+p
+elementary operations, then τcannot distinguish between YandX. We say that1
+pis the elementary operation precision
+(e.o. precision) ofτ.
+This assumption states that a transformer τis insensitive to small structural edits of its input sequence. The only allowed
+operations are token deletions and duplications—no arbitrary modifications of token content. It is therefore reasonable to
+expect that if Ydiffers from Xby only a small fraction of such operations, then τproduces nearly identical representations.
+Although we do not specify the exact constant p, the claim clearly fails for large perturbations (e.g., modifying half the
+tokens) and is trivially true for extremely small ones (e.g., 0.001% of the tokens). Hence, it is highly plausible that there
+exists a non-trivial fraction1/pfor which Assumption E.2 holds.
+Under Assumption E.2, we can obtain an upper bound on the number of different inputs a given transformer τcan distinguish
+between, and hence on the amount of distinct output sequences it can access. This upper bound is a function of both the e.o.
+precision pof the transformer, and the number of distinct input values Dit can distinguish between. If we consider a hard
+prompt transformer [Definition 2.3] without positional embedding, then D=|V| . In general, we can take D= (r
+ε)d, where
+εis the standard precision ofτandris its embedding radius.
+Theorem E.3.There exists an upper bound f(p, D) on the number of sequences of tokens that are accessible by a
+transformerτwith elementary operation precision1
+p.
+Proof. We showed that the input space of τis exactly the set of empirical distributions over [D], which is a subset of ND.
+That is the transformer maps to the same image two inputs xandysatisfying ∃q∈Q,x=qy . We denote by Rand¯xthe
+associated equivalence relation and equivalence classes:
+•∀x,y∈ND,xRy⇐⇒ ∃q∈Q,x=qy.
+•∀x∈ND,¯x={y∈ND:xRy}.
+Then the input space of τis exactly ND/R={ ¯x:x∈ND}. An important thing to note is that in ND/R, the length of an
+empirical distribution xis simply ∥x∥1, and an elementary operation on xamounts to adding or subtracting 1to a non-zero
+coefficient ofx.
+Take the basis B={x∈ND:∥x∥ ∞< b} . Theorem E.3 is a direct consequence of the fact that every vector ¯x∈ND/Ris
+at most g(b, D)∥x∥ 1elementary operations away from a basis vector for some function g. Then, we conclude the proof by
+choosingbsuch thatg(b, D)≤1
+p, and obtainf(p, D) =|B|=bD.
+18
+
+--- PAGE 19 ---
+How Many Different Outputs Can a Transformer Generate?
+A very straightforward way of proving this result is presented in this section. We obtain g(b, D) =D
+2(b−2)andb=pD
+2
+in
+Lemma E.4. We provide in Appendix E more complicated proofs leading to tighter bounds.
+Lemma E.4.Letx∈ND. There exists ¯y∈¯B:={¯y:y∈ B}such that∥x−y∥ 1≤D∥x∥ 1
+2(b−2).
+Proof. Letx= (x 1, . . . , x D)∈ND. Without loss of generality, assume that x1≤. . .≤x D. Let l∈N be the quotient
+of the euclidean division of xDbyb−2 :l(b−2)≤x D< l(b−1) . Then there exists y= (y 1, . . . , y D)∈NDsuch that
+∥x−y∥ 1≤Dl
+2
+and∀i∈[D], l|y i(everyy iis the closest multiple ofltox i).
+Clearly,1
+ly∈ BandyR(1
+ly). Hence ¯y=1
+l¯y∈¯B.
+Finally,l≤xD
+b−2≤∥x∥1
+b−2so∥x−y∥ 1≤D∥x∥ 1
+2(b−2).
+E.1. Tighter Bounds for Theorem E.3
+Theorem E.3.There exists an upper bound f(p, D) on the number of sequences of tokens that are accessible by a
+transformerτwith elementary operation precision1
+p.
+Recall that to prove Theorem E.3, for every p∈N we obtain a basis B={x∈ND:∥x∥ ∞< b} for some b∈N that is
+1
+p-dense inNDin the sense that
+∀x∈ND,∃y∈ND,(
+¯y∈¯B,
+∥x−y∥ 1≤∥x∥1
+p.
+Then, clearlyf(p, D)≤ |B|=bD.
+RemarkE.5.Note that the last equalityf(p, D)≤ |B|=bDleaves room for improvement asf(p, D)≤ | ¯B|<|B|=bD.
+In Lemma E.4, we proposeb=pD
+2
+for the basis radius. Let us show thatb= 2psuffices.
+Lemma E.6.Letx∈ND. There exists ¯y∈¯B:={¯y:y∈ B}such that∥x−y∥ 1≤2∥x∥ 1
+b.
+Proof.For the purpose of this proof, we introduce the distancedonND/Rdefined asd( ¯x,¯y) = min x∈¯x,y∈ ¯y∥x−y∥ 1.
+Letx= (x 1, ..., x D)∈ND. By considering separately the cases where mini∈[D]xi≤∥x∥1
+b2andmini∈[D]xi>∥x∥1
+b2, we
+can show that there existsy1= (0, . . . ,0, y, n 1y, . . . , n ky)∈NDsuch thatd( ¯x,y1)≤∥x∥1
+b.
+Without loss of generality, assume that n1≤. . .≤n k. Ifnk≤b, then y1=(0, . . . ,0,1, n 1, . . . , n k)∈¯B. Else, consider
+y2= (0, . . . ,0,0, n 1y, . . . , n ky)∈NDwhich satisfies∥y1−y2∥1=y=∥y1∥1
+1+n 1+···+n k<∥y1∥1
+1+kb.
+We can conclude by induction.
+F. Theoretical Slope of the Cramming Task for Various Supports
+We describe how we obtain the formulas for the various slopes in the following subsections. First, let us introduce a few
+useful notations and equations.
+LetDbe the distribution over the volume proportion|Et|
+|E|of the next-token cells. That is D(I) =1
+|V|P
+t∈V1|Et|
+|E|∈Ifor all
+I⊂R+. We can approximate the distribution over the volume fractions|Et|
+|E|of the sequences of lengthn,t∈ Vnby
+Dn(I) =1
+|V|nX
+t∈Vn1|Et|
+|E|∈I
+≃1
+|V|nX
+t∈Vn1
+(Qn
+i=1|Eti|
+|E|)∈I
+=Dn(I),(3)
+19
+
+--- PAGE 20 ---
+How Many Different Outputs Can a Transformer Generate?
+where Dndenotes the distribution of the product of nvariables X1, ..., X niid∼ D. Then, at least half of the token sequences
+of length nare inaccessible if Med(Dn)≤1
+P(E,∥·∥,ε), where Med(Dn)denotes the median of Dn. Note that in the setting
+of Corollary 4.6,Dis equal to the Dirac distributionδ 1
+|V|, and we recover the slopeln(P(E,∥·∥,ε))
+ln(|V|)from
+Med(Dn)≤1
+P(E,∥ · ∥, ε)⇐⇒1
+|V|n≤1
+P(E,∥ · ∥, ε)
+⇐⇒n≥ln(P(E,∥ · ∥, ε))
+ln(|V|).(4)
+RemarkF.1.In Eq. 3, we assume conditional independence of next-token cells: for any realized prefix, the distribution
+of subsequent cell volumes within the selected cell is again D. Although strong, this assumption is conservative: we
+hypothesize that adding context reduces the number of plausible next tokens, making the next-token distribution sharper than
+the marginal and thus yielding more variance in the volume cells than D. Under this view, the i.i.d. model Dnis expected to
+overestimate typical continuation volumes and can be interpreted as an upper bound.
+F.1. When the Support Is a Ball
+Proposition F.2.Let Bd×m(0, r)⊃ E be an enclosure of the embedding support. Then the slope of the Cramming Task
+satisfiesC≤dln(1+2r
+ε)
+ln(|V|).
+Proof.This is a simple corollary of Equation 4 and Proposition C.2.
+F.2. When the Support Is a Cone
+Letn≥2,r >0, andδ∈(0, π). Define the (infinite) cone of angleδ
+Cδ:=n
+x∈Rn:x1tan(δ/2)>vuutnX
+i=2x2
+io
+,
+and its truncation by the Euclidean ballBd(0, r) :={x∈Rd:qPd
+i=1x2
+i< r}:
+Cδ,r:=C δ∩Bd(0, r).
+Proposition F.3.LetCm
+δ,r⊃ Ebe an enclosure of the embedding support. Then the slope of the Cramming Task satisfies
+C≤1
+ln(|V|)ln 
+ 
+1 +2r
+εdΓ(d+2
+2)
+2rΓ(3
+2)Γ(d+1
+2)"
+1
+dsind−1δ
+2
+cosδ
+2
++1
+2
+B
+1
+2,d+1
+2
+−B
+cos2(δ
+2);1
+2,d+1
+2#!
+,
+where B(a, b) =R1
+0ta−1(1−t)b−1dtis the Beta function, and B(x;a, b) =Rx
+0ta−1(1−t)b−1dtis the incomplete Beta
+function.
+Proof.
+Lemma F.4.The volume of thed-dimensional cone of angleδand radiusrsatisfies
+|Cδ,r|=ω d−1rd1
+dsind−1δ
+2
+cosδ
+2
++1
+2
+B
+1
+2,d+1
+2
+−B
+cos2(δ
+2);1
+2,d+1
+2
+,
+whereω d−1:=|Bd−1(0,1)|is the volume of the unit ball inRd−1.
+Proof of Lemma F .4.Step 1: Scaling Reduction.For anyr >0, the change of variablesx=rygives
+|Cδ∩Bd(0, r)|=Z
+Rd1Cδ(x)1 Bd(0,r)(x)dx=Z
+Rd1Cδ(ry)1 Bd(0,1)(y)rddy=rd|Cδ∩Bd(0,1)|,
+20
+
+--- PAGE 21 ---
+How Many Different Outputs Can a Transformer Generate?
+Figure 6.Decomposition of the cone inE δandF δ.
+sinceC δis a cone (i.e.y∈C δ⇐⇒ry∈C δforr >0). Thus it suffices to compute|C δ∩Bd(0,1)|.
+Step 2: Disjoint Decomposition.Write, as shown in Figure 6,
+Eδ:= (C δ∩Bd(0,1))∩ {0<x 1<cos(δ/2)}, F δ:= (C δ∩Bd(0,1))∩ {cos(δ/2)<x 1<1}.
+ThenC δ∩Bd(0,1) =E δ˙∪Fδup to a null set (the slicex 1= cos(δ/2)), so
+|Cδ∩Bd(0,1)|=|E δ|+|F δ|.
+Step 3: Volume of the Conical PartE δ.Fixρ∈(0,cos(δ/2)). On the hyperplane{x 1=ρ}, we have
+vuutdX
+i=2x2
+i<x1tan(δ/2) =ρtan(δ/2).
+Sinceρ <cos(δ/2), we obtain
+ρtan(δ/2)≤cos(δ/2) tan(δ/2) = sin(δ/2).
+HencePd
+i=1x2
+i=ρ2+Pd
+i=2x2
+i< ρ2+ sin2(δ/2)≤1.
+So the ball constraintqPd
+i=1x2
+i<1is inactive on these slices and
+{x1=ρ} ∩E δ={ρ} ×Bd−1(0, ρtan(δ/2)).
+Thus,
+|Eδ|=Zcos(δ/2)
+0|Bd−1(0, ρtan(δ/2))|dρ=Zcos(δ/2)
+0ωd−1 
+ρtan(δ/2)d−1dρ.
+Evaluating the integral yields
+|Eδ|=ω d−1tand−1(δ/2)Zcos(δ/2)
+0ρd−1dρ=ωd−1
+dtand−1(δ/2) cosd(δ/2) =ωd−1
+dsind−1(δ/2) cos(δ/2).
+Step 4: Volume of the Spherical-Cap Part Fδ.Fix ρ∈(cos(δ/2),1) . On the hyperplane {x1=ρ} , the ball constraintqPd
+i=1x2
+i<1is equivalent toqPd
+i=2x2
+i<p
+1−ρ2. Forρ >cos(δ/2),
+p
+1−ρ2<p
+1−cos2(δ/2) = sin(δ/2) = cos(δ/2) tan(δ/2)< ρtan(δ/2),
+so the cone constraint is inactive on these slices: the ball provides the tighter bound. Thus
+{x1=ρ} ∩F δ={ρ} ×Bd−1(0,p
+1−ρ2).
+21
+
+--- PAGE 22 ---
+How Many Different Outputs Can a Transformer Generate?
+Hence,
+|Fδ|=Z1
+cos(δ/2)|Bd−1(0,p
+1−ρ2)|dρ=ω d−1Z1
+cos(δ/2) 
+1−ρ2d−1
+2dρ.
+Letτ=ρ2, sodρ=1
+2τ−1/2dτ. Then
+|Fδ|=ωd−1
+2Z1
+cos2(δ/2)τ−1/2(1−τ)d−1
+2dτ=ωd−1
+2h
+B
+1
+2,d+1
+2
+−B
+cos2(δ
+2);1
+2,d+1
+2i
+.
+Step 5: Conclusion.Summing the two contributions,
+|Cδ∩Bd(0,1)|=ω d−11
+dsind−1δ
+2
+cosδ
+2
++1
+2
+B
+1
+2,d+1
+2
+−B
+cos2(δ
+2);1
+2,d+1
+2
+,
+and scaling gives the claimed formula for|C δ∩Bd(0, r)|=rd|Cδ∩Bd(0,1)|.
+The packing number ofC δ,rfollows by symmetry (or using Lemma C.5).
+Corollary F.5.The packing number of thed-dimensional cone of angleδand radiusrsatisfies
+P(C δ,r,∥·∥ 2, ε)≲Γ(d+2
+2)
+2rΓ(3
+2)Γ(d+1
+2)"
+1
+dsind−1δ
+2
+cosδ
+2
++1
+2
+B
+1
+2,d+1
+2
+−B
+cos2(δ
+2);1
+2,d+1
+2#
+P(Bd(0, r),∥·∥ 2, ε)
+Finally, we can conclude using Equation 4 and Proposition C.2.
+F.3. When the Support Is an Ellipsoid
+We use here thel ∞norm.
+Proposition F.6.Let
+[xmin
+1, xmax
+1]× ··· ×[xmin
+d, xmax
+d]m
+⊃ E be an enclosure of the embedding support. Then the slope
+of the Cramming Task satisfiesC≤Pd
+i=1ln(1+xmax
+i−xmin
+i
+ε)
+ln(|V|).
+Proof.This is a simple corollary of Equation 4 and Proposition C.2.
+G. Supplementary Experimental Results
+G.1. Latent space constants for each model
+Pythia Qwen-2.5 Llama-3.2 Gemma-3
+160M 410M 1B 0.5B 1.5B 1B 270M
+Hidden dimensiond768 1024 2048 896 1536 2048 640
+V ocabulary Size|V|50304 50304 50304 151936 151936 128256 262144
+Radiusr63.62 54.90 65.68 309.00 153.62 41.06 10.74
+Cone angleθ1.96 1.87 2.22 2.23 2.34 1.73 1.82
+Table 2.Model constants used to estimate slope upper-bound ratios in Table 1. The dimensionality dand vocabulary size |V|are
+determined by the model architecture, whilerandθare estimated in Section 5.2.
+22
+
+--- PAGE 23 ---
+How Many Different Outputs Can a Transformer Generate?
+G.2. Estimation of precisionε
+G.2.1. FIXEDPRECISION
+We assume a finite numerical precision in transformer computations: inputs closer than a threshold εare effectively
+indiscernible. In practice, transformers are typically evaluated using half-precision floating-point arithmetic (fp16), which
+useskmax= 5exponent bits and p= 11 bits of significand precision.2For numbers with exponent k, the spacing between
+representable values is 2k−p. Thus, two values at exponent kbecome indistinguishable after rounding if their difference is
+below this spacing.
+We use the standard interval definition of machine epsilon: the gap between 1and the next representable floating-point value,
+i.e.ε= 2−10, as used by Pytorch (Paszke et al., 2019). This definition lets us instantiate precision-dependent constants for
+fp16 and derive upper bounds on model slopes.
+G.2.2. VARIABLEPRECISION
+One could however argue that this definition is not precise: the precision should vary depending on the order of magnitude
+of the number being represented. To that end, we revise the upper bound of the packing number as follows.
+LetE= [r min, rmax]be the embedding space, where 0< r min≤rmax(by symmetry, we can easily extend to the setting
+whereE= [−r−
+max,−r−
+min]∪[r+
+min, r+
+max]).
+Define
+a=⌈log2rmin⌉, b=⌈log2rmax⌉.
+Then
+2a−1< rmin≤2a,2b−1< rmax≤2b.
+And
+[rmin, rmax] = [r min,2a]∪[2a,2a+1]∪ ··· ∪[2b−1, rmax].
+Hence, by subadditivity of the packing number,
+P(E)≤ P([r min,2a]) +b−2X
+j=aP([2j,2j+1]) +P([2b−1, rmax]).
+Using the precision at scale 2j,εj= 2j−12,we obtain - P([r min,2a])≤2a+1−2rmin
+2a−12 ,-P([2j,2j+1])≤2j+1−2j
+2j−12 = 212,-
+P([2b−1, rmax])≤2rmax−2b
+2b−12 .
+Therefore,
+P(E)≤2a+1−2r min
+2a−12+ 212(b−a−1) +2rmax−2b
+2b−12.
+After simplification,
+P(E)≤212(b−a) + 213−brmax−213−armin.
+Thus, we obtain the upper bound
+P([r min, rmax])≤212(b−a) + 213−brmax−213−armin.
+G.3. Accessibility of Sequences for Different Models
+We follow the cramming protocol described in Section 5.1. Following (Kuratov et al., 2025), we optimize the soft prompts
+using the Adam optimizer for 3000 steps with a learning rate of 0.01, and a weight decay of 0.01. We run the optimization
+on a server with 2 NVIDIA H100 GPUs.
+2Transformers are often trained using Brain Floating Point (bf16), but since it has fewer precision bits ( p= 8 ), it implies a larger ε.
+We therefore use fp16 as a conservative choice.
+23
+
+--- PAGE 24 ---
+How Many Different Outputs Can a Transformer Generate?
+Figure 7 reports results on the Pythia model suite at three scales with matched architecture (A: 160M, B: 410M, C: 1B).
+Across all model sizes, accessibility decreases sharply as sequence length increases, while the derived n50values grow
+approximately linearly with the number of memory vectorsm.
+Figure 8 compares different model architectures (A: Qwen-2.5, B: Gemma-3, C: Llama-3.2). While the accessibility curves
+for Gemma-3 and Llama-3.2 deviate from a clean exponential decay, all architectures still exhibit an approximately linear
+relationship betweenn 50andm.
+G.4. Support of Different Models
+We estimate support parameters for three geometries (Ball, Cone, and Ellipsoid) by Monte Carlo using the sampling
+procedure described in Section 5.2. For each sequence length ℓ∈1, . . . , ℓ max, we draw N= 105i.i.d. token sequences
+t(k)= [t 1, . . . , t ℓ], where tokens are sampled independently and uniformly as ti∼ U({1, . . . ,|V|}) . Each sequence is
+mapped to an embedding vectorY(k)= (L(X(k))):,−1∈Rd, whereX(k)is the embedded input oft(k).
+For the Ball baseline, we estimate theℓ ∞radius
+r= max
+k∥Yk∥∞.
+For the Cone baseline, we additionally estimate the minimum pairwise cosine similarity to find the opening angleθ
+cmin= min
+i<j⟨Yi, Yj⟩
+∥Yi∥2∥Yj∥2, θ= arccos(c min).
+All support parameters are estimated independently for each ℓ. We verified empirically that increasing Nbeyond 105does
+not materially change the estimates.
+Given (r, θ) , together with the embedding dimension d, vocabulary size |V|, and precision εdefined in Appendix G.2, we
+compute the theoretical slope proxies used in our plots:
+Cball=dlog(1 + 2R/ε)
+log|V|, C cone=dlog(1 + 2R/ε) + log FracCone(θ;d)
+log|V|.
+withFracCone(θ;d) defined as the ratio of packing numbers in Corollary F.5. For the Ellipsoid (axis-aligned rectangle)
+baseline, we estimate per-coordinate rangesr j= max k,k′|(Yk)j−(Y k′)j|and use
+Celli=Pd
+j=1log(1 +r j/ε)
+log|V|,
+Figure 9 reports Cball,Ccone, andCelliestimated from samples Xkwith increasing maximum sequence length ℓmax. For all
+models, the estimated constants stabilize rapidly as ℓmaxincreases, indicating that short sequences are sufficient to obtain
+stable estimates of the slope upper bounds.
+H. Computing the Cell Volume Distribution
+In order to compute the cell volumes |Et|corresponding to each token in Section 5.3, we use the ellipsoid support estimate
+from Section 5.2 and sample points uniformly in volume inside this ellipsoid. (i.e. we sample Y(k)∼ U([xmin
+1,xmax
+1]×
+···×[xmin
+d,xmax
+d])) For each sampled point Y(k), we compute its greedy token ˆt(k)=σ(FY(k))via the decoder and count
+how often each token is selected. The relative volume of tokentis estimated by
+|Et|/|E| ≈1
+NNX
+k=1I{ˆt(k)=t},
+whereEis the support ellipsoid andNis the number of samples (hereN= 50M).
+Figure 10 shows the ranked cell-volume profiles. For most models, volumes are extremely uneven: a small set of tokens
+takes up a large fraction of the support, while the vast majority of tokens have tiny cells. Gemma-3 (and, to a lesser extent,
+24
+
+--- PAGE 25 ---
+How Many Different Outputs Can a Transformer Generate?
+Table 3.Tokens with the largest estimated decoder-cell volumes (Section 5.3). V olumes are shown in parentheses. Whitespace/control
+characters are rendered explicitly (e.g., ,\n). For non-ASCII tokens (e.g., Gemma), we show the Unicode code.
+Model Tokens corresponding to largest cellsE t(|Et|/|E|)
+Pythia-160M<ν> (5.5e−3 ),<κ> (4.7e−3 ),<>(4.1e−3 ),<|endoftext|> (3.9e−3 ),
+<well>(2.9e−3)
+Pythia-410M<\n>(0.21),<,>(0.08),< (>(0.07),<->(0.06),<.>(0.05)
+Pythia-1B<\n>(0.25),<,>(0.21),<->(0.10),<.>(0.054),< (>(0.036)
+Llama-3.2 1B< >(0.38),<,>(0.19),<\n>(0.094),< (>(0.059),<->(0.051)
+Qwen-2.5 0.5B< >(0.70),<,>(0.14),<->(0.038),<\n>(0.036),<.>(0.021)
+Qwen-2.5 1.5B< >(0.81),<,>(0.076),<\n>(0.038),<->(0.033),< (>(0.011)
+Gemma-3 270M<eos> (1.1e−4 ),<U+000A U+000A> (1.0e−4 ),</> (9.6e−5 ),<U+3054
+U+7406 U+89E3>(7.0e−5),<<h2>>(6.7e−5)
+Pythia-160M) looks noticeably more uniform. One possible explanation is their large vocabulary size compared to their
+number of parameters: if a model has many rare tokens, their decoder embeddings may be weakly trained and remain closer
+to random. This can lead to a more even partition of the embedding support, with fewer overwhelmingly large cells. As
+a sanity check, Table 3 shows that the largest-volume cells in most models align with very frequent tokens (whitespace,
+punctuation, and common function words). In contrast, Gemma-3 and Pythia-160M have top-volume tokens that appear less
+obviously frequent, which is consistent with the vocabulary explanation above.
+We estimate the distribution of subsequent sequences by using the previously estimated next-token distribution D, and then
+model the distribution over length- ncontinuations using the n-fold multiplicative convolution Dn. Figure 11 shows the
+resulting volume-cell distributions for sequence lengths n∈ {1, . . . ,6} across models. Most models exhibit highly skewed
+next-token distributions, leading to a rapid concentration of mass near zero as nincreases. Models with more balanced
+distributions, such as Gemma3-270m, exhibit a slower decay.
+25
+
+--- PAGE 26 ---
+How Many Different Outputs Can a Transformer Generate?
+a)
+b)c)
+(A)Pythia-160M
+a)
+b)c)
+(B)Pythia-410M
+a)
+b)c)
+(C)Pythia-1B
+Figure 7.Mean accessibility for a) PG19 and b) random target sequences of length nas a function of the number of trainable memory
+vectors m. For each m, we fit a sigmoid (solid) and mark n50where the fit crosses 0.5 (vertical dashed line). (c) n50(m) for PG19 (blue)
+and random (red), with linear fits (dashed). Results shown for the Pythia model suite at different scales A) 160M, B) 410M, C) 1B.
+26
+
+--- PAGE 27 ---
+How Many Different Outputs Can a Transformer Generate?
+a)
+b)c)
+(A)Qwen 2.5 (0.5B)
+a)
+b)c)
+(B)Gemma-3 270M
+a)
+b)c)
+(C)Llama-3.2 1B
+Figure 8.Mean accessibility for a) PG19 and b) random target sequences of length nas a function of the number of trainable memory
+vectors m. For each m, we fit a sigmoid (solid) and mark n50where the fit crosses 0.5 (vertical dashed line). (c) n50(m) for PG19 (blue)
+and random (red), with linear fits (dashed). Results shown for three architectures A) Qwen-2.5, B) Gemma-3, C) Llama-3.2.
+27
+
+--- PAGE 28 ---
+How Many Different Outputs Can a Transformer Generate?
+a) b) c)
+d) e)
+f ) g)
+Figure 9.Upper bound on Cfor different support geometry —Ball (blue), Cone (green), Ellipsoid (orange)—, estimated using 10K
+randomly sampled input strings of maximum length ℓ. Sampling prompts longer than ℓ≈500 suffices to estimate the upper bound.
+Pythia models for different sizes: a) 160M b) 410M, c) 1B and support for different model architectures d–e) Qwen (0.5B, 1.5B) f) Llama
+1B, g) Gemma 270M.
+Figure 10.Relative volumes of decoder cells across tokens (log-log). For each model, tokens are sorted by estimated cell volume (largest
+on the left). A small set of tokens (typically <102) accounts for a large fraction of the support volume, while most tokens ( 104–105)
+have tiny individual volumes (often10−6–10−8of the support).
+28
+
+--- PAGE 29 ---
+How Many Different Outputs Can a Transformer Generate?
+a)  Pythia-160m
+d)  Qwen2.5-0.5B e)  Qwen2.5-1.5B
+f)  Llama3.2-1B g)  Gemma3-270mb)  Pythia-410m c)  Pythia-1B
+Figure 11.Distribution of n-sequences volumes proportions by estimating the n-fold convolution of the empirical one-step volume
+distribution Dfor different models: a) Pythia-160M, b) Pythia-410M, c) Pythia-1B, d) Qwen2.5 0.5B, e) Qwen2.5 1.5B, f) Llama3.2 1B,
+g) Gemma 270M.
+29

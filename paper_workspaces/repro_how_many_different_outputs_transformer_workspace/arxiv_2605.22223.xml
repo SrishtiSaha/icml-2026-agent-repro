@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/p3o+jCFr36zNPB4KcsI6gQ0wpWc</id>
+  <title>arXiv Query: search_query=&amp;id_list=2605.22223&amp;start=0&amp;max_results=10</title>
+  <updated>2026-08-03T08:03:45Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2605.22223" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22223v1</id>
+    <title>How Many Different Outputs Can a Transformer Generate?</title>
+    <updated>2026-05-21T09:26:37Z</updated>
+    <link href="https://arxiv.org/abs/2605.22223v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22223v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study how we can leverage only a handful of characteristics of a transformer's architecture to closely predict the number of different sequences it can output, both qualitatively and quantitatively. We provide an upper bound depending on the length of the prompt, which we show empirically to be tight up to a factor less than 10, across architectures and model sizes. Our analysis also provides a theoretical explanation for previously observed empirical failures of transformers on simple sequence tasks, such as copying and cramming. Formally, we prove that (i) the maximal length of accessible sequences (those that the transformer can output for some prompt) grows linearly with the prompt length, (ii) beyond a critical threshold, the proportion of accessible sequences decays exponentially with sequence length, and (iii) the linear coefficient relating prompt length to accessible sequence length admits a theoretical upper bound. Notably, these results hold even with unbounded context and computation time.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T09:26:37Z</published>
+    <arxiv:comment>ICML 2026 Spotlight</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Maxime Meyer</name>
+    </author>
+    <author>
+      <name>Mario Michelessa</name>
+    </author>
+    <author>
+      <name>Caroline Chaux</name>
+    </author>
+    <author>
+      <name>Vincent Y. F. Tan</name>
+    </author>
+  </entry>
+</feed>

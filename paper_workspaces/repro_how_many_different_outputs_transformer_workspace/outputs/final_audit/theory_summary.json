@@ -1,0 +1,17 @@
+{
+  "claim1": {
+    "status": "verified",
+    "max_enum_relative_error": 8.658246699807738e-16,
+    "settings": 6
+  },
+  "claim2": {
+    "status": "verified",
+    "settings": 5,
+    "all_first_above_caps_below_one": true
+  },
+  "claim3": {
+    "status": "verified",
+    "settings": 4,
+    "prompt_length_appears_in_threshold": false
+  }
+}

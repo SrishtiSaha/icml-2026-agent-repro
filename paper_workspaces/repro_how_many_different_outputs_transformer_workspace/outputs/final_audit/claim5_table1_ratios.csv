@@ -1,0 +1,36 @@
+method,model,ratio,inside_literal_5_to_20_interval
+Ball,Pythia-160M,9.24,True
+Ball,Pythia-410M,9.79,True
+Ball,Pythia-1B,7.77,True
+Ball,Qwen-2.5-0.5B,14.1,True
+Ball,Qwen-2.5-1.5B,20.4,False
+Ball,Llama-3.2-1B,14.3,True
+Ball,Gemma-3-270M,11.52,True
+Cone,Pythia-160M,9.1,True
+Cone,Pythia-410M,9.6,True
+Cone,Pythia-1B,7.7,True
+Cone,Qwen-2.5-0.5B,14.01,True
+Cone,Qwen-2.5-1.5B,20.34,False
+Cone,Llama-3.2-1B,13.98,True
+Cone,Gemma-3-270M,11.24,True
+Ellipsoid,Pythia-160M,7.92,True
+Ellipsoid,Pythia-410M,8.15,True
+Ellipsoid,Pythia-1B,6.12,True
+Ellipsoid,Qwen-2.5-0.5B,10.96,True
+Ellipsoid,Qwen-2.5-1.5B,15.3,True
+Ellipsoid,Llama-3.2-1B,11.86,True
+Ellipsoid,Gemma-3-270M,11.12,True
+Ellipsoid + Non-uniform Cells,Pythia-160M,6.66,True
+Ellipsoid + Non-uniform Cells,Pythia-410M,5.99,True
+Ellipsoid + Non-uniform Cells,Pythia-1B,4.56,False
+Ellipsoid + Non-uniform Cells,Qwen-2.5-0.5B,7.92,True
+Ellipsoid + Non-uniform Cells,Qwen-2.5-1.5B,10.82,True
+Ellipsoid + Non-uniform Cells,Llama-3.2-1B,10.71,True
+Ellipsoid + Non-uniform Cells,Gemma-3-270M,8.79,True
+Ellipsoid + variable epsilon,Pythia-160M,8.65,True
+Ellipsoid + variable epsilon,Pythia-410M,9.83,True
+Ellipsoid + variable epsilon,Pythia-1B,7.71,True
+Ellipsoid + variable epsilon,Qwen-2.5-0.5B,12.32,True
+Ellipsoid + variable epsilon,Qwen-2.5-1.5B,18.81,True
+Ellipsoid + variable epsilon,Llama-3.2-1B,14.63,True
+Ellipsoid + variable epsilon,Gemma-3-270M,13.42,True

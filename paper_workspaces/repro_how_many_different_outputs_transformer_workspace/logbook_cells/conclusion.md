@@ -1,0 +1,5 @@
+Overall finding: Claims 1-3 are verified as numerical audits of the theory arithmetic; Claims 4-6 are falsified as literally stated by the paper's own source figures and Table 1.
+
+Reproducibility notes: no official GitHub repository was found from the arXiv source or web/GitHub search, and OpenReview's forum/PDF endpoint was blocked by browser verification, so the primary source used here is the arXiv PDF and source bundle: https://arxiv.org/abs/2605.22223, https://arxiv.org/pdf/2605.22223, and https://arxiv.org/e-print/2605.22223. Local scripts in this workspace produce CSV/JSON/HTML artifacts for every claim. One HF GPU smoke job ran on T4-small and is linked from Claim 4: https://huggingface.co/jobs/Srishti280992/6a704c4f6b79c09949c20466.
+
+The strongest supported result is the finite-precision counting logic: the accessible fraction must eventually shrink like a constant divided by `|V|^n`. The empirical overstatements are narrow but concrete: the paper data contain `R^2` and ratio values outside the claimed thresholds.

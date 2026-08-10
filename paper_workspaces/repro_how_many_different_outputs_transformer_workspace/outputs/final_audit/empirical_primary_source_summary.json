@@ -1,0 +1,53 @@
+{
+  "claim4": {
+    "status": "falsified_literal",
+    "min_pg19_r2": 0.987,
+    "min_random_r2": 0.935,
+    "models_below_0_995": [
+      "Gemma-3-270M",
+      "Llama-3.2-1B"
+    ]
+  },
+  "claim5": {
+    "status": "falsified_literal",
+    "min_ratio": 4.56,
+    "max_ratio": 20.4,
+    "outside_5_to_20": [
+      {
+        "method": "Ball",
+        "model": "Qwen-2.5-1.5B",
+        "ratio": 20.4,
+        "inside_literal_5_to_20_interval": false
+      },
+      {
+        "method": "Cone",
+        "model": "Qwen-2.5-1.5B",
+        "ratio": 20.34,
+        "inside_literal_5_to_20_interval": false
+      },
+      {
+        "method": "Ellipsoid + Non-uniform Cells",
+        "model": "Pythia-1B",
+        "ratio": 4.56,
+        "inside_literal_5_to_20_interval": false
+      }
+    ]
+  },
+  "claim6": {
+    "status": "falsified_literal",
+    "sigmoid_r2_values": [
+      0.97,
+      0.95,
+      0.97,
+      0.97,
+      0.8,
+      0.46,
+      0.7
+    ],
+    "models_below_0_90": [
+      "Qwen2.5-0.5B",
+      "Qwen2.5-1.5B",
+      "Llama-3.2-1B"
+    ]
+  }
+}

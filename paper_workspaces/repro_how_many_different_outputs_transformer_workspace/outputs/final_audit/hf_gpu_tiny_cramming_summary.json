@@ -1,0 +1,125 @@
+{
+  "job_url": "https://huggingface.co/jobs/Srishti280992/6a704c4f6b79c09949c20466",
+  "hardware": "t4-small",
+  "timeout": "8m",
+  "model": "https://huggingface.co/sshleifer/tiny-gpt2",
+  "cuda_available": true,
+  "steps": 80,
+  "num_trials": 4,
+  "successes": 0,
+  "results": [
+    {
+      "model": "https://huggingface.co/sshleifer/tiny-gpt2",
+      "device": "cuda",
+      "m": 1,
+      "n": 4,
+      "target": [
+        45,
+        144,
+        89,
+        217
+      ],
+      "generated": [
+        5087,
+        5087,
+        5087,
+        5087
+      ],
+      "success": false,
+      "final_loss": 10.818035125732422
+    },
+    {
+      "model": "https://huggingface.co/sshleifer/tiny-gpt2",
+      "device": "cuda",
+      "m": 1,
+      "n": 8,
+      "target": [
+        192,
+        186,
+        117,
+        18,
+        169,
+        142,
+        168,
+        16
+      ],
+      "generated": [
+        16046,
+        16046,
+        16046,
+        16046,
+        16046,
+        16046,
+        16046,
+        16046
+      ],
+      "success": false,
+      "final_loss": 10.819777488708496
+    },
+    {
+      "model": "https://huggingface.co/sshleifer/tiny-gpt2",
+      "device": "cuda",
+      "m": 2,
+      "n": 8,
+      "target": [
+        34,
+        93,
+        17,
+        37,
+        76,
+        9,
+        13,
+        172
+      ],
+      "generated": [
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087
+      ],
+      "success": false,
+      "final_loss": 10.84009075164795
+    },
+    {
+      "model": "https://huggingface.co/sshleifer/tiny-gpt2",
+      "device": "cuda",
+      "m": 3,
+      "n": 12,
+      "target": [
+        124,
+        27,
+        153,
+        87,
+        242,
+        145,
+        191,
+        95,
+        18,
+        206,
+        168,
+        68
+      ],
+      "generated": [
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087
+      ],
+      "success": false,
+      "final_loss": 10.822148323059082
+    }
+  ],
+  "interpretation": "cheap GPU smoke test of soft-prompt cramming; not decision-critical for architecture-level claims"
+}

@@ -1,0 +1,171 @@
+%%%%%%%% ICML 2026 EXAMPLE LATEX SUBMISSION FILE %%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+
+% Recommended, but optional, packages for figures and better typesetting:
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs} % for professional tables
+
+\renewcommand\thesubfigure{\Alph{subfigure}} % A, B, C...
+\captionsetup[subfigure]{labelformat=parens} % (A), (B), ...
+
+% hyperref makes hyperlinks in the resulting PDF.
+% If your build breaks (sometimes temporarily if a hyperlink spans a page)
+% please comment out the following usepackage line and replace
+% \usepackage{icml2026} with \usepackage[nohyperref]{icml2026} above.
+\usepackage{hyperref}
+
+
+% Attempt to make hyperref and algorithmic work together better:
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+% Use the following line for the initial blind version submitted for review:
+% \usepackage{icml2026}
+
+% For preprint, use
+% \usepackage[preprint]{icml2026}
+
+% If accepted, instead use the following line for the camera-ready submission:
+\usepackage[accepted]{icml2026}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+
+
+% if you use cleveref..
+\usepackage[capitalize,noabbrev]{cleveref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREMS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% For restatable
+\usepackage{thmtools}
+
+% Allows line breaks at any reasonable character in URLs and works well with two-column layouts.
+\usepackage{xurl}
+
+% Todonotes is useful during development; simply uncomment the next line
+%    and comment out the line below the next line to turn off comments
+%\usepackage[disable,textsize=tiny]{todonotes}
+\usepackage[textsize=tiny]{todonotes}
+
+% The \icmltitle you define below is probably too long as a header.
+% Therefore, a short form for the running title is supplied here:
+\icmltitlerunning{How Many Different Outputs Can a Transformer Generate?}
+
+
+\begin{document}
+
+\twocolumn[
+  \icmltitle{How Many Different Outputs Can a Transformer Generate?}
+
+  % It is OKAY to include author information, even for blind submissions: the
+  % style file will automatically remove it for you unless you've provided
+  % the [accepted] option to the icml2026 package.
+
+  % List of affiliations: The first argument should be a (short) identifier you
+  % will use later to specify author affiliations Academic affiliations
+  % should list Department, University, City, Region, Country Industry
+  % affiliations should list Company, City, Region, Country
+
+  % You can specify symbols, otherwise they are numbered in order. Ideally, you
+  % should not use this facility. Affiliations will be numbered in order of
+  % appearance and this is the preferred way.
+  \icmlsetsymbol{equal}{*}
+
+  \begin{icmlauthorlist}
+    \icmlauthor{Maxime Meyer}{equal,nus_maths,IPAL}
+    \icmlauthor{Mario Michelessa}{equal,IPAL,nus_comp}
+    \icmlauthor{Caroline Chaux}{IPAL,marseille}
+    \icmlauthor{Vincent Y. F. Tan}{nus_maths,nus_eng}
+  \end{icmlauthorlist}
+
+  \icmlaffiliation{nus_maths}{Department of Mathematics, National University of Singapore, Singapore, 117543}
+  \icmlaffiliation{IPAL}{IPAL, IRL2955, Singapore}
+  \icmlaffiliation{nus_comp}{School of Computing, National University of Singapore, Singapore, 117543}
+  \icmlaffiliation{marseille}{Aix Marseille Univ, CNRS, I2M, Marseille, France}
+  \icmlaffiliation{nus_eng}{Department of Electrical and Computer Engineering, National University of Singapore}
+
+  \icmlcorrespondingauthor{Maxime Meyer}{maxime.meyer@u.nus.edu}
+
+  % You may provide any keywords that you find helpful for describing your
+  % paper; these are used to populate the "keywords" metadata in the PDF but
+  % will not be shown in the document
+  \icmlkeywords{Machine Learning, ICML, transformers, expressivity, accessible sequences, copying, cramming, scaling, long context}
+
+  \vskip 0.3in
+]
+
+% this must go after the closing bracket ] following \twocolumn[ ...
+
+% This command actually creates the footnote in the first column listing the
+% affiliations and the copyright notice. The command takes one argument, which
+% is text to display at the start of the footnote. The \icmlEqualContribution
+% command is standard text for equal contribution. Remove it (just {}) if you
+% do not need this facility.
+
+% Use ONE of the following lines. DO NOT remove the command.
+% If you have no special notice, KEEP empty braces:
+% \printAffiliationsAndNotice{}  % no special notice (required even if empty)
+% Or, if applicable, use the standard equal contribution text:
+\printAffiliationsAndNotice{\icmlEqualContribution}
+
+\begin{abstract}
+  We study how we can leverage only a handful of characteristics of a transformer's architecture to closely predict the number of different sequences it can output, both qualitatively and quantitatively.
+  We provide an upper bound depending on the length of the prompt, which we show empirically to be tight up to a factor less than 10, across architectures and model sizes.
+  Our analysis also provides a theoretical explanation for previously observed empirical failures of transformers on simple sequence tasks---such as copying and cramming.
+  Formally, we prove that (i) the maximal length of accessible sequences (those that the transformer can output for some prompt) grows linearly with the prompt length, (ii) beyond a critical threshold, the proportion of accessible sequences decays exponentially with sequence length, and (iii) the linear coefficient relating prompt length to accessible sequence length admits a theoretical upper bound.
+  Notably, these results hold even with unbounded context and computation time.
+\end{abstract}
+
+\input{ch-introduction}
+
+\input{ch-preliminaries}
+
+\input{ch-embed_rep}
+
+\input{ch-theory}
+
+\input{ch-experiments}
+
+\input{ch-conclusion}
+
+\newpage
+
+\section*{Impact Statement}
+
+This paper presents work whose goal is to advance the field of machine learning. There are many potential societal consequences of our work, none of which we feel must be specifically highlighted here.
+
+\section*{Acknowledgements}
+
+This research/project is supported by the National Research Foundation, Singapore under its AI Singapore Programme (AISG Award No: AISG3-PhD-2026-01-068T). V.~Y.~F.~Tan is also supported by
+a Singapore Ministry of Education (MOE) AcRF Tier 2 grant under grant number A-8004062-00-00.
+This research/project is supported by the National Research Foundation, Singapore under its AI Singapore Programme (AISG Award No: AISG2-PhD-2023-01-040-J), and is part of the programme DesCartes which is supported by the National Research Foundation, Prime Minister’s Office, Singapore under its Campus for Research Excellence and Technological Enterprise (CREATE) programme.
+
+\newpage
+
+\bibliography{references}
+\bibliographystyle{icml2026}
+
+\appendix
+
+\onecolumn
+
+\input{ch-appendix}
+
+\end{document}

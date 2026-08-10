@@ -1,0 +1,200 @@
+/Users/srishtisaha/.local/share/uv/tools/huggingface-hub/lib/python3.8/site-packages/huggingface_hub/utils/_experimental.py:60: UserWarning: 'HfApi.run_uv_job' is experimental and might be subject to breaking changes in the future without prior notice. You can disable this warning by setting `HF_HUB_DISABLE_EXPERIMENTAL_WARNING=1` as environment variable.
+  warnings.warn(
+Uploading gpu_tiny_cramming_smoke.py to Srishti280992/hf-cli-jobs-uv-run-scripts...
+Job started with ID: 6a704c4f6b79c09949c20466
+View at: https://huggingface.co/jobs/Srishti280992/6a704c4f6b79c09949c20466
+Downloading hf-xet (4.2MiB)
+Downloading transformers (11.1MiB)
+Downloading nvidia-cuda-runtime (2.1MiB)
+Downloading networkx (2.0MiB)
+Downloading nvidia-nvshmem-cu13 (57.6MiB)
+Downloading numpy (15.9MiB)
+Downloading cuda-bindings (6.3MiB)
+Downloading nvidia-curand (56.8MiB)
+Downloading nvidia-cudnn-cu13 (349.2MiB)
+Downloading nvidia-cusparselt-cu13 (162.3MiB)
+Downloading nvidia-nvjitlink (38.9MiB)
+Downloading nvidia-cufft (204.2MiB)
+Downloading nvidia-cufile (1.2MiB)
+Downloading nvidia-cuda-cupti (10.2MiB)
+Downloading nvidia-cusparse (139.2MiB)
+Downloading sympy (6.0MiB)
+Downloading nvidia-cuda-nvrtc (86.0MiB)
+Downloading triton (188.6MiB)
+Downloading torch (502.2MiB)
+Downloading nvidia-cublas (403.5MiB)
+Downloading nvidia-nccl-cu13 (196.4MiB)
+Downloading nvidia-cusolver (191.6MiB)
+Downloading tokenizers (3.1MiB)
+Downloading pygments (1.2MiB)
+ Downloaded nvidia-cufile
+ Downloaded nvidia-cuda-runtime
+ Downloaded pygments
+ Downloaded tokenizers
+ Downloaded networkx
+ Downloaded hf-xet
+ Downloaded cuda-bindings
+ Downloaded nvidia-cuda-cupti
+ Downloaded sympy
+ Downloaded numpy
+ Downloaded nvidia-nvjitlink
+ Downloaded nvidia-curand
+ Downloaded nvidia-nvshmem-cu13
+ Downloaded nvidia-cuda-nvrtc
+ Downloaded transformers
+ Downloaded nvidia-cusparse
+ Downloaded nvidia-cusparselt-cu13
+ Downloaded nvidia-cusolver
+ Downloaded nvidia-nccl-cu13
+ Downloaded nvidia-cufft
+ Downloaded triton
+ Downloaded nvidia-cublas
+ Downloaded nvidia-cudnn-cu13
+ Downloaded torch
+Installed 53 packages in 466ms
+{"cuda_available": true, "device": "cuda"}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+config.json:   0%|          | 0.00/662 [00:00<?, ?B/s][Aconfig.json: 100%|██████████| 662/662 [00:00<00:00, 3.37MB/s]
+
+tokenizer_config.json:   0%|          | 0.00/26.0 [00:00<?, ?B/s][Atokenizer_config.json: 100%|██████████| 26.0/26.0 [00:00<00:00, 133kB/s]
+
+vocab.json:   0%|          | 0.00/899k [00:00<?, ?B/s][Avocab.json: 100%|██████████| 899k/899k [00:00<00:00, 38.2MB/s]
+
+merges.txt:   0%|          | 0.00/456k [00:00<?, ?B/s][Amerges.txt: 100%|██████████| 456k/456k [00:00<00:00, 32.7MB/s]
+
+special_tokens_map.json:   0%|          | 0.00/90.0 [00:00<?, ?B/s][Aspecial_tokens_map.json: 100%|██████████| 90.0/90.0 [00:00<00:00, 370kB/s]
+
+pytorch_model.bin: reconstructing file:   0%|          |  0.00B / 2.51MB            [Apytorch_model.bin: downloading bytes:           |  0.00B            pytorch_model.bin: downloading bytes: ██████████|  440kB,   ???B/s  pytorch_model.bin: downloading bytes: ██████████|  440kB,   ???B/s  
+pytorch_model.bin: reconstructing file: 100%|██████████| 2.51MB / 2.51MB,   ???B/s  
+
+Loading weights:   0%|          | 0/29 [00:00<?, ?it/s][ALoading weights: 100%|██████████| 29/29 [00:00<00:00, 20272.47it/s]
+[transformers] [1mGPT2LMHeadModel LOAD REPORT[0m from: sshleifer/tiny-gpt2
+Key                                   | Status     |  | 
+--------------------------------------+------------+--+-
+transformer.h.{0, 1}.attn.masked_bias | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+
+model.safetensors: reconstructing file:   0%|          |  0.00B / 2.51MB            [Amodel.safetensors: downloading bytes:           |  0.00B            model.safetensors: downloading bytes: ██████████|  427kB, 42.6kB/s  model.safetensors: downloading bytes: ██████████|  427kB, 42.6kB/s  
+model.safetensors: reconstructing file: 100%|██████████| 2.51MB / 2.51MB,  250kB/s  
+RESULTS_JSON_START
+{
+  "steps": 80,
+  "results": [
+    {
+      "model": "https://huggingface.co/sshleifer/tiny-gpt2",
+      "device": "cuda",
+      "m": 1,
+      "n": 4,
+      "target": [
+        45,
+        144,
+        89,
+        217
+      ],
+      "generated": [
+        5087,
+        5087,
+        5087,
+        5087
+      ],
+      "success": false,
+      "final_loss": 10.818035125732422
+    },
+    {
+      "model": "https://huggingface.co/sshleifer/tiny-gpt2",
+      "device": "cuda",
+      "m": 1,
+      "n": 8,
+      "target": [
+        192,
+        186,
+        117,
+        18,
+        169,
+        142,
+        168,
+        16
+      ],
+      "generated": [
+        16046,
+        16046,
+        16046,
+        16046,
+        16046,
+        16046,
+        16046,
+        16046
+      ],
+      "success": false,
+      "final_loss": 10.819777488708496
+    },
+    {
+      "model": "https://huggingface.co/sshleifer/tiny-gpt2",
+      "device": "cuda",
+      "m": 2,
+      "n": 8,
+      "target": [
+        34,
+        93,
+        17,
+        37,
+        76,
+        9,
+        13,
+        172
+      ],
+      "generated": [
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087
+      ],
+      "success": false,
+      "final_loss": 10.84009075164795
+    },
+    {
+      "model": "https://huggingface.co/sshleifer/tiny-gpt2",
+      "device": "cuda",
+      "m": 3,
+      "n": 12,
+      "target": [
+        124,
+        27,
+        153,
+        87,
+        242,
+        145,
+        191,
+        95,
+        18,
+        206,
+        168,
+        68
+      ],
+      "generated": [
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087,
+        5087
+      ],
+      "success": false,
+      "final_loss": 10.822148323059082
+    }
+  ]
+}
+RESULTS_JSON_END

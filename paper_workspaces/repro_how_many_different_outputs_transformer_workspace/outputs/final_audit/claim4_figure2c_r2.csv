@@ -1,0 +1,8 @@
+model,pg19_r2,random_r2,slope_pg19,slope_random,source_png,pg19_meets_claimed_0_995,random_meets_claimed_0_995
+Pythia-160M,0.999,0.996,90.37,44.13,rendered_figures/pythia160.png,True,True
+Pythia-410M,1.0,1.0,111.14,69.32,rendered_figures/pythia410.png,True,True
+Pythia-1B,0.998,0.998,201.42,137.22,rendered_figures/pythia1b.png,True,True
+Qwen-2.5-0.5B,0.998,0.998,71.02,36.65,rendered_figures/qwen05.png,True,True
+Qwen-2.5-1.5B,0.999,0.995,79.56,36.38,rendered_figures/qwen15.png,True,True
+Gemma-3-270M,0.987,0.989,44.54,22.97,rendered_figures/gemma270.png,False,False
+Llama-3.2-1B,0.992,0.935,137.77,71.3,rendered_figures/llama1b.png,False,False

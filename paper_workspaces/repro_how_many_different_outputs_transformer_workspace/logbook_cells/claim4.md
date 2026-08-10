@@ -1,0 +1,7 @@
+Verdict: falsified as literally stated.
+
+The paper source says Qwen-2.5-1.5B has `R^2_PG19=0.999` and `R^2_random=0.995` in Figure 2c, matching the threshold. However, the appendix source figures also show counterexamples: Gemma-3-270M has `R^2_PG19=0.987` and `R^2_random=0.989`, while Llama-3.2-1B has `R^2_PG19=0.992` and `R^2_random=0.935`. A universal claim of `R^2 >= 0.995` across the tested architectures is therefore contradicted by the paper's own figure assets.
+
+Linked model resources referenced by the audited figures and claim: https://huggingface.co/EleutherAI/pythia-160m, https://huggingface.co/EleutherAI/pythia-410m, https://huggingface.co/EleutherAI/pythia-1b, https://huggingface.co/EleutherAI/pythia-1.4b, https://huggingface.co/EleutherAI/pythia-2.8b, https://huggingface.co/Qwen/Qwen2.5-0.5B, https://huggingface.co/Qwen/Qwen2.5-1.5B, https://huggingface.co/meta-llama/Llama-3.2-1B, https://huggingface.co/meta-llama/Llama-3.2-3B, https://huggingface.co/google/gemma-3-270m, and https://huggingface.co/google/gemma-3-1b-pt.
+
+Scaled HF Job smoke check: I also ran the soft-prompt cramming procedure on https://huggingface.co/sshleifer/tiny-gpt2 using a T4-small GPU at https://huggingface.co/jobs/Srishti280992/6a704c4f6b79c09949c20466. CUDA was available and the script completed four tiny exact-match trials with zero successes after 80 prompt-optimization steps. This job is a cheap mechanism check, not a substitute for the paper-scale H100 cramming runs.
