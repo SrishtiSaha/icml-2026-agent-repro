@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "model_ladders": {},
+  "papers": {
+    "<paper_slug>": {
+      "workspace": ".",
+      "claims": {
+        "all": {
+          "title": "Run paper-local claim checks",
+          "route": "local_command",
+          "command": "{python} scripts/verify_claims.py",
+          "postprocess_command": "{python} {root}/scripts/write_verdict_logbook.py --workspace {workspace} --claims-json {workspace}/outputs/claim_verification.json",
+          "confirmation_tests": [
+            "Run exact source/artifact checks before paid compute.",
+            "Use the real algorithm, paper metric, and adequate scale for empirical claims."
+          ],
+          "counterexample_search": [
+            "Check alternate aggregations, edge cases, null baselines, destructive controls, and adversarial regions."
+          ]
+        },
+        "matrix-hf": {
+          "title": "Scaled seed/setting matrix",
+          "route": "matrix_hf_job",
+          "image": "python:3.12",
+          "flavor": "cpu-basic",
+          "timeout": "2h",
+          "secret_requirements": ["HF_TOKEN"],
+          "matrix": {
+            "SEED": [0, 1, 2],
+            "SETTING": ["default", "edge"]
+          },
+          "mounts": [
+            {"host": "{workspace}", "container": "/input", "mode": "ro"}
+          ],
+          "remote_command": "cd /tmp && cp -a /input repro && cd repro && python scripts/verify_claims.py --seed \"$SEED\" --setting \"$SETTING\""
+        }
+      }
+    }
+  }
+}

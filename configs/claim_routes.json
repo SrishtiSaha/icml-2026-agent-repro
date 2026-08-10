@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "route_types": {
+    "local_command": {
+      "description": "Run a deterministic verifier or source audit inside a paper workspace."
+    },
+    "hf_job_command": {
+      "description": "Submit one isolated Hugging Face Job for a substantive reproduction unit."
+    },
+    "matrix_hf_job": {
+      "description": "Submit one restart-safe job per seed, model, dataset, fold, or setting combination."
+    }
+  },
+  "model_ladders": {},
+  "papers": {}
+}

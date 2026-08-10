@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "paper_id": "replace-with-stable-paper-id",
+  "title": "Replace with paper title",
+  "sources": [
+    {
+      "kind": "paper",
+      "locator": "paper.pdf or stable URL",
+      "revision": "version/date/commit"
+    },
+    {
+      "kind": "official_code",
+      "locator": "repository URL",
+      "revision": "commit SHA"
+    }
+  ]
+}

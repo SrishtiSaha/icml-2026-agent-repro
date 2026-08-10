@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "paper_id": "replace-with-stable-paper-id",
+  "source_manifest_hash": "sha256-of-canonical-source-manifest",
+  "claims_hash": "sha256-of-canonical-claim-contract",
+  "budget": {"currency": "USD", "maximum": 0, "expected": 0},
+  "units": [
+    {
+      "id": "smoke-local",
+      "kind": "smoke",
+      "claim_ids": ["claim-1"],
+      "route": "local_command",
+      "command": "python scripts/verify_claims.py --smoke",
+      "cost_tier": 0,
+      "expected_artifacts": ["outputs/smoke.json"]
+    },
+    {
+      "id": "claim-1-scaled",
+      "kind": "scaled",
+      "claim_ids": ["claim-1"],
+      "route": "matrix_hf_job",
+      "command": "python scripts/verify_claims.py",
+      "cost_tier": 2,
+      "expected_artifacts": ["outputs/claim-1-results.json"]
+    }
+  ]
+}

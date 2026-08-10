@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "paper_id": "replace-with-stable-paper-id",
+  "claims_hash": "sha256-of-canonical-claim-contract",
+  "plan_hash": "sha256-of-canonical-plan",
+  "claims": [
+    {
+      "id": "claim-1",
+      "verdict": "inconclusive",
+      "metric": "Exact observed metric and comparator",
+      "scope": "Model, data, scale, seeds and limitations",
+      "artifacts": [{"path": "outputs/claim-1-results.json", "sha256": "replace"}],
+      "fidelity": {"passed": false, "details": ""},
+      "data_integrity": {"passed": false, "details": ""},
+      "controls": {"passed": false, "details": ""},
+      "statistics": {"passed": false, "details": ""}
+    }
+  ]
+}

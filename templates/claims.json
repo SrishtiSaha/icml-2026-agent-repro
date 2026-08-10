@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "paper_id": "replace-with-stable-paper-id",
+  "source_manifest_hash": "sha256-of-canonical-source-manifest",
+  "claims": [
+    {
+      "id": "claim-1",
+      "text": "Exact falsifiable claim text",
+      "source_anchor": "paper.pdf page/table/figure/theorem",
+      "evidence_type": "empirical_magnitude",
+      "required_metric": "Exact metric, aggregation and denominator",
+      "comparator": "Baseline or null comparator",
+      "verification_condition": "Exact condition that verifies the claim",
+      "falsification_condition": "Exact condition that falsifies the claim",
+      "route": "local_command",
+      "paper_scale": {"target": "Paper sample/model/task scale", "minimum_adequate": "Justified lower bound"},
+      "fidelity": {"algorithm": "Real algorithm", "model": "Model/checkpoint requirement", "metric": "Paper metric"},
+      "data_integrity": {"revisions": [], "split_policy": "", "row_identity": "", "leakage_prevention": ""},
+      "controls": {"baseline": "", "negative_control": "", "paired_randomness": false, "all_cells_required": true},
+      "statistics": {"seeds": 1, "replicates": 1, "uncertainty": "", "multiple_comparisons": ""},
+      "counterexample_search": ["Setting, edge case, or adversarial region that could disprove the claim"]
+    }
+  ]
+}
